@@ -18,10 +18,10 @@ __pycache__/
 *.log
 
 # Large model checkpoints (weights)
-*.pt
 *.pth
 *.onnx
-models/
+models/*
+!models/best_model.pt
 
 # Heavy local model outputs (keep code, exclude raw volumes)
 outputs/segmentation/*/*.nii.gz
