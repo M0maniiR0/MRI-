@@ -51,13 +51,13 @@ import nibabel as nib
 import numpy as np
 import torch
 import torch.nn as nn
-from torch.utils.data import DataLoader, Dataset
+from torch.utils.data import DataLoader
 
 # Suppress benign MONAI deprecation messages for clean clinical logs
 warnings.filterwarnings("ignore", category=FutureWarning)
 warnings.filterwarnings("ignore", category=UserWarning)
 
-from monai.data import MetaTensor
+from monai.data import Dataset, MetaTensor, list_data_collate
 from monai.inferers import sliding_window_inference
 from monai.losses import DiceLoss
 from monai.metrics import compute_hausdorff_distance
