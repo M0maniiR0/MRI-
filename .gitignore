@@ -23,6 +23,8 @@ __pycache__/
 models/*
 !models/best_model.pt
 !models/baseline_5ep_best_model.pt
+!models/smoke_test_model.pt
 
-# Heavy local model outputs (keep code, exclude raw volumes)
-outputs/segmentation/*/*.nii.gz
+# Heavy local model outputs (keep code and metrics, exclude heavy 3D masks)
+outputs/**/*.nii.gz
+outputs/**/*.nii

@@ -1,0 +1,46 @@
+{
+  "status": "PASS",
+  "timestamp": "2026-10-16T20:30:03Z",
+  "unit_tests_pass": true,
+  "cases_trained": [
+    "BRATS_001",
+    "BRATS_003",
+    "BRATS_004",
+    "BRATS_005"
+  ],
+  "epochs": 1,
+  "training_duration_seconds": 9.948,
+  "peak_memory_mb": 272.78,
+  "checkpoint_file": "smoke_test_model.pt",
+  "checkpoint_size_mb": 2.1,
+  "initial_loss": 0.7475602626800537,
+  "final_loss": 0.7090046405792236,
+  "average_loss": 0.7392,
+  "param_weight_delta_l2": 0.00809049978852272,
+  "validation_case_evaluated": "BRATS_002",
+  "validation_metrics": {
+    "Whole_Tumor_WT": 0.0408,
+    "Tumor_Core_TC": 0.0019,
+    "Enhancing_Tumor_ET": 0.0039,
+    "Mean_Dice": 0.0155
+  },
+  "validation_hd95_mm": {
+    "Whole_Tumor_WT": 171.62,
+    "Tumor_Core_TC": 175.48,
+    "Enhancing_Tumor_ET": 179.21,
+    "Mean_HD95": 175.44
+  },
+  "nifti_geometry_verified": {
+    "shape_match": true,
+    "affine_match": true,
+    "discrete_labels_preserved": true
+  },
+  "split_counts": {
+    "train_ids": 339,
+    "val_ids": 73,
+    "test_ids": 72,
+    "holdout_untouched": true
+  },
+  "clinical_readiness_disclaimer": "Training readiness and 1-epoch smoke test verify pipeline mechanics, numerical convergence, and spatial safety. High clinical segmentation accuracy requires multi-epoch training on the full 339 cohort.",
+  "full_scale_command": "python segmentation_baseline.py --train --epochs 20 --lr 1e-4 --val-num-cases 73 --output-checkpoint models/segresnet_fullvolume_best.pt"
+}
