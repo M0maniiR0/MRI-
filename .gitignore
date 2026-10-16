@@ -22,6 +22,7 @@ __pycache__/
 *.onnx
 models/*
 !models/best_model.pt
+!models/baseline_5ep_best_model.pt
 
 # Heavy local model outputs (keep code, exclude raw volumes)
 outputs/segmentation/*/*.nii.gz

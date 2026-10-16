@@ -1,0 +1,321 @@
+{
+  "summary": {
+    "evaluation_timestamp": "2026-10-16T17:54:57Z",
+    "checkpoint_evaluated": {
+      "checkpoint_file": "best_model.pt",
+      "checkpoint_path": "C:\\Users\\HP VICTUS\\OneDrive\\Desktop\\MRI Data\\models\\best_model.pt",
+      "epoch": 5,
+      "training_loss": 0.8630344688892364,
+      "optimizer": "AdamW",
+      "learning_rate": 0.001,
+      "init_filters": 8,
+      "blocks_down": [
+        1,
+        2,
+        2
+      ],
+      "blocks_up": [
+        1,
+        1
+      ],
+      "timestamp": "2026-10-16T17:00:54Z"
+    },
+    "cases_requested": 5,
+    "cases_evaluated_successfully": 5,
+    "cases_failed": 0,
+    "dice_metrics": {
+      "Whole_Tumor_WT": {
+        "mean": 0.0895,
+        "median": 0.081,
+        "std": 0.0332
+      },
+      "Tumor_Core_TC": {
+        "mean": 0.113,
+        "median": 0.1459,
+        "std": 0.0614
+      },
+      "Enhancing_Tumor_ET": {
+        "mean": 0.0225,
+        "median": 0.0204,
+        "std": 0.0161
+      },
+      "Overall_Mean_Dice": 0.075
+    },
+    "hd95_metrics_mm": {
+      "with_penalty": {
+        "Whole_Tumor_WT_mean": 136.61,
+        "Tumor_Core_TC_mean": 143.37,
+        "Enhancing_Tumor_ET_mean": 152.57
+      },
+      "valid_nonpenalty_only": {
+        "Whole_Tumor_WT_mean": 136.61,
+        "Tumor_Core_TC_mean": 143.37,
+        "Enhancing_Tumor_ET_mean": 152.57,
+        "valid_sample_counts": {
+          "WT": 5,
+          "TC": 5,
+          "ET": 5
+        }
+      }
+    },
+    "timing_breakdown": {
+      "avg_preprocessing_sec": 4.04,
+      "avg_sliding_window_sec": 15.34,
+      "avg_inversion_save_sec": 0.26,
+      "avg_end_to_end_sec": 33.35
+    },
+    "empty_mask_policy": {
+      "case_both_empty": "0.0 mm (both prediction and ground truth contain 0 voxels; true negative boundary alignment)",
+      "case_one_empty": "Volume Euclidean diagonal penalty in mm: sqrt(sum((dim_i * spacing_i)^2)) (complete false positive or false negative)",
+      "case_both_nonempty": "95th percentile Euclidean surface distance in physical millimeters computed via MONAI compute_hausdorff_distance"
+    }
+  },
+  "per_case_results": [
+    {
+      "case_id": "BRATS_002",
+      "status": "SUCCESS",
+      "dice": {
+        "Whole_Tumor_WT": 0.0378,
+        "Tumor_Core_TC": 0.0147,
+        "Enhancing_Tumor_ET": 0.0063,
+        "Mean_Dice": 0.0196
+      },
+      "hd95_mm": {
+        "Whole_Tumor_WT": 164.08,
+        "Tumor_Core_TC": 179.3,
+        "Enhancing_Tumor_ET": 172.82,
+        "Mean_HD95": 172.07
+      },
+      "empty_status": {
+        "WT_gt_empty": false,
+        "WT_pred_empty": false,
+        "TC_gt_empty": false,
+        "TC_pred_empty": false,
+        "ET_gt_empty": false,
+        "ET_pred_empty": false,
+        "penalties_applied": {
+          "WT": false,
+          "TC": false,
+          "ET": false
+        }
+      },
+      "predicted_volumes": {
+        "WT_voxels": 3953228,
+        "WT_volume_ml": 3953.228,
+        "TC_voxels": 2958331,
+        "TC_volume_ml": 2958.331,
+        "ET_voxels": 2581946,
+        "ET_volume_ml": 2581.946
+      },
+      "ground_truth_voxels": {
+        "WT": 63061,
+        "TC": 9325,
+        "ET": 8219
+      },
+      "timing_seconds": {
+        "preprocessing": 3.823,
+        "sliding_window_inference": 16.16,
+        "inversion_and_nifti_save": 0.303,
+        "end_to_end_total": 35.368
+      },
+      "exported_mask": "C:\\Users\\HP VICTUS\\OneDrive\\Desktop\\MRI Data\\outputs\\segmentation_full_volume\\BRATS_002\\mask.nii.gz"
+    },
+    {
+      "case_id": "BRATS_006",
+      "status": "SUCCESS",
+      "dice": {
+        "Whole_Tumor_WT": 0.1203,
+        "Tumor_Core_TC": 0.1574,
+        "Enhancing_Tumor_ET": 0.03,
+        "Mean_Dice": 0.1026
+      },
+      "hd95_mm": {
+        "Whole_Tumor_WT": 121.27,
+        "Tumor_Core_TC": 126.31,
+        "Enhancing_Tumor_ET": 154.42,
+        "Mean_HD95": 134.0
+      },
+      "empty_status": {
+        "WT_gt_empty": false,
+        "WT_pred_empty": false,
+        "TC_gt_empty": false,
+        "TC_pred_empty": false,
+        "ET_gt_empty": false,
+        "ET_pred_empty": false,
+        "penalties_applied": {
+          "WT": false,
+          "TC": false,
+          "ET": false
+        }
+      },
+      "predicted_volumes": {
+        "WT_voxels": 4203991,
+        "WT_volume_ml": 4203.991,
+        "TC_voxels": 3170347,
+        "TC_volume_ml": 3170.347,
+        "ET_voxels": 2805222,
+        "ET_volume_ml": 2805.222
+      },
+      "ground_truth_voxels": {
+        "WT": 217359,
+        "TC": 107443,
+        "ET": 43378
+      },
+      "timing_seconds": {
+        "preprocessing": 3.717,
+        "sliding_window_inference": 17.923,
+        "inversion_and_nifti_save": 0.319,
+        "end_to_end_total": 37.922
+      },
+      "exported_mask": "C:\\Users\\HP VICTUS\\OneDrive\\Desktop\\MRI Data\\outputs\\segmentation_full_volume\\BRATS_006\\mask.nii.gz"
+    },
+    {
+      "case_id": "BRATS_011",
+      "status": "SUCCESS",
+      "dice": {
+        "Whole_Tumor_WT": 0.0776,
+        "Tumor_Core_TC": 0.0692,
+        "Enhancing_Tumor_ET": 0.0204,
+        "Mean_Dice": 0.0557
+      },
+      "hd95_mm": {
+        "Whole_Tumor_WT": 132.28,
+        "Tumor_Core_TC": 147.74,
+        "Enhancing_Tumor_ET": 143.17,
+        "Mean_HD95": 141.06
+      },
+      "empty_status": {
+        "WT_gt_empty": false,
+        "WT_pred_empty": false,
+        "TC_gt_empty": false,
+        "TC_pred_empty": false,
+        "ET_gt_empty": false,
+        "ET_pred_empty": false,
+        "penalties_applied": {
+          "WT": false,
+          "TC": false,
+          "ET": false
+        }
+      },
+      "predicted_volumes": {
+        "WT_voxels": 3994186,
+        "WT_volume_ml": 3994.186,
+        "TC_voxels": 2825613,
+        "TC_volume_ml": 2825.613,
+        "ET_voxels": 2500633,
+        "ET_volume_ml": 2500.633
+      },
+      "ground_truth_voxels": {
+        "WT": 137297,
+        "TC": 46495,
+        "ET": 26264
+      },
+      "timing_seconds": {
+        "preprocessing": 3.676,
+        "sliding_window_inference": 18.153,
+        "inversion_and_nifti_save": 0.355,
+        "end_to_end_total": 39.323
+      },
+      "exported_mask": "C:\\Users\\HP VICTUS\\OneDrive\\Desktop\\MRI Data\\outputs\\segmentation_full_volume\\BRATS_011\\mask.nii.gz"
+    },
+    {
+      "case_id": "BRATS_014",
+      "status": "SUCCESS",
+      "dice": {
+        "Whole_Tumor_WT": 0.081,
+        "Tumor_Core_TC": 0.1778,
+        "Enhancing_Tumor_ET": 0.0493,
+        "Mean_Dice": 0.1027
+      },
+      "hd95_mm": {
+        "Whole_Tumor_WT": 136.9,
+        "Tumor_Core_TC": 141.74,
+        "Enhancing_Tumor_ET": 142.69,
+        "Mean_HD95": 140.44
+      },
+      "empty_status": {
+        "WT_gt_empty": false,
+        "WT_pred_empty": false,
+        "TC_gt_empty": false,
+        "TC_pred_empty": false,
+        "ET_gt_empty": false,
+        "ET_pred_empty": false,
+        "penalties_applied": {
+          "WT": false,
+          "TC": false,
+          "ET": false
+        }
+      },
+      "predicted_volumes": {
+        "WT_voxels": 4180656,
+        "WT_volume_ml": 4180.656,
+        "TC_voxels": 2917601,
+        "TC_volume_ml": 2917.601,
+        "ET_voxels": 2609959,
+        "ET_volume_ml": 2609.959
+      },
+      "ground_truth_voxels": {
+        "WT": 147784,
+        "TC": 124096,
+        "ET": 72360
+      },
+      "timing_seconds": {
+        "preprocessing": 6.748,
+        "sliding_window_inference": 14.319,
+        "inversion_and_nifti_save": 0.191,
+        "end_to_end_total": 33.855
+      },
+      "exported_mask": "C:\\Users\\HP VICTUS\\OneDrive\\Desktop\\MRI Data\\outputs\\segmentation_full_volume\\BRATS_014\\mask.nii.gz"
+    },
+    {
+      "case_id": "BRATS_022",
+      "status": "SUCCESS",
+      "dice": {
+        "Whole_Tumor_WT": 0.1306,
+        "Tumor_Core_TC": 0.1459,
+        "Enhancing_Tumor_ET": 0.0065,
+        "Mean_Dice": 0.0943
+      },
+      "hd95_mm": {
+        "Whole_Tumor_WT": 128.54,
+        "Tumor_Core_TC": 121.76,
+        "Enhancing_Tumor_ET": 149.73,
+        "Mean_HD95": 133.34
+      },
+      "empty_status": {
+        "WT_gt_empty": false,
+        "WT_pred_empty": false,
+        "TC_gt_empty": false,
+        "TC_pred_empty": false,
+        "ET_gt_empty": false,
+        "ET_pred_empty": false,
+        "penalties_applied": {
+          "WT": false,
+          "TC": false,
+          "ET": false
+        }
+      },
+      "predicted_volumes": {
+        "WT_voxels": 4406374,
+        "WT_volume_ml": 4406.374,
+        "TC_voxels": 3257187,
+        "TC_volume_ml": 3257.187,
+        "ET_voxels": 2906827,
+        "ET_volume_ml": 2906.827
+      },
+      "ground_truth_voxels": {
+        "WT": 248231,
+        "TC": 100646,
+        "ET": 9546
+      },
+      "timing_seconds": {
+        "preprocessing": 2.218,
+        "sliding_window_inference": 10.123,
+        "inversion_and_nifti_save": 0.155,
+        "end_to_end_total": 20.292
+      },
+      "exported_mask": "C:\\Users\\HP VICTUS\\OneDrive\\Desktop\\MRI Data\\outputs\\segmentation_full_volume\\BRATS_022\\mask.nii.gz"
+    }
+  ],
+  "failures": []
+}

@@ -1,0 +1,2922 @@
+{
+  "summary": {
+    "dataset": "BRATS",
+    "expected_training": 484,
+    "actual_training_entries": 484,
+    "expected_test": 266,
+    "actual_test_entries": 266,
+    "passed": 484,
+    "failed": 0,
+    "cases_with_warnings": 0,
+    "training_duplicates": [],
+    "train_test_id_overlap": [],
+    "total_time_seconds": 431.0,
+    "note": "All 484 training cases validated. 484/484 PASS. 0 failures."
+  },
+  "cases": [
+    {
+      "case": "BRATS_457",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_306",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_206",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_449",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_318",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_218",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_434",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_365",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_265",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_214",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_314",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_445",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_269",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_369",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_438",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_277",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_377",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_426",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_095",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_222",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_195",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_473",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_322",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_241",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_410",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_341",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_330",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_461",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_187",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_230",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_087",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_199",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_099",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_353",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_402",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_253",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_384",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_133",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_284",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_033",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_150",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_050",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_021",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_296",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_121",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_396",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_288",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_388",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_042",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_142",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_017",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_117",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_009",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_109",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_074",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_174",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_105",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_005",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_178",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_078",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_480",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_166",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_066",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_040",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_140",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_023",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_294",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_123",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_394",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_398",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_298",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_152",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_052",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_386",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_131",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_286",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_031",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_119",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_019",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_482",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_164",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_064",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_107",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_007",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_076",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_176",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_015",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_115",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_068",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_168",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_208",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_308",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_459",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_275",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_375",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_424",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_216",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_316",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_447",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_436",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_367",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_267",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_455",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_304",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_204",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_428",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_379",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_279",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_351",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_400",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_251",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_332",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_463",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_185",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_232",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_085",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_089",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_189",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_243",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_412",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_343",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_097",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_220",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_197",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_471",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_320",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_072",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_172",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_011",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_111",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_160",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_060",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_103",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_003",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_156",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_056",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_148",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_048",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_382",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_135",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_282",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_035",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_044",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_144",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_039",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_139",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_027",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_290",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_127",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_390",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_247",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_347",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_416",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_259",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_359",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_408",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_093",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_224",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_193",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_324",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_475",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_404",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_355",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_255",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_479",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_328",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_228",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_467",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_336",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_181",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_236",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_081",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_363",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_432",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_263",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_300",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_451",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_200",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_271",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_420",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_371",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_212",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_443",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_312",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_418",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_349",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_249",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_465",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_334",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_183",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_234",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_083",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_406",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_357",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_257",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_091",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_226",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_191",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_326",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_477",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_245",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_345",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_414",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_238",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_338",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_469",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_210",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_441",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_310",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_273",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_422",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_373",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_302",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_453",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_202",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_361",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_430",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_261",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_101",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_001",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_484",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_162",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_062",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_013",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_113",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_070",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_170",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_058",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_158",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_025",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_292",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_125",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_392",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_046",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_146",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_380",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_137",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_280",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_037",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_154",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_054",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_129",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_029",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_175",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_075",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_108",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_008",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_116",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_016",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_067",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_481",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_167",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_079",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_179",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_004",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_104",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_051",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_151",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_285",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_032",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_385",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_132",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_143",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_043",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_389",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_289",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_120",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_397",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_020",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_297",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_411",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_340",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_240",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_194",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_472",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_323",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_094",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_223",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_252",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_352",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_403",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_098",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_198",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_231",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_086",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_331",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_460",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_186",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_264",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_435",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_364",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_219",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_448",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_319",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_207",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_456",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_307",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_376",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_427",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_276",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_368",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_439",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_268",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_315",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_444",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_215",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_233",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_084",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_333",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_462",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_184",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_250",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_350",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_401",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_196",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_470",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_321",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_096",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_221",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_413",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_342",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_242",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_188",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_088",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_317",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_446",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_217",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_374",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_425",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_274",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_309",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_458",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_209",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_278",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_429",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_378",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_205",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_454",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_305",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_266",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_437",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_366",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_006",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_106",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_065",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_483",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_165",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_018",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_118",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_169",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_069",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_114",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_014",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_177",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_077",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_122",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_395",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_022",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_295",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_141",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_041",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_287",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_030",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_387",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_130",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_053",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_153",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_299",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_399",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_201",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_301",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_450",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_262",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_362",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_433",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_442",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_313",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_213",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_421",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_370",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_270",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_192",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_325",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_474",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_092",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_225",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_358",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_409",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_258",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_346",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_417",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_246",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_237",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_080",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_466",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_337",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_180",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_229",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_478",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_329",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_254",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_405",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_354",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_283",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_034",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_383",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_134",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_049",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_149",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_057",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_157",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_126",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_391",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_026",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_291",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_138",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_038",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_145",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_045",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_110",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_010",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_173",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_073",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_002",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_102",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_061",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_161",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_147",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_047",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_124",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_393",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_024",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_293",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_159",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_059",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_028",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_128",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_055",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_155",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_281",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_036",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_381",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_136",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_063",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_163",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_100",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_171",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_071",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_112",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_012",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_423",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_372",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_272",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_440",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_311",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_211",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_260",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_360",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_431",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_203",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_303",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_452",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_256",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_407",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_356",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_235",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_082",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_464",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_335",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_182",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_248",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_419",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_348",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_339",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_468",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_239",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_344",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_415",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_244",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_190",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_327",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_476",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_090",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    },
+    {
+      "case": "BRATS_227",
+      "passed": true,
+      "errors": [],
+      "warnings": []
+    }
+  ]
+}

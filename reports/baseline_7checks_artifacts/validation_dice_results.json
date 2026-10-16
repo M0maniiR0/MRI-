@@ -1,0 +1,80 @@
+{
+  "cases_evaluated": 5,
+  "mean_dice": {
+    "Whole_Tumor_WT": 0.6498,
+    "Tumor_Core_TC": NaN,
+    "Enhancing_Tumor_ET": NaN
+  },
+  "mean_hd95_mm": {
+    "Whole_Tumor_WT": 43.44,
+    "Tumor_Core_TC": 43.16,
+    "Enhancing_Tumor_ET": 67.2
+  },
+  "cases": [
+    {
+      "case_id": "BRATS_002",
+      "dice": {
+        "Whole_Tumor_WT": 0.0543,
+        "Tumor_Core_TC": NaN,
+        "Enhancing_Tumor_ET": NaN
+      },
+      "hd95_mm": {
+        "Whole_Tumor_WT": 77.42,
+        "Tumor_Core_TC": 110.85,
+        "Enhancing_Tumor_ET": 110.85
+      }
+    },
+    {
+      "case_id": "BRATS_006",
+      "dice": {
+        "Whole_Tumor_WT": 0.8905,
+        "Tumor_Core_TC": 0.805,
+        "Enhancing_Tumor_ET": 0.5283
+      },
+      "hd95_mm": {
+        "Whole_Tumor_WT": 27.19,
+        "Tumor_Core_TC": 15.32,
+        "Enhancing_Tumor_ET": 63.71
+      }
+    },
+    {
+      "case_id": "BRATS_011",
+      "dice": {
+        "Whole_Tumor_WT": 0.6961,
+        "Tumor_Core_TC": 0.5286,
+        "Enhancing_Tumor_ET": 0.2883
+      },
+      "hd95_mm": {
+        "Whole_Tumor_WT": 44.0,
+        "Tumor_Core_TC": 46.0,
+        "Enhancing_Tumor_ET": 60.27
+      }
+    },
+    {
+      "case_id": "BRATS_014",
+      "dice": {
+        "Whole_Tumor_WT": 0.6754,
+        "Tumor_Core_TC": 0.8386,
+        "Enhancing_Tumor_ET": 0.4393
+      },
+      "hd95_mm": {
+        "Whole_Tumor_WT": 42.21,
+        "Tumor_Core_TC": 30.65,
+        "Enhancing_Tumor_ET": 47.4
+      }
+    },
+    {
+      "case_id": "BRATS_022",
+      "dice": {
+        "Whole_Tumor_WT": 0.9327,
+        "Tumor_Core_TC": 0.6738,
+        "Enhancing_Tumor_ET": 0.0588
+      },
+      "hd95_mm": {
+        "Whole_Tumor_WT": 26.4,
+        "Tumor_Core_TC": 12.96,
+        "Enhancing_Tumor_ET": 53.77
+      }
+    }
+  ]
+}

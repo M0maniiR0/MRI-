@@ -1,0 +1,6 @@
+{
+  "untrained_baseline_dice": 0.0646,
+  "trained_model_dice": 0.6498,
+  "absolute_improvement": 0.5852,
+  "status": "PASS: Trained model significantly outperforms untrained baseline"
+}
