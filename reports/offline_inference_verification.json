@@ -1,0 +1,9 @@
+{
+  "checkpoint_source": "C:\\Users\\HP VICTUS\\OneDrive\\Desktop\\MRI Data\\models\\best_model.pt",
+  "checkpoint_epoch": 5,
+  "architecture": "SegResNet_3D",
+  "optimizer": "AdamW",
+  "network_calls_blocked": true,
+  "offline_inference_time_sec": 0.2523,
+  "status": "PASS: Model executed 100% offline from local disk with zero dependencies on cloud APIs"
+}

@@ -41,3 +41,4 @@ assert np.isfinite(image_data).all(), "MRI contains NaN or Inf"
 assert np.isin(np.unique(label_data), [0, 1, 2, 3]).all(), "Unexpected mask labels"
 
 print("\nPASS: First case passed basic validation!")
+
