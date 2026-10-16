@@ -1,0 +1,17 @@
+{
+  "case_id": "BRATS_002",
+  "timestamp": "2026-10-15T19:52:51Z",
+  "pipeline_version": "MedicalAI_Workstream_v1.0",
+  "spatial_transform": "Invertible_RAS_1mm_Isotropic",
+  "artifacts": {
+    "mask": "outputs/segmentation/BRATS_002/mask.nii.gz",
+    "detection": "handoff_deliverables\\BRATS_002\\detection.json",
+    "classification": "handoff_deliverables\\BRATS_002\\classification.json",
+    "morpho": "handoff_deliverables\\BRATS_002\\morpho.json"
+  },
+  "regulatory_notice": [
+    "Research use only",
+    "BrainAgenticthon 2026 Evaluation Protocol",
+    "Not for direct clinical diagnostic use without medical review"
+  ]
+}

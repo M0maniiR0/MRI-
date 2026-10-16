@@ -1,0 +1,20 @@
+{
+  "case_id": "BRATS_002",
+  "class_probabilities": {
+    "Normal": 0.01,
+    "Glioma": 0.95,
+    "Meningioma": 0.01,
+    "Metastasis": 0.01,
+    "Alzheimer's": 0.005,
+    "FCD epilepsy": 0.005,
+    "Post-stroke lesion": 0.005,
+    "Parkinson's": 0.005,
+    "ASD": 0.005,
+    "Uncertain/Other": 0.005
+  },
+  "model_version": "SegFeature_Classifier_v1",
+  "supported_labels": [
+    "Glioma"
+  ],
+  "unsupported_policy": "Flagged as out-of-distribution / high uncertainty if outside supported_labels"
+}

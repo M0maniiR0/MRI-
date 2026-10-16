@@ -1,0 +1,16 @@
+case_id,image_path,label,source_cohort,is_test_control
+BRATS_457,C:\Users\HP VICTUS\OneDrive\Desktop\MRI Data\Task01_BrainTumour\Task01_BrainTumour\imagesTr\BRATS_457.nii.gz,1,MSD_Task01_Glioma,False
+BRATS_306,C:\Users\HP VICTUS\OneDrive\Desktop\MRI Data\Task01_BrainTumour\Task01_BrainTumour\imagesTr\BRATS_306.nii.gz,1,MSD_Task01_Glioma,False
+BRATS_206,C:\Users\HP VICTUS\OneDrive\Desktop\MRI Data\Task01_BrainTumour\Task01_BrainTumour\imagesTr\BRATS_206.nii.gz,1,MSD_Task01_Glioma,False
+BRATS_449,C:\Users\HP VICTUS\OneDrive\Desktop\MRI Data\Task01_BrainTumour\Task01_BrainTumour\imagesTr\BRATS_449.nii.gz,1,MSD_Task01_Glioma,False
+BRATS_318,C:\Users\HP VICTUS\OneDrive\Desktop\MRI Data\Task01_BrainTumour\Task01_BrainTumour\imagesTr\BRATS_318.nii.gz,1,MSD_Task01_Glioma,False
+BRATS_218,C:\Users\HP VICTUS\OneDrive\Desktop\MRI Data\Task01_BrainTumour\Task01_BrainTumour\imagesTr\BRATS_218.nii.gz,1,MSD_Task01_Glioma,False
+BRATS_434,C:\Users\HP VICTUS\OneDrive\Desktop\MRI Data\Task01_BrainTumour\Task01_BrainTumour\imagesTr\BRATS_434.nii.gz,1,MSD_Task01_Glioma,False
+BRATS_365,C:\Users\HP VICTUS\OneDrive\Desktop\MRI Data\Task01_BrainTumour\Task01_BrainTumour\imagesTr\BRATS_365.nii.gz,1,MSD_Task01_Glioma,False
+BRATS_265,C:\Users\HP VICTUS\OneDrive\Desktop\MRI Data\Task01_BrainTumour\Task01_BrainTumour\imagesTr\BRATS_265.nii.gz,1,MSD_Task01_Glioma,False
+BRATS_214,C:\Users\HP VICTUS\OneDrive\Desktop\MRI Data\Task01_BrainTumour\Task01_BrainTumour\imagesTr\BRATS_214.nii.gz,1,MSD_Task01_Glioma,False
+HEALTHY_CTRL_001,C:\Users\HP VICTUS\OneDrive\Desktop\MRI Data\Task01_BrainTumour\Task01_BrainTumour\imagesTr\BRATS_457.nii.gz,0,TEST_HEALTHY_CONTROL,True
+HEALTHY_CTRL_002,C:\Users\HP VICTUS\OneDrive\Desktop\MRI Data\Task01_BrainTumour\Task01_BrainTumour\imagesTr\BRATS_457.nii.gz,0,TEST_HEALTHY_CONTROL,True
+HEALTHY_CTRL_003,C:\Users\HP VICTUS\OneDrive\Desktop\MRI Data\Task01_BrainTumour\Task01_BrainTumour\imagesTr\BRATS_457.nii.gz,0,TEST_HEALTHY_CONTROL,True
+HEALTHY_CTRL_004,C:\Users\HP VICTUS\OneDrive\Desktop\MRI Data\Task01_BrainTumour\Task01_BrainTumour\imagesTr\BRATS_457.nii.gz,0,TEST_HEALTHY_CONTROL,True
+HEALTHY_CTRL_005,C:\Users\HP VICTUS\OneDrive\Desktop\MRI Data\Task01_BrainTumour\Task01_BrainTumour\imagesTr\BRATS_457.nii.gz,0,TEST_HEALTHY_CONTROL,True

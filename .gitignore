@@ -1,0 +1,27 @@
+# Large Medical MRI Datasets & Archives (Exceeds GitHub 100MB limit)
+Task01_BrainTumour/
+archive/
+raw_samples_brats2021/
+nnUNet_raw/
+*.nii.gz
+*.nii
+*.tar
+*.zip
+
+# Virtual Environment & Python Cache
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+*.log
+
+# Large model checkpoints (weights)
+*.pt
+*.pth
+*.onnx
+models/
+
+# Heavy local model outputs (keep code, exclude raw volumes)
+outputs/segmentation/*/*.nii.gz
