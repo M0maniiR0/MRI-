@@ -24,6 +24,8 @@ models/*
 !models/best_model.pt
 !models/baseline_5ep_best_model.pt
 !models/smoke_test_model.pt
+!models/segresnet_fullvolume_best.pt
+!models/segresnet_fullvolume_best_latest.pt
 
 # Heavy local model outputs (keep code and metrics, exclude heavy 3D masks)
 outputs/**/*.nii.gz

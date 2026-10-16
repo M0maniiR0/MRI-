@@ -978,6 +978,20 @@ def train_full_volume(
                 torch.save(checkpoint_dict, str(output_checkpoint))
                 print(f"  [SAVED] New best checkpoint saved -> {output_checkpoint.name} (Val Dice: {best_val_dice:.4f})")
 
+        # Always save latest checkpoint for resume safety
+        latest_ckpt_path = output_checkpoint.parent / f"{output_checkpoint.stem}_latest.pt"
+        latest_dict = {
+            "model_version": "1.0.0-fullvolume",
+            "timestamp": time.strftime("%Y-%m-%dT%H:%M:%SZ"),
+            "epoch": epoch,
+            "model_state_dict": model.state_dict(),
+            "optimizer_state_dict": optimizer.state_dict(),
+            "training_loss": avg_loss,
+            "val_mean_dice": best_val_dice,
+            "learning_rate": learning_rate,
+        }
+        torch.save(latest_dict, str(latest_ckpt_path))
+
     print(f"\n[DONE] Training complete. Best validation Dice achieved: {best_val_dice:.4f}")
 
 
@@ -996,6 +1010,7 @@ def main():
     parser.add_argument("--epochs", type=int, default=5, help="Training epochs")
     parser.add_argument("--lr", type=float, default=1e-4, help="Learning rate")
     parser.add_argument("--val-num-cases", type=int, default=73, help="Number of val cases for checkpoint selection (default: 73)")
+    parser.add_argument("--val-frequency", type=int, default=1, help="Validation frequency in epochs (default: 1)")
     parser.add_argument("--resume-checkpoint", type=Path, default=None, help="Resume training from existing checkpoint")
     parser.add_argument("--output-checkpoint", type=Path, default=DEFAULT_OUTPUT_CHECKPOINT, help="Output checkpoint for new training")
     parser.add_argument("--report-file", type=Path, default=DEFAULT_REPORT_PATH, help="Path to save evaluation JSON report")
@@ -1034,6 +1049,7 @@ def main():
             resume_checkpoint=args.resume_checkpoint.resolve() if args.resume_checkpoint else None,
             epochs=args.epochs,
             learning_rate=args.lr,
+            val_frequency=args.val_frequency,
             val_num_cases=args.val_num_cases,
             device=device,
             seed=args.seed,
