@@ -3,10 +3,10 @@
   "status": "RUNNING",
   "system_metrics": {
     "process_id": 19556,
-    "cpu_seconds_consumed": 141192.8,
-    "ram_working_set_mb": 939.1,
+    "cpu_seconds_consumed": 160523.8,
+    "ram_working_set_mb": 991.1,
     "responding": true,
-    "last_checkpoint_write_time": "2026-10-17T20:36:54+03:00"
+    "last_checkpoint_write_time": "2026-10-17T22:47:37+03:00"
   },
   "cohort_split_guard": {
     "train_cases_total": 339,
@@ -15,11 +15,12 @@
     "zero_leakage_enforced": true
   },
   "training_progress": {
-    "completed_epochs": 15,
+    "completed_epochs": 17,
+    "current_epoch": 18,
     "target_epochs": 20,
-    "progress_percentage": "75.0%",
-    "estimated_time_remaining": "Approx 2 - 2.5 hours (Estimated completion around 23:45 - 00:00 tonight)",
-    "latest_training_loss": 0.5781293879304312,
+    "progress_percentage": "85.0%",
+    "estimated_time_remaining": "Approx 1 hour and 15-20 minutes (Estimated completion around 00:40 - 00:45 AM)",
+    "latest_training_loss": 0.5370642163496805,
     "latest_val_mean_dice_73_cases": 0.2489123287671233,
     "best_epoch": 12,
     "best_val_mean_dice": 0.2489123287671233
