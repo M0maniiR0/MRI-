@@ -3,13 +3,10 @@
   "status": "RUNNING",
   "system_metrics": {
     "process_id": 19556,
-    "process_name": "python",
-    "cpu_seconds_consumed": 30045.75,
-    "ram_working_set_mb": 383.34,
-    "oom_detected": false,
+    "cpu_seconds_consumed": 141192.8,
+    "ram_working_set_mb": 939.1,
     "responding": true,
-    "start_time": "2026-10-16T20:42:30+03:00",
-    "last_checkpoint_write_time": "2026-10-17T13:25:04+03:00"
+    "last_checkpoint_write_time": "2026-10-17T20:36:54+03:00"
   },
   "cohort_split_guard": {
     "train_cases_total": 339,
@@ -18,76 +15,13 @@
     "zero_leakage_enforced": true
   },
   "training_progress": {
-    "completed_epochs": 2,
-    "current_epoch": 3,
+    "completed_epochs": 15,
     "target_epochs": 20,
-    "epoch_history": [
-      {
-        "epoch": 1,
-        "training_loss": 0.8521,
-        "val_mean_dice_73_cases": 0.0884,
-        "status": "COMPLETED"
-      },
-      {
-        "epoch": 2,
-        "training_loss": 0.8262149498174324,
-        "val_mean_dice_73_cases": 0.10594520547945205,
-        "best_model_saved": true,
-        "checkpoint_file": "segresnet_fullvolume_best.pt",
-        "status": "COMPLETED"
-      }
-    ]
-  },
-  "checkpoint_verification": {
-    "best_checkpoint": {
-      "file_path": "models/segresnet_fullvolume_best.pt",
-      "size_bytes": 2205803,
-      "epoch": 2,
-      "training_loss": 0.8262149498174324,
-      "val_mean_dice": 0.10594520547945205,
-      "val_cohort_size": 73,
-      "learning_rate": 0.0001,
-      "optimizer": "AdamW",
-      "timestamp": "2026-10-17T13:25:04Z"
-    },
-    "latest_checkpoint": {
-      "file_path": "models/segresnet_fullvolume_best_latest.pt",
-      "size_bytes": 2206057,
-      "epoch": 2,
-      "training_loss": 0.8262149498174324,
-      "val_mean_dice": 0.10594520547945205,
-      "timestamp": "2026-10-17T13:25:04Z"
-    }
-  },
-  "sample_validation_case_brats002": {
-    "case_id": "BRATS_002",
-    "evaluation_mode": "full_volume_sliding_window_64x64x64",
-    "metrics_comparison": {
-      "baseline_model_before_training": {
-        "Whole_Tumor_WT_Dice": 0.0378,
-        "Tumor_Core_TC_Dice": 0.0147,
-        "Enhancing_Tumor_ET_Dice": 0.0063,
-        "Mean_Dice": 0.0196
-      },
-      "epoch_2_trained_model": {
-        "Whole_Tumor_WT_Dice": 0.0463,
-        "Tumor_Core_TC_Dice": 0.0509,
-        "Enhancing_Tumor_ET_Dice": 0.0644,
-        "Mean_Dice": 0.0539
-      },
-      "relative_gains": {
-        "WT_Dice": "+22.5%",
-        "TC_Dice": "+246.3% (3.5x)",
-        "ET_Dice": "+922.2% (10.2x)",
-        "Overall_Mean_Dice": "+175.0% (2.8x)"
-      }
-    },
-    "hd95_mm": {
-      "Whole_Tumor_WT": 174.07,
-      "Tumor_Core_TC": 174.2,
-      "Enhancing_Tumor_ET": 195.27,
-      "Mean_HD95": 181.18
-    }
-  },
-  "conclusion_for_collaborator": "Training loop is verified, numerically stable, strictly zero-leakage, actively converging across all 339 training cases, and evaluating full volumes across all 73 validation cases. Both best and latest checkpoints are saved and verified on disk."
+    "progress_percentage": "75.0%",
+    "estimated_time_remaining": "Approx 2 - 2.5 hours (Estimated completion around 23:45 - 00:00 tonight)",
+    "latest_training_loss": 0.5781293879304312,
+    "latest_val_mean_dice_73_cases": 0.2489123287671233,
+    "best_epoch": 12,
+    "best_val_mean_dice": 0.2489123287671233
+  }
 }
