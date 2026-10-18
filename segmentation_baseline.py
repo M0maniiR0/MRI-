@@ -722,6 +722,81 @@ def evaluate_cohort(
     with open(report_path, "w", encoding="utf-8") as f:
         json.dump(full_report, f, indent=2)
 
+    csv_path = report_path.parent / "segmentation_per_case_metrics.csv"
+    with open(csv_path, "w", newline="", encoding="utf-8") as f:
+        writer = csv.writer(f)
+        writer.writerow([
+            "case_id",
+            "status",
+            "WT_Dice",
+            "TC_Dice",
+            "ET_Dice",
+            "Mean_Dice",
+            "WT_HD95_mm",
+            "TC_HD95_mm",
+            "ET_HD95_mm",
+            "Mean_HD95_mm",
+            "WT_Penalty_Applied",
+            "TC_Penalty_Applied",
+            "ET_Penalty_Applied",
+            "WT_GT_voxels",
+            "TC_GT_voxels",
+            "ET_GT_voxels",
+            "WT_Pred_voxels",
+            "TC_Pred_voxels",
+            "ET_Pred_voxels",
+            "Preprocessing_sec",
+            "Inference_sec",
+            "Inversion_Save_sec",
+            "Total_E2E_sec",
+            "Exported_Mask_Path",
+        ])
+        for r in results:
+            d = r["dice"]
+            h = r["hd95_mm"]
+            p = r["empty_status"]["penalties_applied"]
+            gt = r["ground_truth_voxels"]
+            pv = r["predicted_volumes"]
+            t = r["timing_seconds"]
+            writer.writerow([
+                r["case_id"],
+                r["status"],
+                d["Whole_Tumor_WT"],
+                d["Tumor_Core_TC"],
+                d["Enhancing_Tumor_ET"],
+                d["Mean_Dice"],
+                h["Whole_Tumor_WT"],
+                h["Tumor_Core_TC"],
+                h["Enhancing_Tumor_ET"],
+                h["Mean_HD95"],
+                p["WT"],
+                p["TC"],
+                p["ET"],
+                gt["WT"],
+                gt["TC"],
+                gt["ET"],
+                pv["WT_voxels"],
+                pv["TC_voxels"],
+                pv["ET_voxels"],
+                t["preprocessing"],
+                t["sliding_window_inference"],
+                t["inversion_and_nifti_save"],
+                t["end_to_end_total"],
+                r.get("exported_mask", ""),
+            ])
+        for fl in failures:
+            writer.writerow([
+                fl["case_id"],
+                "FAILED",
+                "", "", "", "",
+                "", "", "", "",
+                "", "", "",
+                "", "", "",
+                "", "", "",
+                "", "", "", "",
+                fl.get("error", ""),
+            ])
+
     print()
     print("=" * 75)
     print("  EVALUATION SUMMARY & EMPIRICAL RESULTS")
