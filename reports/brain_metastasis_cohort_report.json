@@ -1,0 +1,80 @@
+[
+  {
+    "patient_id": "P30",
+    "voxel_spacing_mm": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "metastatic_volume_mm3": 4973.0,
+    "ground_truth_volume_mm3": 2903.0,
+    "foci_count": 55,
+    "dice_score": 0.0,
+    "visual_path": "C:\\Users\\HP VICTUS\\OneDrive\\Desktop\\MRI Data\\outputs\\brain_metastasis_analysis\\P30_metastasis_visual.png"
+  },
+  {
+    "patient_id": "P31",
+    "voxel_spacing_mm": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "metastatic_volume_mm3": 69793.0,
+    "ground_truth_volume_mm3": 28136.0,
+    "foci_count": 24,
+    "dice_score": 0.0,
+    "visual_path": "C:\\Users\\HP VICTUS\\OneDrive\\Desktop\\MRI Data\\outputs\\brain_metastasis_analysis\\P31_metastasis_visual.png"
+  },
+  {
+    "patient_id": "P32",
+    "voxel_spacing_mm": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "metastatic_volume_mm3": 7752.0,
+    "ground_truth_volume_mm3": 2217.0,
+    "foci_count": 43,
+    "dice_score": 0.0,
+    "visual_path": "C:\\Users\\HP VICTUS\\OneDrive\\Desktop\\MRI Data\\outputs\\brain_metastasis_analysis\\P32_metastasis_visual.png"
+  },
+  {
+    "patient_id": "P33",
+    "voxel_spacing_mm": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "metastatic_volume_mm3": 16280.0,
+    "ground_truth_volume_mm3": 35224.0,
+    "foci_count": 33,
+    "dice_score": 0.022872009936534633,
+    "visual_path": "C:\\Users\\HP VICTUS\\OneDrive\\Desktop\\MRI Data\\outputs\\brain_metastasis_analysis\\P33_metastasis_visual.png"
+  },
+  {
+    "patient_id": "P34",
+    "voxel_spacing_mm": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "metastatic_volume_mm3": 41508.0,
+    "ground_truth_volume_mm3": 12184.0,
+    "foci_count": 32,
+    "dice_score": 0.0,
+    "visual_path": "C:\\Users\\HP VICTUS\\OneDrive\\Desktop\\MRI Data\\outputs\\brain_metastasis_analysis\\P34_metastasis_visual.png"
+  },
+  {
+    "patient_id": "P35",
+    "voxel_spacing_mm": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "metastatic_volume_mm3": 10855.0,
+    "ground_truth_volume_mm3": 9402.0,
+    "foci_count": 30,
+    "dice_score": 0.0,
+    "visual_path": "C:\\Users\\HP VICTUS\\OneDrive\\Desktop\\MRI Data\\outputs\\brain_metastasis_analysis\\P35_metastasis_visual.png"
+  }
+]

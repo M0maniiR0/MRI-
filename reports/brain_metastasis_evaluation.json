@@ -1,0 +1,49 @@
+{
+  "project": "NeuroScope AI - BrainAgenticthon 2026",
+  "task": "Brain Metastasis 3D Segmentation (\u0627\u0644\u0623\u0648\u0631\u0627\u0645 \u0627\u0644\u062f\u0645\u0627\u063a\u064a\u0629 \u0627\u0644\u0645\u0646\u062a\u0634\u0631\u0629)",
+  "dataset": "Pakawat-Phasook / Brain Metastases Dataset",
+  "cohort_size": 40,
+  "train_patients": 32,
+  "val_patients": 8,
+  "epochs_trained": 12,
+  "best_val_dice": 0.0494,
+  "total_training_time_seconds": 430.6,
+  "history": [
+    {
+      "epoch": 2,
+      "train_loss": 1.3248034119606018,
+      "val_dice": 0.0,
+      "epoch_duration_sec": 27.543553590774536
+    },
+    {
+      "epoch": 4,
+      "train_loss": 1.3040091469883919,
+      "val_dice": 0.005951362660584627,
+      "epoch_duration_sec": 27.6929669380188
+    },
+    {
+      "epoch": 6,
+      "train_loss": 1.286293312907219,
+      "val_dice": 0.0318326421937162,
+      "epoch_duration_sec": 28.01607894897461
+    },
+    {
+      "epoch": 8,
+      "train_loss": 1.2753691151738167,
+      "val_dice": 0.04246031068317299,
+      "epoch_duration_sec": 27.530375957489014
+    },
+    {
+      "epoch": 10,
+      "train_loss": 1.2668695896863937,
+      "val_dice": 0.04626275614653804,
+      "epoch_duration_sec": 28.927079677581787
+    },
+    {
+      "epoch": 12,
+      "train_loss": 1.2694430723786354,
+      "val_dice": 0.04941222990366928,
+      "epoch_duration_sec": 28.10461163520813
+    }
+  ]
+}
