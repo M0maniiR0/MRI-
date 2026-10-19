@@ -14,6 +14,7 @@ Selects representative cases across the cohort performance spectrum:
 Uses PIL and NumPy (100% offline, zero external internet dependencies).
 """
 
+import argparse
 import csv
 import json
 import os
@@ -26,10 +27,18 @@ from PIL import Image, ImageDraw, ImageFont
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 DEFAULT_DATA = SCRIPT_DIR / "Task01_BrainTumour" / "Task01_BrainTumour"
-DEFAULT_OUTPUT_DIR = SCRIPT_DIR / "outputs" / "segmentation_full_volume"
+DEFAULT_OUTPUT_DIR = (
+    SCRIPT_DIR / "outputs" / "segmentation_finetuned"
+    if (SCRIPT_DIR / "outputs" / "segmentation_finetuned").is_dir()
+    else SCRIPT_DIR / "outputs" / "segmentation_full_volume"
+)
 VIS_DIR = DEFAULT_OUTPUT_DIR / "visualizations"
 CSV_METRICS = SCRIPT_DIR / "reports" / "segmentation_per_case_metrics.csv"
-JSON_METRICS = SCRIPT_DIR / "reports" / "full_volume_evaluation_metrics.json"
+JSON_METRICS = (
+    SCRIPT_DIR / "reports" / "finetuned_evaluation_metrics.json"
+    if (SCRIPT_DIR / "reports" / "finetuned_evaluation_metrics.json").is_file()
+    else SCRIPT_DIR / "reports" / "full_volume_evaluation_metrics.json"
+)
 
 # Color Palette: MSD Task01 labels {1: edema, 2: NET, 3: ET}
 COLORS = {
@@ -206,13 +215,32 @@ def generate_single_case_figure(
 
 
 def main():
-    vis_dir = VIS_DIR
+    parser = argparse.ArgumentParser(description="Generate publication visual comparisons")
+    parser.add_argument("--data", type=Path, default=DEFAULT_DATA, help="Path to Task01_BrainTumour root")
+    parser.add_argument("--output-dir", type=Path, default=DEFAULT_OUTPUT_DIR, help="Path to segmentation predictions")
+    parser.add_argument("--report-file", type=Path, default=None, help="Path to evaluation metrics JSON or CSV")
+    parser.add_argument("--vis-dir", type=Path, default=None, help="Path to save visualization PNGs")
+    args = parser.parse_args()
+
+    data_dir = args.data.resolve()
+    output_dir = args.output_dir.resolve()
+    vis_dir = args.vis_dir.resolve() if args.vis_dir else (output_dir / "visualizations")
     vis_dir.mkdir(parents=True, exist_ok=True)
+
+    # Determine report file
+    report_candidate = args.report_file.resolve() if args.report_file else None
+    if report_candidate is None:
+        if (SCRIPT_DIR / "reports" / "finetuned_evaluation_metrics.json").is_file():
+            report_candidate = SCRIPT_DIR / "reports" / "finetuned_evaluation_metrics.json"
+        elif CSV_METRICS.is_file():
+            report_candidate = CSV_METRICS
+        else:
+            report_candidate = JSON_METRICS
 
     # 1. Read metrics from CSV or JSON
     cases = []
-    if CSV_METRICS.is_file():
-        with open(CSV_METRICS, "r", encoding="utf-8") as f:
+    if report_candidate and report_candidate.suffix == ".csv" and report_candidate.is_file():
+        with open(report_candidate, "r", encoding="utf-8") as f:
             reader = csv.DictReader(f)
             for row in reader:
                 if row.get("status") == "SUCCESS":
@@ -223,8 +251,8 @@ def main():
                         "TC_Dice": float(row.get("TC_Dice", 0.0)),
                         "ET_Dice": float(row.get("ET_Dice", 0.0)),
                     })
-    elif JSON_METRICS.is_file():
-        with open(JSON_METRICS, "r", encoding="utf-8") as f:
+    elif report_candidate and report_candidate.is_file():
+        with open(report_candidate, "r", encoding="utf-8") as f:
             data = json.load(f)
             for r in data.get("per_case_results", []):
                 d = r["dice"]
@@ -237,7 +265,7 @@ def main():
                 })
 
     if not cases:
-        print("[ERROR] No evaluated cases found yet. Ensure full evaluation completes first.")
+        print(f"[ERROR] No evaluated cases found in {report_candidate}. Ensure full evaluation completes first.")
         return
 
     # Sort cases by Mean_Dice
@@ -245,8 +273,7 @@ def main():
     n = len(cases)
     print(f"Total evaluated cases available: {n}")
 
-    # Select at least 5 representative cases:
-    # 2 Good (top 15%), 2 Average (median), 2 Challenging (lower 20%)
+    # Select representative cases:
     top_indices = [0, max(1, n // 8)]
     median_indices = [n // 2 - 1, n // 2]
     lower_indices = [int(n * 0.8), int(n * 0.95)]
@@ -263,8 +290,8 @@ def main():
     for c in selected_cases:
         p = generate_single_case_figure(
             case_id=c["case_id"],
-            data_dir=DEFAULT_DATA,
-            output_dir=DEFAULT_OUTPUT_DIR,
+            data_dir=data_dir,
+            output_dir=output_dir,
             vis_dir=vis_dir,
             metrics=c,
         )
