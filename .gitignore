@@ -1,5 +1,7 @@
 # Large Medical MRI Datasets & Archives (Exceeds GitHub 100MB limit)
 Task01_BrainTumour/
+Task04_Hippocampus/
+Task_Meningioma/
 archive/
 raw_samples_brats2021/
 nnUNet_raw/
@@ -7,11 +9,14 @@ nnUNet_raw/
 *.nii
 *.tar
 *.zip
+._*
 
 # Virtual Environment & Python Cache
 .venv/
+.venv_gpu/
 venv/
 env/
+.idea/
 __pycache__/
 *.py[cod]
 *$py.class
@@ -26,7 +31,11 @@ models/*
 !models/smoke_test_model.pt
 !models/segresnet_fullvolume_best.pt
 !models/segresnet_fullvolume_best_latest.pt
+!models/segresnet_meningioma_best.pt
+!models/segresnet_alzheimer_hippocampus_best.pt
 
 # Heavy local model outputs (keep code and metrics, exclude heavy 3D masks)
 outputs/**/*.nii.gz
 outputs/**/*.nii
+reports/master_guide_temp.html
+

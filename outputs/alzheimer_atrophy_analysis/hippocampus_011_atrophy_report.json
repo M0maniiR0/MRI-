@@ -1,0 +1,21 @@
+{
+  "case_id": "hippocampus_011",
+  "voxel_spacing_mm": [
+    1.0,
+    1.0,
+    1.0
+  ],
+  "original_shape": [
+    36,
+    50,
+    31
+  ],
+  "anterior_volume_mm3": 0.0,
+  "posterior_volume_mm3": 2177.0,
+  "total_volume_mm3": 2177.0,
+  "gt_volume_mm3": 3456.0,
+  "dice_score": 0.5190839767456055,
+  "atrophy_category": "ATROPHY / ALZHEIMER'S",
+  "clinical_assessment": "Significant hippocampal atrophy (High radiological correlation with Alzheimer's Disease)",
+  "visual_path": "C:\\Users\\HP VICTUS\\OneDrive\\Desktop\\MRI Data\\outputs\\alzheimer_atrophy_analysis\\hippocampus_011_atrophy_visual.png"
+}

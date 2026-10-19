@@ -1,0 +1,52 @@
+{
+  "project": "NeuroScope AI - BrainAgenticthon 2026",
+  "task": "Alzheimer's Disease & Hippocampal Volumetric Biomarker",
+  "dataset": "MSD Task04_Hippocampus",
+  "device": "cuda",
+  "gpu_name": "NVIDIA GeForce RTX 2050",
+  "total_training_time_seconds": 49.0,
+  "best_total_hippocampus_dice": 0.5708,
+  "epochs_trained": 10,
+  "history": [
+    {
+      "epoch": 2,
+      "train_loss": 1.1122013788956862,
+      "val_total_dice": 0.5633781649990497,
+      "val_anterior_dice": 0.0,
+      "val_posterior_dice": 0.7126276508833786,
+      "val_mean_dice": 0.3563138254416893
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.9848599892396194,
+      "val_total_dice": 0.5337226339566168,
+      "val_anterior_dice": 0.0,
+      "val_posterior_dice": 0.7984286108750924,
+      "val_mean_dice": 0.3992143054375462
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.9253689004824712,
+      "val_total_dice": 0.5522362003263122,
+      "val_anterior_dice": 0.0,
+      "val_posterior_dice": 0.8159285161705565,
+      "val_mean_dice": 0.40796425808527825
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.8964129571731274,
+      "val_total_dice": 0.5707500086648918,
+      "val_anterior_dice": 0.0,
+      "val_posterior_dice": 0.8252203607354538,
+      "val_mean_dice": 0.4126101803677269
+    },
+    {
+      "epoch": 10,
+      "train_loss": 0.8871908210791074,
+      "val_total_dice": 0.564544861805914,
+      "val_anterior_dice": 0.0,
+      "val_posterior_dice": 0.8315912973827845,
+      "val_mean_dice": 0.41579564869139224
+    }
+  ]
+}

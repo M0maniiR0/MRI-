@@ -1,0 +1,170 @@
+[
+  {
+    "case_id": "hippocampus_001",
+    "voxel_spacing_mm": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "original_shape": [
+      35,
+      51,
+      35
+    ],
+    "anterior_volume_mm3": 0.0,
+    "posterior_volume_mm3": 2340.0,
+    "total_volume_mm3": 2340.0,
+    "gt_volume_mm3": 2948.0,
+    "dice_score": 0.5389561057090759,
+    "atrophy_category": "ATROPHY / ALZHEIMER'S",
+    "clinical_assessment": "Significant hippocampal atrophy (High radiological correlation with Alzheimer's Disease)",
+    "visual_path": "C:\\Users\\HP VICTUS\\OneDrive\\Desktop\\MRI Data\\outputs\\alzheimer_atrophy_analysis\\hippocampus_001_atrophy_visual.png"
+  },
+  {
+    "case_id": "hippocampus_003",
+    "voxel_spacing_mm": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "original_shape": [
+      34,
+      52,
+      35
+    ],
+    "anterior_volume_mm3": 0.0,
+    "posterior_volume_mm3": 2377.0,
+    "total_volume_mm3": 2377.0,
+    "gt_volume_mm3": 3353.0,
+    "dice_score": 0.6048865914344788,
+    "atrophy_category": "ATROPHY / ALZHEIMER'S",
+    "clinical_assessment": "Significant hippocampal atrophy (High radiological correlation with Alzheimer's Disease)",
+    "visual_path": "C:\\Users\\HP VICTUS\\OneDrive\\Desktop\\MRI Data\\outputs\\alzheimer_atrophy_analysis\\hippocampus_003_atrophy_visual.png"
+  },
+  {
+    "case_id": "hippocampus_004",
+    "voxel_spacing_mm": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "original_shape": [
+      36,
+      52,
+      38
+    ],
+    "anterior_volume_mm3": 0.0,
+    "posterior_volume_mm3": 2318.0,
+    "total_volume_mm3": 2318.0,
+    "gt_volume_mm3": 3698.0,
+    "dice_score": 0.572473406791687,
+    "atrophy_category": "ATROPHY / ALZHEIMER'S",
+    "clinical_assessment": "Significant hippocampal atrophy (High radiological correlation with Alzheimer's Disease)",
+    "visual_path": "C:\\Users\\HP VICTUS\\OneDrive\\Desktop\\MRI Data\\outputs\\alzheimer_atrophy_analysis\\hippocampus_004_atrophy_visual.png"
+  },
+  {
+    "case_id": "hippocampus_006",
+    "voxel_spacing_mm": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "original_shape": [
+      35,
+      52,
+      34
+    ],
+    "anterior_volume_mm3": 0.0,
+    "posterior_volume_mm3": 2351.0,
+    "total_volume_mm3": 2351.0,
+    "gt_volume_mm3": 4263.0,
+    "dice_score": 0.542788028717041,
+    "atrophy_category": "ATROPHY / ALZHEIMER'S",
+    "clinical_assessment": "Significant hippocampal atrophy (High radiological correlation with Alzheimer's Disease)",
+    "visual_path": "C:\\Users\\HP VICTUS\\OneDrive\\Desktop\\MRI Data\\outputs\\alzheimer_atrophy_analysis\\hippocampus_006_atrophy_visual.png"
+  },
+  {
+    "case_id": "hippocampus_007",
+    "voxel_spacing_mm": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "original_shape": [
+      34,
+      47,
+      40
+    ],
+    "anterior_volume_mm3": 0.0,
+    "posterior_volume_mm3": 2401.0,
+    "total_volume_mm3": 2401.0,
+    "gt_volume_mm3": 3372.0,
+    "dice_score": 0.5324788093566895,
+    "atrophy_category": "BORDERLINE / MCI",
+    "clinical_assessment": "Mild volume reduction (Consistent with Mild Cognitive Impairment / Early Alzheimer's)",
+    "visual_path": "C:\\Users\\HP VICTUS\\OneDrive\\Desktop\\MRI Data\\outputs\\alzheimer_atrophy_analysis\\hippocampus_007_atrophy_visual.png"
+  },
+  {
+    "case_id": "hippocampus_008",
+    "voxel_spacing_mm": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "original_shape": [
+      36,
+      48,
+      40
+    ],
+    "anterior_volume_mm3": 0.0,
+    "posterior_volume_mm3": 2415.0,
+    "total_volume_mm3": 2415.0,
+    "gt_volume_mm3": 3248.0,
+    "dice_score": 0.5784919857978821,
+    "atrophy_category": "BORDERLINE / MCI",
+    "clinical_assessment": "Mild volume reduction (Consistent with Mild Cognitive Impairment / Early Alzheimer's)",
+    "visual_path": "C:\\Users\\HP VICTUS\\OneDrive\\Desktop\\MRI Data\\outputs\\alzheimer_atrophy_analysis\\hippocampus_008_atrophy_visual.png"
+  },
+  {
+    "case_id": "hippocampus_011",
+    "voxel_spacing_mm": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "original_shape": [
+      36,
+      50,
+      31
+    ],
+    "anterior_volume_mm3": 0.0,
+    "posterior_volume_mm3": 2177.0,
+    "total_volume_mm3": 2177.0,
+    "gt_volume_mm3": 3456.0,
+    "dice_score": 0.5190839767456055,
+    "atrophy_category": "ATROPHY / ALZHEIMER'S",
+    "clinical_assessment": "Significant hippocampal atrophy (High radiological correlation with Alzheimer's Disease)",
+    "visual_path": "C:\\Users\\HP VICTUS\\OneDrive\\Desktop\\MRI Data\\outputs\\alzheimer_atrophy_analysis\\hippocampus_011_atrophy_visual.png"
+  },
+  {
+    "case_id": "hippocampus_014",
+    "voxel_spacing_mm": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "original_shape": [
+      39,
+      50,
+      40
+    ],
+    "anterior_volume_mm3": 0.0,
+    "posterior_volume_mm3": 2364.0,
+    "total_volume_mm3": 2364.0,
+    "gt_volume_mm3": 3622.0,
+    "dice_score": 0.4784497022628784,
+    "atrophy_category": "ATROPHY / ALZHEIMER'S",
+    "clinical_assessment": "Significant hippocampal atrophy (High radiological correlation with Alzheimer's Disease)",
+    "visual_path": "C:\\Users\\HP VICTUS\\OneDrive\\Desktop\\MRI Data\\outputs\\alzheimer_atrophy_analysis\\hippocampus_014_atrophy_visual.png"
+  }
+]
