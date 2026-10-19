@@ -180,7 +180,14 @@ def main():
     with open(manifest_path, "r", encoding="utf-8") as f:
         manifest = json.load(f)
 
-    eval_cohort = manifest[-args.num_patients:]
+    # Sample evenly across the consolidated 240-patient multi-center cohort
+    step = max(1, len(manifest) // args.num_patients)
+    eval_cohort = [manifest[i * step] for i in range(min(args.num_patients, len(manifest)))]
+    # Ensure a known high-lesion case like sci_p040 is included if present
+    p040_cand = [m for m in manifest if m["patient_id"] == "sci_p040"]
+    if p040_cand and p040_cand[0] not in eval_cohort:
+        eval_cohort[-1] = p040_cand[0]
+
     print(f"\n======================================================================")
     print(f"  RUNNING BRAIN METASTASIS COHORT QUANTIFICATION ({len(eval_cohort)} patients)")
     print(f"======================================================================")

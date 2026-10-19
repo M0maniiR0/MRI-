@@ -4,12 +4,14 @@
 
 | Patient ID | Metastatic Volume (mm³) | Ground Truth (mm³) | Foci Count | Dice Similarity | Clinical Finding |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| `P30` | 4,973.0 | 2,903.0 | 55 | 0.000 | **Multiple Foci (55)** |
-| `P31` | 69,793.0 | 28,136.0 | 24 | 0.000 | **Multiple Foci (24)** |
-| `P32` | 7,752.0 | 2,217.0 | 43 | 0.000 | **Multiple Foci (43)** |
-| `P33` | 16,280.0 | 35,224.0 | 33 | 0.023 | **Multiple Foci (33)** |
-| `P34` | 41,508.0 | 12,184.0 | 32 | 0.000 | **Multiple Foci (32)** |
-| `P35` | 10,855.0 | 9,402.0 | 30 | 0.000 | **Multiple Foci (30)** |
+| `sci_p001` | 15,337.0 | 3,927.0 | 16 | 0.110 | **Multiple Foci (16)** |
+| `sci_p031` | 96,464.0 | 71,018.0 | 11 | 0.541 | **Multiple Foci (11)** |
+| `sci_p061` | 126,320.0 | 143,894.0 | 24 | 0.362 | **Multiple Foci (24)** |
+| `sci_p091` | 202,447.0 | 281,217.0 | 11 | 0.722 | **Multiple Foci (11)** |
+| `sci_p121` | 68,984.0 | 24,409.0 | 16 | 0.369 | **Multiple Foci (16)** |
+| `sci_p151` | 138,313.0 | 119,724.0 | 10 | 0.352 | **Multiple Foci (10)** |
+| `sci_p181` | 46,427.0 | 389.0 | 19 | 0.000 | **Multiple Foci (19)** |
+| `sci_p040` | 131,067.0 | 159,691.0 | 8 | 0.527 | **Multiple Foci (8)** |
 
 ## Diagnostic Overlays
 High-resolution 3-plane views (Coronal, Sagittal, Axial) saved to `outputs\brain_metastasis_analysis/`.

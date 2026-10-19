@@ -217,8 +217,9 @@ def run_metastasis_training(
         if ep % 2 == 0 or ep == epochs:
             model.eval()
             dices = []
+            val_eval_indices = range(len(val_ds)) if ep == epochs else range(min(8, len(val_ds)))
             with torch.no_grad():
-                for v_idx in range(len(val_ds)):
+                for v_idx in val_eval_indices:
                     v_item = val_ds[v_idx]
                     v_x = v_item["image"].unsqueeze(0).to(device)
                     v_y = v_item["label"].to(device)
@@ -239,7 +240,7 @@ def run_metastasis_training(
             if device.type == "cuda":
                 torch.cuda.empty_cache()
 
-            val_dice = float(np.mean(dices))
+            val_dice = float(np.mean(dices)) if len(dices) > 0 else 0.0
             print(f"  >>> Val Brain Metastasis Dice: {val_dice:.4f}", flush=True)
 
             history.append({
@@ -256,7 +257,7 @@ def run_metastasis_training(
                     "epoch": ep,
                     "model_state_dict": model.state_dict(),
                     "val_dice": best_dice,
-                    "dataset": "Pakawat-Phasook / Brain Metastasis",
+                    "dataset": "Pakawat-Phasook & SCI Multi-Modal Metastases",
                 }, str(output_checkpoint))
                 print(f"  [SAVED BEST CHECKPOINT] -> {output_checkpoint.name} (Val Dice: {best_dice:.4f})", flush=True)
 
