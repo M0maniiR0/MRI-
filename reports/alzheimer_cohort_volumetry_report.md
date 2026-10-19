@@ -6,14 +6,14 @@
 
 | Case ID | Anterior Vol (mm³) | Posterior Vol (mm³) | Total Vol (mm³) | Ground Truth (mm³) | Dice Score | Clinical Atrophy Status |
 | :--- | :---: | :---: | :---: | :---: | :---: | :--- |
-| `hippocampus_001` | 0.0 | 2340.0 | 2340.0 | 2948.0 | 0.539 | **ATROPHY / ALZHEIMER'S** |
-| `hippocampus_003` | 0.0 | 2377.0 | 2377.0 | 3353.0 | 0.605 | **ATROPHY / ALZHEIMER'S** |
-| `hippocampus_004` | 0.0 | 2318.0 | 2318.0 | 3698.0 | 0.572 | **ATROPHY / ALZHEIMER'S** |
-| `hippocampus_006` | 0.0 | 2351.0 | 2351.0 | 4263.0 | 0.543 | **ATROPHY / ALZHEIMER'S** |
-| `hippocampus_007` | 0.0 | 2401.0 | 2401.0 | 3372.0 | 0.532 | **BORDERLINE / MCI** |
-| `hippocampus_008` | 0.0 | 2415.0 | 2415.0 | 3248.0 | 0.578 | **BORDERLINE / MCI** |
-| `hippocampus_011` | 0.0 | 2177.0 | 2177.0 | 3456.0 | 0.519 | **ATROPHY / ALZHEIMER'S** |
-| `hippocampus_014` | 0.0 | 2364.0 | 2364.0 | 3622.0 | 0.478 | **ATROPHY / ALZHEIMER'S** |
+| `hippocampus_001` | 1726.0 | 1889.0 | 3615.0 | 2948.0 | 0.837 | **NORMAL** |
+| `hippocampus_003` | 1974.0 | 1985.0 | 3959.0 | 3353.0 | 0.880 | **NORMAL** |
+| `hippocampus_004` | 2165.0 | 1919.0 | 4084.0 | 3698.0 | 0.891 | **NORMAL** |
+| `hippocampus_006` | 2369.0 | 2045.0 | 4414.0 | 4263.0 | 0.917 | **NORMAL** |
+| `hippocampus_007` | 1999.0 | 1811.0 | 3810.0 | 3372.0 | 0.845 | **NORMAL** |
+| `hippocampus_008` | 1955.0 | 1832.0 | 3787.0 | 3248.0 | 0.895 | **NORMAL** |
+| `hippocampus_011` | 2068.0 | 1863.0 | 3931.0 | 3456.0 | 0.806 | **NORMAL** |
+| `hippocampus_014` | 2220.0 | 1915.0 | 4135.0 | 3622.0 | 0.864 | **NORMAL** |
 
 ## Clinical Diagnostic Criteria
 - **Normal Brain Volume** ($\ge 3000\text{ mm}^3$): Healthy hippocampal structure, low risk of cognitive impairment.

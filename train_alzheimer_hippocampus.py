@@ -144,11 +144,12 @@ def run_alzheimer_training(
     data_dir: Path,
     output_checkpoint: Path,
     report_file: Path,
-    epochs: int = 15,
+    epochs: int = 20,
     lr: float = 2e-4,
     batch_size: int = 4,
-    crop_size: Tuple[int, int, int] = (32, 32, 32),
+    crop_size: Tuple[int, int, int] = (32, 64, 32),
     device_str: str = "cuda" if torch.cuda.is_available() else "cpu",
+    resume: bool = False,
 ):
     device = torch.device(device_str)
     print("=" * 80)
@@ -192,7 +193,17 @@ def run_alzheimer_training(
 
     # 2. Model & Optimization
     model = create_model(device)
-    loss_fn = DiceCELoss(to_onehot_y=True, softmax=True)
+    if resume and output_checkpoint.is_file():
+        print(f"[RESUME] Loading existing checkpoint for continued fine-tuning: {output_checkpoint.name}", flush=True)
+        ckpt = torch.load(str(output_checkpoint), map_location=device, weights_only=False)
+        model.load_state_dict(ckpt["model_state_dict"])
+        best_mean_dice = ckpt.get("val_total_dice", 0.0)
+        print(f"  -> Resumed weights successfully! Previous Best Dice: {best_mean_dice:.4f}", flush=True)
+    else:
+        best_mean_dice = 0.0
+
+    # include_background=False forces network to optimize both Anterior and Posterior
+    loss_fn = DiceCELoss(to_onehot_y=True, softmax=True, include_background=False)
     optimizer = torch.optim.AdamW(model.parameters(), lr=lr, weight_decay=1e-5)
     scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=epochs, eta_min=1e-6)
 
@@ -202,7 +213,6 @@ def run_alzheimer_training(
 
     output_checkpoint.parent.mkdir(parents=True, exist_ok=True)
     report_file.parent.mkdir(parents=True, exist_ok=True)
-    best_mean_dice = 0.0
     history = []
 
     # 3. Training Loop
@@ -308,9 +318,10 @@ def main():
     parser.add_argument("--data", type=Path, default=DEFAULT_DATA_DIR)
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT_CKPT)
     parser.add_argument("--report", type=Path, default=DEFAULT_REPORT)
-    parser.add_argument("--epochs", type=int, default=15)
+    parser.add_argument("--epochs", type=int, default=20)
     parser.add_argument("--lr", type=float, default=2e-4)
     parser.add_argument("--batch-size", type=int, default=4)
+    parser.add_argument("--resume", action="store_true", help="Resume training from existing checkpoint")
     parser.add_argument("--device", type=str, default="cuda" if torch.cuda.is_available() else "cpu")
     args = parser.parse_args()
 
@@ -322,6 +333,7 @@ def main():
         lr=args.lr,
         batch_size=args.batch_size,
         device_str=args.device,
+        resume=args.resume,
     )
 
 

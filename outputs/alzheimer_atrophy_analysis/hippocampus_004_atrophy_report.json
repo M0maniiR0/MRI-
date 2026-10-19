@@ -10,12 +10,12 @@
     52,
     38
   ],
-  "anterior_volume_mm3": 0.0,
-  "posterior_volume_mm3": 2318.0,
-  "total_volume_mm3": 2318.0,
+  "anterior_volume_mm3": 2165.0,
+  "posterior_volume_mm3": 1919.0,
+  "total_volume_mm3": 4084.0,
   "gt_volume_mm3": 3698.0,
-  "dice_score": 0.572473406791687,
-  "atrophy_category": "ATROPHY / ALZHEIMER'S",
-  "clinical_assessment": "Significant hippocampal atrophy (High radiological correlation with Alzheimer's Disease)",
+  "dice_score": 0.8905165791511536,
+  "atrophy_category": "NORMAL",
+  "clinical_assessment": "Preserved hippocampal volume (Low risk of neurodegeneration)",
   "visual_path": "C:\\Users\\HP VICTUS\\OneDrive\\Desktop\\MRI Data\\outputs\\alzheimer_atrophy_analysis\\hippocampus_004_atrophy_visual.png"
 }

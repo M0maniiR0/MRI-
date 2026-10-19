@@ -11,13 +11,13 @@
       51,
       35
     ],
-    "anterior_volume_mm3": 0.0,
-    "posterior_volume_mm3": 2340.0,
-    "total_volume_mm3": 2340.0,
+    "anterior_volume_mm3": 1726.0,
+    "posterior_volume_mm3": 1889.0,
+    "total_volume_mm3": 3615.0,
     "gt_volume_mm3": 2948.0,
-    "dice_score": 0.5389561057090759,
-    "atrophy_category": "ATROPHY / ALZHEIMER'S",
-    "clinical_assessment": "Significant hippocampal atrophy (High radiological correlation with Alzheimer's Disease)",
+    "dice_score": 0.8371171951293945,
+    "atrophy_category": "NORMAL",
+    "clinical_assessment": "Preserved hippocampal volume (Low risk of neurodegeneration)",
     "visual_path": "C:\\Users\\HP VICTUS\\OneDrive\\Desktop\\MRI Data\\outputs\\alzheimer_atrophy_analysis\\hippocampus_001_atrophy_visual.png"
   },
   {
@@ -32,13 +32,13 @@
       52,
       35
     ],
-    "anterior_volume_mm3": 0.0,
-    "posterior_volume_mm3": 2377.0,
-    "total_volume_mm3": 2377.0,
+    "anterior_volume_mm3": 1974.0,
+    "posterior_volume_mm3": 1985.0,
+    "total_volume_mm3": 3959.0,
     "gt_volume_mm3": 3353.0,
-    "dice_score": 0.6048865914344788,
-    "atrophy_category": "ATROPHY / ALZHEIMER'S",
-    "clinical_assessment": "Significant hippocampal atrophy (High radiological correlation with Alzheimer's Disease)",
+    "dice_score": 0.8796498775482178,
+    "atrophy_category": "NORMAL",
+    "clinical_assessment": "Preserved hippocampal volume (Low risk of neurodegeneration)",
     "visual_path": "C:\\Users\\HP VICTUS\\OneDrive\\Desktop\\MRI Data\\outputs\\alzheimer_atrophy_analysis\\hippocampus_003_atrophy_visual.png"
   },
   {
@@ -53,13 +53,13 @@
       52,
       38
     ],
-    "anterior_volume_mm3": 0.0,
-    "posterior_volume_mm3": 2318.0,
-    "total_volume_mm3": 2318.0,
+    "anterior_volume_mm3": 2165.0,
+    "posterior_volume_mm3": 1919.0,
+    "total_volume_mm3": 4084.0,
     "gt_volume_mm3": 3698.0,
-    "dice_score": 0.572473406791687,
-    "atrophy_category": "ATROPHY / ALZHEIMER'S",
-    "clinical_assessment": "Significant hippocampal atrophy (High radiological correlation with Alzheimer's Disease)",
+    "dice_score": 0.8905165791511536,
+    "atrophy_category": "NORMAL",
+    "clinical_assessment": "Preserved hippocampal volume (Low risk of neurodegeneration)",
     "visual_path": "C:\\Users\\HP VICTUS\\OneDrive\\Desktop\\MRI Data\\outputs\\alzheimer_atrophy_analysis\\hippocampus_004_atrophy_visual.png"
   },
   {
@@ -74,13 +74,13 @@
       52,
       34
     ],
-    "anterior_volume_mm3": 0.0,
-    "posterior_volume_mm3": 2351.0,
-    "total_volume_mm3": 2351.0,
+    "anterior_volume_mm3": 2369.0,
+    "posterior_volume_mm3": 2045.0,
+    "total_volume_mm3": 4414.0,
     "gt_volume_mm3": 4263.0,
-    "dice_score": 0.542788028717041,
-    "atrophy_category": "ATROPHY / ALZHEIMER'S",
-    "clinical_assessment": "Significant hippocampal atrophy (High radiological correlation with Alzheimer's Disease)",
+    "dice_score": 0.9171372652053833,
+    "atrophy_category": "NORMAL",
+    "clinical_assessment": "Preserved hippocampal volume (Low risk of neurodegeneration)",
     "visual_path": "C:\\Users\\HP VICTUS\\OneDrive\\Desktop\\MRI Data\\outputs\\alzheimer_atrophy_analysis\\hippocampus_006_atrophy_visual.png"
   },
   {
@@ -95,13 +95,13 @@
       47,
       40
     ],
-    "anterior_volume_mm3": 0.0,
-    "posterior_volume_mm3": 2401.0,
-    "total_volume_mm3": 2401.0,
+    "anterior_volume_mm3": 1999.0,
+    "posterior_volume_mm3": 1811.0,
+    "total_volume_mm3": 3810.0,
     "gt_volume_mm3": 3372.0,
-    "dice_score": 0.5324788093566895,
-    "atrophy_category": "BORDERLINE / MCI",
-    "clinical_assessment": "Mild volume reduction (Consistent with Mild Cognitive Impairment / Early Alzheimer's)",
+    "dice_score": 0.8446115255355835,
+    "atrophy_category": "NORMAL",
+    "clinical_assessment": "Preserved hippocampal volume (Low risk of neurodegeneration)",
     "visual_path": "C:\\Users\\HP VICTUS\\OneDrive\\Desktop\\MRI Data\\outputs\\alzheimer_atrophy_analysis\\hippocampus_007_atrophy_visual.png"
   },
   {
@@ -116,13 +116,13 @@
       48,
       40
     ],
-    "anterior_volume_mm3": 0.0,
-    "posterior_volume_mm3": 2415.0,
-    "total_volume_mm3": 2415.0,
+    "anterior_volume_mm3": 1955.0,
+    "posterior_volume_mm3": 1832.0,
+    "total_volume_mm3": 3787.0,
     "gt_volume_mm3": 3248.0,
-    "dice_score": 0.5784919857978821,
-    "atrophy_category": "BORDERLINE / MCI",
-    "clinical_assessment": "Mild volume reduction (Consistent with Mild Cognitive Impairment / Early Alzheimer's)",
+    "dice_score": 0.8946695327758789,
+    "atrophy_category": "NORMAL",
+    "clinical_assessment": "Preserved hippocampal volume (Low risk of neurodegeneration)",
     "visual_path": "C:\\Users\\HP VICTUS\\OneDrive\\Desktop\\MRI Data\\outputs\\alzheimer_atrophy_analysis\\hippocampus_008_atrophy_visual.png"
   },
   {
@@ -137,13 +137,13 @@
       50,
       31
     ],
-    "anterior_volume_mm3": 0.0,
-    "posterior_volume_mm3": 2177.0,
-    "total_volume_mm3": 2177.0,
+    "anterior_volume_mm3": 2068.0,
+    "posterior_volume_mm3": 1863.0,
+    "total_volume_mm3": 3931.0,
     "gt_volume_mm3": 3456.0,
-    "dice_score": 0.5190839767456055,
-    "atrophy_category": "ATROPHY / ALZHEIMER'S",
-    "clinical_assessment": "Significant hippocampal atrophy (High radiological correlation with Alzheimer's Disease)",
+    "dice_score": 0.8057398200035095,
+    "atrophy_category": "NORMAL",
+    "clinical_assessment": "Preserved hippocampal volume (Low risk of neurodegeneration)",
     "visual_path": "C:\\Users\\HP VICTUS\\OneDrive\\Desktop\\MRI Data\\outputs\\alzheimer_atrophy_analysis\\hippocampus_011_atrophy_visual.png"
   },
   {
@@ -158,13 +158,13 @@
       50,
       40
     ],
-    "anterior_volume_mm3": 0.0,
-    "posterior_volume_mm3": 2364.0,
-    "total_volume_mm3": 2364.0,
+    "anterior_volume_mm3": 2220.0,
+    "posterior_volume_mm3": 1915.0,
+    "total_volume_mm3": 4135.0,
     "gt_volume_mm3": 3622.0,
-    "dice_score": 0.4784497022628784,
-    "atrophy_category": "ATROPHY / ALZHEIMER'S",
-    "clinical_assessment": "Significant hippocampal atrophy (High radiological correlation with Alzheimer's Disease)",
+    "dice_score": 0.8639938235282898,
+    "atrophy_category": "NORMAL",
+    "clinical_assessment": "Preserved hippocampal volume (Low risk of neurodegeneration)",
     "visual_path": "C:\\Users\\HP VICTUS\\OneDrive\\Desktop\\MRI Data\\outputs\\alzheimer_atrophy_analysis\\hippocampus_014_atrophy_visual.png"
   }
 ]
