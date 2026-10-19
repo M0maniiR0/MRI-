@@ -97,10 +97,18 @@ def download_cohort(target_dir: Path, num_cases: int = 30, max_workers: int = 6)
     print(f"Downloading {total_files} files across {len(available)} cases ({max_workers} concurrent threads)...")
 
     with concurrent.futures.ThreadPoolExecutor(max_workers=max_workers) as executor:
-        results = list(executor.map(download_single_file, all_tasks))
+        future_map = {executor.submit(download_single_file, t): t for t in all_tasks}
+        completed = 0
+        success_count = 0
+        for fut in concurrent.futures.as_completed(future_map):
+            if fut.result():
+                success_count += 1
+            completed += 1
+            if completed % 50 == 0 or completed == total_files:
+                pct = (completed / total_files) * 100
+                print(f"  [Download Progress] {completed}/{total_files} files ({pct:.1f}%)", flush=True)
 
-    success_count = sum(1 for r in results if r)
-    print(f"Download results: {success_count}/{total_files} files ready.")
+    print(f"Download results: {success_count}/{total_files} files ready.", flush=True)
 
     manifest = []
     for case_id in available:

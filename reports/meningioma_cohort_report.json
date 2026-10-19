@@ -1,62 +1,74 @@
 [
   {
-    "case_id": "BraTS-MEN-00040-000",
+    "case_id": "BraTS-MEN-00308-000",
     "voxel_spacing_mm": [
       1.0,
       1.0,
       1.0
     ],
-    "tumor_volume_mm3": 668403.0,
-    "tumor_voxels": 668403,
-    "dice_score": 0.11141131461887904,
-    "visual_path": "C:\\Users\\HP VICTUS\\OneDrive\\Desktop\\MRI Data\\outputs\\meningioma_analysis\\BraTS-MEN-00040-000_meningioma_visual.png"
+    "tumor_volume_mm3": 526123.0,
+    "tumor_voxels": 526123,
+    "dice_score": 0.0,
+    "visual_path": "C:\\Users\\HP VICTUS\\OneDrive\\Desktop\\MRI Data\\outputs\\meningioma_analysis\\BraTS-MEN-00308-000_meningioma_visual.png"
   },
   {
-    "case_id": "BraTS-MEN-00041-000",
+    "case_id": "BraTS-MEN-00311-000",
     "voxel_spacing_mm": [
       1.0,
       1.0,
       1.0
     ],
-    "tumor_volume_mm3": 631745.0,
-    "tumor_voxels": 631745,
-    "dice_score": 0.09253948835084122,
-    "visual_path": "C:\\Users\\HP VICTUS\\OneDrive\\Desktop\\MRI Data\\outputs\\meningioma_analysis\\BraTS-MEN-00041-000_meningioma_visual.png"
+    "tumor_volume_mm3": 541736.0,
+    "tumor_voxels": 541736,
+    "dice_score": 0.0,
+    "visual_path": "C:\\Users\\HP VICTUS\\OneDrive\\Desktop\\MRI Data\\outputs\\meningioma_analysis\\BraTS-MEN-00311-000_meningioma_visual.png"
   },
   {
-    "case_id": "BraTS-MEN-00042-000",
+    "case_id": "BraTS-MEN-00312-000",
     "voxel_spacing_mm": [
       1.0,
       1.0,
       1.0
     ],
-    "tumor_volume_mm3": 678817.0,
-    "tumor_voxels": 678817,
-    "dice_score": 0.0018137120688368382,
-    "visual_path": "C:\\Users\\HP VICTUS\\OneDrive\\Desktop\\MRI Data\\outputs\\meningioma_analysis\\BraTS-MEN-00042-000_meningioma_visual.png"
+    "tumor_volume_mm3": 600214.0,
+    "tumor_voxels": 600214,
+    "dice_score": 0.36908092298512857,
+    "visual_path": "C:\\Users\\HP VICTUS\\OneDrive\\Desktop\\MRI Data\\outputs\\meningioma_analysis\\BraTS-MEN-00312-000_meningioma_visual.png"
   },
   {
-    "case_id": "BraTS-MEN-00043-000",
+    "case_id": "BraTS-MEN-00313-000",
     "voxel_spacing_mm": [
       1.0,
       1.0,
       1.0
     ],
-    "tumor_volume_mm3": 631899.0,
-    "tumor_voxels": 631899,
-    "dice_score": 0.004082199213781016,
-    "visual_path": "C:\\Users\\HP VICTUS\\OneDrive\\Desktop\\MRI Data\\outputs\\meningioma_analysis\\BraTS-MEN-00043-000_meningioma_visual.png"
+    "tumor_volume_mm3": 522797.0,
+    "tumor_voxels": 522797,
+    "dice_score": 0.17423735533643353,
+    "visual_path": "C:\\Users\\HP VICTUS\\OneDrive\\Desktop\\MRI Data\\outputs\\meningioma_analysis\\BraTS-MEN-00313-000_meningioma_visual.png"
   },
   {
-    "case_id": "BraTS-MEN-00045-000",
+    "case_id": "BraTS-MEN-00315-000",
     "voxel_spacing_mm": [
       1.0,
       1.0,
       1.0
     ],
-    "tumor_volume_mm3": 631546.0,
-    "tumor_voxels": 631546,
-    "dice_score": 0.023196816110641134,
-    "visual_path": "C:\\Users\\HP VICTUS\\OneDrive\\Desktop\\MRI Data\\outputs\\meningioma_analysis\\BraTS-MEN-00045-000_meningioma_visual.png"
+    "tumor_volume_mm3": 603991.0,
+    "tumor_voxels": 603991,
+    "dice_score": 0.002142247171529303,
+    "visual_path": "C:\\Users\\HP VICTUS\\OneDrive\\Desktop\\MRI Data\\outputs\\meningioma_analysis\\BraTS-MEN-00315-000_meningioma_visual.png"
+  },
+  {
+    "case_id": "BraTS-MEN-00318-000",
+    "voxel_spacing_mm": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "tumor_volume_mm3": 591363.0,
+    "tumor_voxels": 591363,
+    "dice_score": 0.0,
+    "visual_path": "C:\\Users\\HP VICTUS\\OneDrive\\Desktop\\MRI Data\\outputs\\meningioma_analysis\\BraTS-MEN-00318-000_meningioma_visual.png"
   }
 ]

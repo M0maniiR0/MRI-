@@ -4,11 +4,12 @@
 
 | Case ID | Tumor Volume (mm³) | Tumor Voxels | Dice Similarity | Clinical Finding |
 | :--- | :---: | :---: | :---: | :--- |
-| `BraTS-MEN-00040-000` | 668,403.0 | 668,403 | 0.111 | **Detected Meningioma** |
-| `BraTS-MEN-00041-000` | 631,745.0 | 631,745 | 0.093 | **Detected Meningioma** |
-| `BraTS-MEN-00042-000` | 678,817.0 | 678,817 | 0.002 | **Detected Meningioma** |
-| `BraTS-MEN-00043-000` | 631,899.0 | 631,899 | 0.004 | **Detected Meningioma** |
-| `BraTS-MEN-00045-000` | 631,546.0 | 631,546 | 0.023 | **Detected Meningioma** |
+| `BraTS-MEN-00308-000` | 526,123.0 | 526,123 | 0.000 | **Detected Meningioma** |
+| `BraTS-MEN-00311-000` | 541,736.0 | 541,736 | 0.000 | **Detected Meningioma** |
+| `BraTS-MEN-00312-000` | 600,214.0 | 600,214 | 0.369 | **Detected Meningioma** |
+| `BraTS-MEN-00313-000` | 522,797.0 | 522,797 | 0.174 | **Detected Meningioma** |
+| `BraTS-MEN-00315-000` | 603,991.0 | 603,991 | 0.002 | **Detected Meningioma** |
+| `BraTS-MEN-00318-000` | 591,363.0 | 591,363 | 0.000 | **Detected Meningioma** |
 
 ## Diagnostic Overlays
 High-contrast 3-plane views (Coronal, Sagittal, Axial) saved to `outputs\meningioma_analysis/`.

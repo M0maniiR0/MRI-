@@ -238,11 +238,12 @@ def run_meningioma_transfer(
         dur = time.time() - t0
         print(f"--- Epoch [{ep:>2}/{epochs}] ({dur:.1f}s) | Avg Loss: {avg_loss:.4f} ---", flush=True)
 
-        # Fast Validation on Val Cohort
+        # Fast Validation on Val Cohort (subsample during training, full on final epoch)
         model.eval()
         dices = []
+        val_eval_indices = range(len(val_ds)) if ep == epochs else range(min(8, len(val_ds)))
         with torch.no_grad():
-            for v_idx in range(len(val_ds)):
+            for v_idx in val_eval_indices:
                 v_item = val_ds[v_idx]
                 v_x = v_item["image"].unsqueeze(0).to(device)
                 v_y = v_item["label"].to(device)
