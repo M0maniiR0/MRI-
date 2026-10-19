@@ -1,0 +1,47 @@
+{
+  "dataset": "BraTS-MEN 2023 (Meningioma)",
+  "cohort_size": 25,
+  "train_cases": 20,
+  "val_cases": 5,
+  "total_epochs": 6,
+  "best_val_dice": 0.059306166556261156,
+  "total_training_time_sec": 368.6074974536896,
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.8596649765968323,
+      "val_wt_dice": 0.05103098596919865,
+      "epoch_duration_sec": 70.37833023071289
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.8469708323478699,
+      "val_wt_dice": 0.053159767862881055,
+      "epoch_duration_sec": 67.64335608482361
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.8028101176023483,
+      "val_wt_dice": 0.059306166556261156,
+      "epoch_duration_sec": 61.75322222709656
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.7571127727627754,
+      "val_wt_dice": 0.055727594226975874,
+      "epoch_duration_sec": 32.720070123672485
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.805922968685627,
+      "val_wt_dice": 0.056202861455995755,
+      "epoch_duration_sec": 26.850928783416748
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.8240797415375709,
+      "val_wt_dice": 0.05642505912729897,
+      "epoch_duration_sec": 25.483412742614746
+    }
+  ]
+}

@@ -202,13 +202,15 @@ def run_meningioma_transfer(
     optimizer = torch.optim.AdamW(model.parameters(), lr=lr, weight_decay=1e-5)
     scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=epochs, eta_min=1e-6)
     use_amp = device.type == "cuda"
-    scaler = torch.cuda.amp.GradScaler(enabled=use_amp)
+    scaler = torch.amp.GradScaler("cuda", enabled=use_amp)
     print(f"[ACCELERATION] Automatic Mixed Precision (AMP): {'ENABLED (FP16 Tensor Cores)' if use_amp else 'DISABLED'}")
 
     output_checkpoint.parent.mkdir(parents=True, exist_ok=True)
     best_dice = 0.0
+    history = []
 
     # 3. Training Loop
+    t_start = time.time()
     for ep in range(1, epochs + 1):
         t0 = time.time()
         model.train()
@@ -220,7 +222,7 @@ def run_meningioma_transfer(
             y = batch["label"].to(device)
             optimizer.zero_grad(set_to_none=True)
 
-            with torch.cuda.amp.autocast(enabled=use_amp):
+            with torch.amp.autocast("cuda", enabled=use_amp):
                 out = model(x)
                 loss = loss_fn(out, y)
 
@@ -245,7 +247,7 @@ def run_meningioma_transfer(
                 v_x = v_item["image"].unsqueeze(0).to(device)
                 v_y = v_item["label"].to(device)
 
-                with torch.cuda.amp.autocast(enabled=use_amp):
+                with torch.amp.autocast("cuda", enabled=use_amp):
                     v_out = sliding_window_inference(
                         inputs=v_x,
                         roi_size=crop_size,
@@ -266,6 +268,13 @@ def run_meningioma_transfer(
         val_wt_dice = float(np.mean(dices))
         print(f"  >>> Val Meningioma WT Dice: {val_wt_dice:.4f}", flush=True)
 
+        history.append({
+            "epoch": ep,
+            "train_loss": avg_loss,
+            "val_wt_dice": val_wt_dice,
+            "epoch_duration_sec": dur,
+        })
+
         if val_wt_dice > best_dice:
             best_dice = val_wt_dice
             torch.save({
@@ -278,9 +287,27 @@ def run_meningioma_transfer(
             }, str(output_checkpoint))
             print(f"  [SAVED NEW BEST] -> {output_checkpoint.name} (Val Dice: {best_dice:.4f})", flush=True)
 
+    total_training_time = time.time() - t_start
+
+    # Save JSON report
+    report_data = {
+        "dataset": "BraTS-MEN 2023 (Meningioma)",
+        "cohort_size": len(case_dirs),
+        "train_cases": len(train_cases),
+        "val_cases": len(val_cases),
+        "total_epochs": epochs,
+        "best_val_dice": best_dice,
+        "total_training_time_sec": total_training_time,
+        "history": history,
+    }
+    report_file = SCRIPT_DIR / "reports" / "meningioma_evaluation.json"
+    report_file.parent.mkdir(parents=True, exist_ok=True)
+    report_file.write_text(json.dumps(report_data, indent=2), encoding="utf-8")
+
     print("\n" + "=" * 80)
     print(f"  MENINGIOMA TRANSFER TRAINING COMPLETE! Best Dice: {best_dice:.4f}")
     print(f"  Saved Checkpoint: {output_checkpoint.resolve()}")
+    print(f"  Saved Evaluation: {report_file.resolve()}")
     print("=" * 80)
 
 
