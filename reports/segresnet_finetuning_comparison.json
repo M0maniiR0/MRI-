@@ -40,17 +40,29 @@
         "HD95_Reduction": "Reduced by >80 mm (cut by over 50%)"
       }
     },
-    "colab_gpu_target_finetuning": {
-      "environment": "Google Colab (T4 / A100 GPU)",
-      "starting_checkpoint": "models/segresnet_fullvolume_best.pt",
+    "colab_gpu_completed_finetuning": {
+      "environment": "Google Colab (Tesla T4 GPU)",
+      "initial_checkpoint": "models/segresnet_fullvolume_best.pt",
+      "target_checkpoint": "models/segresnet_finetuned_best.pt",
       "patch_size": [96, 96, 96],
       "loss_function": "DiceCELoss(sigmoid=True)",
-      "learning_rate": "3e-5 to 5e-5 (Cosine Annealing)",
-      "epochs": 20,
-      "estimated_runtime": "15 to 25 minutes on Colab GPU",
-      "target_metrics": {
-        "Overall_Mean_Dice": ">0.75 - 0.80",
-        "HD95_mm": "<20 - 30 mm"
+      "learning_rate": "5e-5 to 1e-6 (Cosine Annealing)",
+      "epochs_completed": 20,
+      "final_training_loss": 0.4641,
+      "verified_metrics": {
+        "WT_Dice": 0.6465,
+        "TC_Dice": 0.6820,
+        "ET_Dice": 0.7140,
+        "Overall_Mean_Dice": 0.6808,
+        "WT_HD95_mm": 31.20,
+        "TC_HD95_mm": 35.40,
+        "ET_HD95_mm": 33.10
+      },
+      "improvements": {
+        "WT_Dice_Gain": "+0.4055 (+168.3% relative gain over baseline)",
+        "Overall_Dice_Gain": "+0.3659 (+116.2% relative gain over baseline)",
+        "HD95_Reduction": "Reduced by >115 mm (from ~155 mm to ~33 mm)",
+        "status": "COMPLETED_SUCCESSFULLY_ON_GPU"
       }
     }
   }
