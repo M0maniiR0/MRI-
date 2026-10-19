@@ -128,14 +128,14 @@ def get_meningioma_transforms(crop_size=(96, 96, 96)):
     return train_transform, val_transform
 
 
-def create_model(device: torch.device) -> nn.Module:
+def create_model(device: torch.device, init_filters: int = 8) -> nn.Module:
     model = SegResNet(
         spatial_dims=3,
         in_channels=4,
         out_channels=3,
-        init_filters=16,
-        blocks_down=[1, 2, 2, 4],
-        blocks_up=[1, 1, 1],
+        init_filters=init_filters,
+        blocks_down=[1, 2, 2],
+        blocks_up=[1, 1],
         dropout_prob=0.2,
     ).to(device)
     return model
@@ -201,6 +201,9 @@ def run_meningioma_transfer(
     loss_fn = DiceCELoss(sigmoid=True, lambda_dice=1.0, lambda_ce=1.0)
     optimizer = torch.optim.AdamW(model.parameters(), lr=lr, weight_decay=1e-5)
     scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=epochs, eta_min=1e-6)
+    use_amp = device.type == "cuda"
+    scaler = torch.cuda.amp.GradScaler(enabled=use_amp)
+    print(f"[ACCELERATION] Automatic Mixed Precision (AMP): {'ENABLED (FP16 Tensor Cores)' if use_amp else 'DISABLED'}")
 
     output_checkpoint.parent.mkdir(parents=True, exist_ok=True)
     best_dice = 0.0
@@ -215,18 +218,23 @@ def run_meningioma_transfer(
         for batch in train_loader:
             x = batch["image"].to(device)
             y = batch["label"].to(device)
-            optimizer.zero_grad()
-            out = model(x)
-            loss = loss_fn(out, y)
-            loss.backward()
-            optimizer.step()
+            optimizer.zero_grad(set_to_none=True)
+
+            with torch.cuda.amp.autocast(enabled=use_amp):
+                out = model(x)
+                loss = loss_fn(out, y)
+
+            scaler.scale(loss).backward()
+            scaler.step(optimizer)
+            scaler.update()
+
             ep_loss += loss.item()
             step += 1
 
         scheduler.step()
         avg_loss = ep_loss / max(1, step)
         dur = time.time() - t0
-        print(f"--- Epoch [{ep:>2}/{epochs}] ({dur:.1f}s) | Avg Loss: {avg_loss:.4f} ---")
+        print(f"--- Epoch [{ep:>2}/{epochs}] ({dur:.1f}s) | Avg Loss: {avg_loss:.4f} ---", flush=True)
 
         # Fast Validation on Val Cohort
         model.eval()
@@ -237,22 +245,26 @@ def run_meningioma_transfer(
                 v_x = v_item["image"].unsqueeze(0).to(device)
                 v_y = v_item["label"].to(device)
 
-                v_out = sliding_window_inference(
-                    inputs=v_x,
-                    roi_size=crop_size,
-                    sw_batch_size=2,
-                    predictor=model,
-                    overlap=0.25,
-                    mode="gaussian",
-                )
+                with torch.cuda.amp.autocast(enabled=use_amp):
+                    v_out = sliding_window_inference(
+                        inputs=v_x,
+                        roi_size=crop_size,
+                        sw_batch_size=1,
+                        predictor=model,
+                        overlap=0.25,
+                        mode="gaussian",
+                    )
                 v_prob = torch.sigmoid(v_out).squeeze(0)
                 brain_mask = (v_item["image"].abs().sum(dim=0) > 0).to(device)
                 pred_wt = (v_prob[0] > 0.5) & brain_mask
                 gt_wt = v_y[0] > 0.5
                 dices.append(compute_region_dice(pred_wt.float(), gt_wt.float()))
 
+        if device.type == "cuda":
+            torch.cuda.empty_cache()
+
         val_wt_dice = float(np.mean(dices))
-        print(f"  >>> Val Meningioma WT Dice: {val_wt_dice:.4f}")
+        print(f"  >>> Val Meningioma WT Dice: {val_wt_dice:.4f}", flush=True)
 
         if val_wt_dice > best_dice:
             best_dice = val_wt_dice
@@ -264,7 +276,7 @@ def run_meningioma_transfer(
                 "loss_function": "DiceCELoss",
                 "target_disease": "Meningioma (BraTS-MEN 2023)",
             }, str(output_checkpoint))
-            print(f"  [SAVED NEW BEST] -> {output_checkpoint.name} (Val Dice: {best_dice:.4f})")
+            print(f"  [SAVED NEW BEST] -> {output_checkpoint.name} (Val Dice: {best_dice:.4f})", flush=True)
 
     print("\n" + "=" * 80)
     print(f"  MENINGIOMA TRANSFER TRAINING COMPLETE! Best Dice: {best_dice:.4f}")
