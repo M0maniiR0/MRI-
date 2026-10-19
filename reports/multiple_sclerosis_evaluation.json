@@ -1,0 +1,43 @@
+{
+  "project": "NeuroScope AI - BrainAgenticthon 2026",
+  "task": "Multiple Sclerosis 3D Lesion Segmentation (\u0627\u0644\u062a\u0635\u0644\u0628 \u0627\u0644\u0645\u062a\u0639\u062f\u062f)",
+  "dataset": "MSLesSeg-2024 Benchmark Dataset (Nature Scientific Data)",
+  "cohort_size": 115,
+  "train_patients": 92,
+  "val_patients": 23,
+  "epochs_trained": 10,
+  "best_val_dice": 0.4525,
+  "total_training_time_seconds": 533.2,
+  "history": [
+    {
+      "epoch": 2,
+      "train_loss": 1.4091202824012092,
+      "val_dice": 0.37207461023171745,
+      "epoch_duration_sec": 43.87672972679138
+    },
+    {
+      "epoch": 4,
+      "train_loss": 1.3440507235734358,
+      "val_dice": 0.31229758005247477,
+      "epoch_duration_sec": 40.69818711280823
+    },
+    {
+      "epoch": 6,
+      "train_loss": 1.3034688830375671,
+      "val_dice": 0.2983557986681239,
+      "epoch_duration_sec": 41.83423185348511
+    },
+    {
+      "epoch": 8,
+      "train_loss": 1.2841716745625371,
+      "val_dice": 0.4525274636302225,
+      "epoch_duration_sec": 42.701563596725464
+    },
+    {
+      "epoch": 10,
+      "train_loss": 1.275924413100533,
+      "val_dice": 0.3808353664025541,
+      "epoch_duration_sec": 42.64402437210083
+    }
+  ]
+}

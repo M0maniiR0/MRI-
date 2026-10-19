@@ -18,6 +18,10 @@ DATA/
 │   ├── data_nii/                      # صور الرنين NIfTI (200 مريض: 1,000 حجم ثلاثي الأبعاد)
 │   └── DATA_SOURCE_INFO.md            # التفاصيل الطبية، رابط Hugging Face، والمراجع
 │
+├── 🔬 MultipleSclerosis_MSLesSeg/     # التصلب المتعدد / التصلب اللويحي
+│   ├── data_nii/                      # صور الرنين NIfTI (115 فحصاً لـ 75 مريضاً: 460 حجماً)
+│   └── DATA_SOURCE_INFO.md            # التفاصيل الطبية، رابط Nature / Figshare، والمراجع
+│
 ├── 🧬 Glioma_BraTS_Task01/            # الأورام الدبقية عالية ومنخفضة الدرجة
 │   ├── data_nii/                      # صور الرنين NIfTI (484 مريضاً: 1,936 حجماً ثلاثي الأبعاد)
 │   └── DATA_SOURCE_INFO.md            # التفاصيل الطبية، بروتوكول BraTS، والمراجع
@@ -32,24 +36,28 @@ DATA/
 | المرض / المهمة السريرية | المجموعة المعتمدة (Dataset) | الجهة المانحة / المرجع | عدد الحالات (Cases) | التسلسلات الإشعاعية (MRI Modalities) | أوزان النموذج المدرّب |
 | :--- | :--- | :--- | :---: | :--- | :--- |
 | **1. الأورام المنتشرة (Brain Metastasis)** | **SCI + Pakawat Cohorts** | Emulated-Inc / Pakawat-Phasook | **240 مريضاً** | 3D High-Res T1-CE, T1n, T2f, T2w | `models/segresnet_brain_metastasis_best.pt` |
-| **2. مرض الزهايمر (Alzheimer's)** | **MSD Task04_Hippocampus** | Vanderbilt Univ (VUMC) | **390 حالة** | T1-weighted 3D Isotropic ($1\text{mm}^3$) | `models/segresnet_alzheimer_hippocampus_best.pt` |
-| **3. الأورام السحائية (Meningioma)** | **BraTS-MEN 2023** | RSNA / ASNR / MICCAI | **200 حالة محلياً** (من أصل 953) | 4 قنوات: T1n, T1c, T2f, T2w | `models/segresnet_meningioma_best.pt` |
-| **4. الأورام الدبقية (Glioma)** | **MSD Task01_BrainTumour** | Penn Medicine (CBICA) | **484 حالة** | 4 قنوات: FLAIR, T1w, T1gd, T2w | `models/segresnet_fullvolume_best.pt` |
+| **2. التصلب المتعدد (Multiple Sclerosis)** | **MSLesSeg-2024** | Nature Scientific Data / Figshare | **115 فحصاً (75 مريضاً)** | 3D FLAIR, T1, T2 (MNI152 Isotropic) | `models/segresnet_multiple_sclerosis_best.pt` |
+| **3. مرض الزهايمر (Alzheimer's)** | **MSD Task04_Hippocampus** | Vanderbilt Univ (VUMC) | **390 حالة** | T1-weighted 3D Isotropic ($1\text{mm}^3$) | `models/segresnet_alzheimer_hippocampus_best.pt` |
+| **4. الأورام السحائية (Meningioma)** | **BraTS-MEN 2023** | RSNA / ASNR / MICCAI | **200 حالة محلياً** (من أصل 953) | 4 قنوات: T1n, T1c, T2f, T2w | `models/segresnet_meningioma_best.pt` |
+| **5. الأورام الدبقية (Glioma)** | **MSD Task01_BrainTumour** | Penn Medicine (CBICA) | **484 حالة** | 4 قنوات: FLAIR, T1w, T1gd, T2w | `models/segresnet_fullvolume_best.pt` |
 
 ---
 
 ## 🔬 الأثر الطبي والتطبيقي لكل مجموعة بيانات:
 1. **الأورام المنتشرة (Brain Metastasis):** رصد وتحديد البؤر السرطانية الثانوية المنبثة في الدماغ، وحساب عبء الورم الكلي ($mm^3$)، وعدّ البؤر (Foci Count) لدعم قرارات الجراحة الإشعاعية (SRS).
-2. **الزهايمر (Alzheimer):** حساب الحجم الدقيق لقرن آمون بالمليمتر المكعب ($mm^3$) لتحديد الضمور المبكر وتصنيف الحالات سريرياً إلى (Normal vs. MCI vs. Severe Atrophy).
-3. **الأورام السحائية (Meningioma):** كشف وتحديد حدود الأورام السطحية الخارجية التي تضغط على قشرة الدماغ وعزلها عن أنسجة المخ السليمة.
-4. **الأورام الدبقية (Glioma):** تشريح الورم الداخلي متعدد المناطق (الوذمة الارتشاحية، المركز المتنخر، الحواف الماصة للصبغة).
+2. **التصلب المتعدد (Multiple Sclerosis):** عزل لويحات زوال المايلين (Demyelinating Plaques)، قياس العبء الحجمي الإجمالي للآفات (Total Lesion Load - TLL $mm^3$)، وعدّ اللويحات لتطبيق معايير ماكدونالد (McDonald Criteria).
+3. **الزهايمر (Alzheimer):** حساب الحجم الدقيق لقرن آمون بالمليمتر المكعب ($mm^3$) لتحديد الضمور المبكر وتصنيف الحالات سريرياً إلى (Normal vs. MCI vs. Severe Atrophy).
+4. **الأورام السحائية (Meningioma):** كشف وتحديد حدود الأورام السطحية الخارجية التي تضغط على قشرة الدماغ وعزلها عن أنسجة المخ السليمة.
+5. **الأورام الدبقية (Glioma):** تشريح الورم الداخلي متعدد المناطق (الوذمة الارتشاحية، المركز المتنخر، الحواف الماصة للصبغة).
 
 ---
 
 ## 💻 طريقة تشغيل التدريب لأي مرض بضغطة زر:
+* **لتدريب التصلب المتعدد:** تشغيل [`train_ms_gpu.bat`](file:///c:/Users/HP%20VICTUS/OneDrive/Desktop/MRI%20Data/train_ms_gpu.bat)
 * **لتدريب الأورام المنتشرة:** تشغيل [`train_metastasis_gpu.bat`](file:///c:/Users/HP%20VICTUS/OneDrive/Desktop/MRI%20Data/train_metastasis_gpu.bat)
 * **لتدريب الزهايمر:** تشغيل [`train_alzheimer_gpu.bat`](file:///c:/Users/HP%20VICTUS/OneDrive/Desktop/MRI%20Data/train_alzheimer_gpu.bat)
 * **لتدريب الأورام السحائية:** تشغيل [`train_meningioma_gpu.bat`](file:///c:/Users/HP%20VICTUS/OneDrive/Desktop/MRI%20Data/train_meningioma_gpu.bat)
-* **لتقييم الزهايمر الحجمي:** `python quantify_alzheimer_atrophy.py`
+* **لتقييم التصلب المتعدد الحجمي:** `python quantify_multiple_sclerosis.py`
 * **لتقييم الأورام المنتشرة:** `python quantify_brain_metastasis.py`
+* **لتقييم الزهايمر الحجمي:** `python quantify_alzheimer_atrophy.py`
 * **لتقييم الأورام السحائية:** تشغيل [`run_meningioma_evaluation.bat`](file:///c:/Users/HP%20VICTUS/OneDrive/Desktop/MRI%20Data/run_meningioma_evaluation.bat)

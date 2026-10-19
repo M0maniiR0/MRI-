@@ -3,6 +3,7 @@ Task01_BrainTumour/
 Task04_Hippocampus/
 Task_Meningioma/
 Task_BrainMetastasis/
+Task_MultipleSclerosis/
 DATA/**/data_nii/
 DATA/**/data_nii
 archive/
@@ -37,6 +38,7 @@ models/*
 !models/segresnet_meningioma_best.pt
 !models/segresnet_alzheimer_hippocampus_best.pt
 !models/segresnet_brain_metastasis_best.pt
+!models/segresnet_multiple_sclerosis_best.pt
 
 # Heavy local model outputs (keep code and metrics, exclude heavy 3D masks)
 outputs/**/*.nii.gz

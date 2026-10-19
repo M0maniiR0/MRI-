@@ -1,0 +1,106 @@
+[
+  {
+    "patient_id": "P54",
+    "voxel_spacing_mm": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "total_lesion_load_mm3": 14972.0,
+    "ground_truth_volume_mm3": 1332.0,
+    "plaque_count": 60,
+    "dice_score": 0.15615799794151253,
+    "visual_path": "C:\\Users\\HP VICTUS\\OneDrive\\Desktop\\MRI Data\\outputs\\multiple_sclerosis_analysis\\P54_ms_visual.png"
+  },
+  {
+    "patient_id": "P68",
+    "voxel_spacing_mm": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "total_lesion_load_mm3": 23716.0,
+    "ground_truth_volume_mm3": 919.0,
+    "plaque_count": 64,
+    "dice_score": 0.043758879625021764,
+    "visual_path": "C:\\Users\\HP VICTUS\\OneDrive\\Desktop\\MRI Data\\outputs\\multiple_sclerosis_analysis\\P68_ms_visual.png"
+  },
+  {
+    "patient_id": "P11_T2",
+    "voxel_spacing_mm": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "total_lesion_load_mm3": 14791.0,
+    "ground_truth_volume_mm3": 3215.0,
+    "plaque_count": 84,
+    "dice_score": 0.335332666702581,
+    "visual_path": "C:\\Users\\HP VICTUS\\OneDrive\\Desktop\\MRI Data\\outputs\\multiple_sclerosis_analysis\\P11_T2_ms_visual.png"
+  },
+  {
+    "patient_id": "P18_T1",
+    "voxel_spacing_mm": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "total_lesion_load_mm3": 20612.0,
+    "ground_truth_volume_mm3": 770.0,
+    "plaque_count": 79,
+    "dice_score": 0.05612197172569359,
+    "visual_path": "C:\\Users\\HP VICTUS\\OneDrive\\Desktop\\MRI Data\\outputs\\multiple_sclerosis_analysis\\P18_T1_ms_visual.png"
+  },
+  {
+    "patient_id": "P22_T2",
+    "voxel_spacing_mm": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "total_lesion_load_mm3": 18350.0,
+    "ground_truth_volume_mm3": 2857.0,
+    "plaque_count": 64,
+    "dice_score": 0.20917621530193983,
+    "visual_path": "C:\\Users\\HP VICTUS\\OneDrive\\Desktop\\MRI Data\\outputs\\multiple_sclerosis_analysis\\P22_T2_ms_visual.png"
+  },
+  {
+    "patient_id": "P31_T1",
+    "voxel_spacing_mm": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "total_lesion_load_mm3": 15832.0,
+    "ground_truth_volume_mm3": 4293.0,
+    "plaque_count": 69,
+    "dice_score": 0.3765465836638278,
+    "visual_path": "C:\\Users\\HP VICTUS\\OneDrive\\Desktop\\MRI Data\\outputs\\multiple_sclerosis_analysis\\P31_T1_ms_visual.png"
+  },
+  {
+    "patient_id": "P40_T1",
+    "voxel_spacing_mm": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "total_lesion_load_mm3": 19343.0,
+    "ground_truth_volume_mm3": 6806.0,
+    "plaque_count": 55,
+    "dice_score": 0.47298175820376237,
+    "visual_path": "C:\\Users\\HP VICTUS\\OneDrive\\Desktop\\MRI Data\\outputs\\multiple_sclerosis_analysis\\P40_T1_ms_visual.png"
+  },
+  {
+    "patient_id": "P50_T2",
+    "voxel_spacing_mm": [
+      1.0,
+      1.0,
+      1.0
+    ],
+    "total_lesion_load_mm3": 47064.0,
+    "ground_truth_volume_mm3": 36435.0,
+    "plaque_count": 45,
+    "dice_score": 0.7867399608633947,
+    "visual_path": "C:\\Users\\HP VICTUS\\OneDrive\\Desktop\\MRI Data\\outputs\\multiple_sclerosis_analysis\\P50_T2_ms_visual.png"
+  }
+]
