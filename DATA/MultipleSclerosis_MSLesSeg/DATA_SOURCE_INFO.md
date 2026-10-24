@@ -1,24 +1,24 @@
 # 🎗️ مصادر وتفاصيل بيانات التصلب المتعدد (Multiple Sclerosis Dataset)
 
 ## 1. التعريف بالبيانات (Dataset Overview)
-* **اسم المجموعة المعتمد:** **MSLesSeg-2024: Multiple Sclerosis Lesion Segmentation Benchmark**.
-* **المستودع المباشر والمصدر العلمي:** [Nature Scientific Data / Figshare — MSLesSeg Dataset](https://springernature.figshare.com/articles/dataset/MSLesSeg_baseline_and_benchmarking_of_a_new_Multiple_Sclerosis_Lesion_Segmentation_dataset/27919209) (DOI: 10.6084/m9.figshare.27919209).
-* **الكود الرسمي:** [GitHub — alessiarondinella/MSLesSeg-2024](https://github.com/alessiarondinella/MSLesSeg-2024).
+* **اسم المجموعة المعتمد:** **MSLesSeg-2024 & WMH Challenge (Consolidated 240 Cohort)**.
+* **المستودع المباشر والمصادر العلمية:** 
+  1. [Nature Scientific Data / Figshare — MSLesSeg Dataset](https://springernature.figshare.com/articles/dataset/MSLesSeg_baseline_and_benchmarking_of_a_new_Multiple_Sclerosis_Lesion_Segmentation_dataset/27919209) (DOI: 10.6084/m9.figshare.27919209) لـ 115 فحصاً معيارياً.
+  2. [MICCAI WMH Challenge (White Matter Hyperintensities / MS Lesions)](https://huggingface.co/datasets/MedOtter/wmh-segmentation) لـ 125 فحصاً متعدد المراكز (Utrecht, Singapore, Amsterdam).
 * **المجال الطبي والسريري:** مرض التصلب المتعدد / التصلب اللويحي (Multiple Sclerosis - MS) هو مرض مناعي ذاتي مزمن يهاجم فيه الجهاز المناعي غمد المايلين (Myelin Sheath) المحيط بالألياف العصبية في الدماغ والحبل الشوكي، مما يسبب بؤراً التهابية وتندبات (Demyelinating Plaques / Lesions). تتطلب المتابعة السريرية قياس العبء الحجمي الإجمالي للآفات (Total Lesion Load - TLL بالمليمتر المكعب) ورصد ظهور آفات جديدة أو تضخمها وفق معايير ماكدونالد (McDonald Criteria).
 
 ---
 
 ## 2. الإحصائيات الفنية للبيانات (Technical Specifications)
-* **إجمالي الفحوصات والحالات:** **115 فحصاً ثلاثي الأبعاد لـ 75 مريضاً متكاملاً** (بمجموع **460 ملف رنين وقناع ثلاثي الأبعاد 3D NIfTI** بحجم غير مضغوط يتجاوز 3.8 جيجابايت).
-  - **حالات التدريب (Training Cohort):** 92 فحصاً ثلاثي الأبعاد.
-  - **حالات التحقق والتقييم (Validation Cohort):** 23 فحصاً ثلاثي الأبعاد.
+* **إجمالي الفحوصات والحالات:** **240 فحصاً وحالة ثلاثية الأبعاد 3D NIfTI متكاملة ومحققة 100%**.
+  - **حالات التدريب (Training Cohort):** 192 فحصاً ثلاثي الأبعاد (80%).
+  - **حالات التحقق والتقييم (Validation Cohort):** 48 فحصاً ثلاثي الأبعاد (20%).
 * **المعالجة المعيارية المسبقة (Standardized Preprocessing):**
-  1. التسجيل والمطابقة الفراغية المعيارية مع قالب MNI152 بدقة متساوية الأبعاد $1.0\text{ mm}^3$ (Isotropic Spacing).
-  2. عزل الجمجمة والأنسجة غير الدماغية (Brain Extraction / BET Skull-stripping).
+  1. مطابقة فراغية وإعادة ضبط الكثافة مع وسادات فراغية ذكية `SpatialPadd` لاستيعاب كافة أحجام المسح.
+  2. عزل الأنسجة الدماغية ورصد التباين على صور FLAIR و T1.
 * **التسلسلات الإشعاعية المعتمدة لكل فحص:**
-  1. `*_FLAIR.nii.gz`: تسلسل T2-FLAIR ثلاثي الأبعاد (التسلسل الحاسم لرصد اللويحات البيضاء Periventricular Plaques).
-  2. `*_MASK.nii.gz`: أقنعة التحديد ثلاثية الأبعاد المعتمدة سريرياً من قبل استشاريي الأشعة العصبية (Ground Truth).
-  3. `*_T1.nii.gz` و `*_T2.nii.gz`: تسلسلات الرنين المغناطيسي التشريحية المصاحبة.
+  1. صور FLAIR ثلاثية الأبعاد (3D T2-FLAIR / 2D Multi-slice FLAIR): التسلسل الأكثر حساسية لرصد لويحات المادة البيضاء (White Matter Hyperintensities & Demyelinating Plaques).
+  2. أقنعة التحديد ثلاثية الأبعاد المعتمدة سريرياً (Binary Ground Truth Masks).
 * **صيغة الملفات:** NIfTI Compressed (`.nii.gz`).
 
 ---

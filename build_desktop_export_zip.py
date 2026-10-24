@@ -31,14 +31,14 @@ ZIP_NAME = "NeuroScope_AI_GPU_Reports_Outputs.zip"
 def create_executive_summary():
     content = """# 🧠 ملخص إنجازات مشروع NeuroScope AI — تدريب نماذج الذكاء الاصطناعي على كرت الشاشة (GPU)
 ## موجه إلى الزميل العزيز: عبد الرحمن
-**التاريخ**: 19 تشرين الأول (أكتوبر) 2026  
+**التاريخ**: 24 تشرين الأول (أكتوبر) 2026  
 **العتاد المستخدم**: بطاقة الرسوميات المدمجة **NVIDIA GeForce RTX 2050 (4GB VRAM)** بتقنية التسريع العتادي **Automatic Mixed Precision (AMP FP16)** على PyTorch & MONAI.  
 **المستودع الرسمي على GitHub**: [https://github.com/M0maniiR0/MRI-.git](https://github.com/M0maniiR0/MRI-.git)
 
 ---
 
 ### 1. نظرة عامة على المشروع (Project Mission)
-تم بحمد الله بناء وتدريب وتقييم **5 نماذج ذكاء اصطناعي ثلاثية الأبعاد (3D SegResNet)** مستقلة ومتخصصة تغطي أهم **5 أمراض عصبية ودماغية خطيرة**، بالاعتماد على مجموعات بيانات عالمية مفتوحة ومعتمدة سريرياً تتجاوز بمجموعها **1,429 مريضاً وفحصاً ثلاثي الأبعاد (3D NIfTI)**.
+تم بحمد الله بناء وتدريب وتقييم **5 نماذج ذكاء اصطناعي ثلاثية الأبعاد (3D SegResNet)** مستقلة ومتخصصة تغطي أهم **5 أمراض عصبية ودماغية خطيرة**، بالاعتماد على مجموعات بيانات عالمية مفتوحة ومعتمدة سريرياً تتجاوز بمجموعها **1,554 مريضاً وفحصاً ثلاثي الأبعاد (3D NIfTI)**.
 
 تم تدريب جميع النماذج محلياً على كرت شاشة الجهاز (RTX 2050)، مع ابتكار حلول هندسية للذاكرة (Dynamic Sliding-Window Patching 96x96x96 مع FP16 Tensor Cores) مكنت من تدريب شبكات ثلاثية الأبعاد عملاقة باستهلاك ذاكرة لم يتجاوز **1.5 جيجابايت VRAM**.
 
@@ -52,7 +52,7 @@ def create_executive_summary():
 | **2** | **الأورام السحائية (Meningioma)** | BraTS-MEN 2023 (RSNA / MICCAI) | **200 حالة** | 4 قنوات: T1n, T1c, T2f, T2w | **0.3690** (Dice) | كشف أورام الجافية السطحية وتحديد حدودها وحجمها ($mm^3$). | `models/segresnet_meningioma_best.pt` |
 | **3** | **الزهايمر وضمور الحُصين (Alzheimer's)** | MSD Task04_Hippocampus (Vanderbilt Univ) | **390 حالة** | T1 Isotropic ($1\text{mm}^3$) | **0.8679** (Dice) | قياس حجم قرن آمون الأمامي والخلفي وتشخيص الضمور (Normal vs. MCI vs. Severe). | `models/segresnet_alzheimer_hippocampus_best.pt` |
 | **4** | **الأورام المنتشرة (Brain Metastasis)** | SCI + Pakawat Cohorts (Hugging Face) | **240 حالة** | High-Res T1-CE, T1n, T2f, T2w | **0.7220** (Dice) | رصد البؤر الصغيرة المتباعدة، عدّ البؤر (Foci Count)، وقياس عبء الورم للجراحة الإشعاعية. | `models/segresnet_brain_metastasis_best.pt` |
-| **5** | **التصلب المتعدد (Multiple Sclerosis)** | MSLesSeg-2024 (Nature Scientific Data) | **115 فحصاً** (75 مريضاً) | 3D FLAIR, T1, T2 (MNI152) | **0.7870** (Dice) | كشف لويحات زوال المايلين (Dawson's Fingers)، قياس العبء الكلي (TLL)، وتطبيق معايير ماكدونالد. | `models/segresnet_multiple_sclerosis_best.pt` |
+| **5** | **التصلب المتعدد (Multiple Sclerosis)** | MSLesSeg & WMH Challenge (Consolidated) | **240 حالة** | 3D FLAIR, T1, T2 (Multi-center) | **0.6225** (Scan Dice) | كشف لويحات زوال المايلين (Dawson's Fingers)، قياس العبء الكلي (TLL)، وتطبيق معايير ماكدونالد. | `models/segresnet_multiple_sclerosis_best.pt` |
 
 ---
 

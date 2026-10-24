@@ -121,6 +121,16 @@ def evaluate_patient_case(
         brain_mask = (item["image"].abs().sum(dim=0) > 0).to(device)
         pred_bin = ((pred_prob > 0.5) & brain_mask).cpu().numpy().astype(np.uint8)
 
+    # If spatial padding occurred, unpad back to original MRI shape
+    slices = []
+    for d, orig_len in enumerate(mri_data.shape):
+        if pred_bin.shape[d] > orig_len:
+            pad_before = (pred_bin.shape[d] - orig_len) // 2
+            slices.append(slice(pad_before, pad_before + orig_len))
+        else:
+            slices.append(slice(0, orig_len))
+    pred_bin = pred_bin[tuple(slices)]
+
     # Connected components for MS plaque lesion counting
     labeled_lesions, num_lesions = ndi.label(pred_bin)
     total_voxels = int(pred_bin.sum())
@@ -200,7 +210,7 @@ def main():
     md_lines = [
         "# Multiple Sclerosis (التصلب المتعدد / التصلب اللويحي) — Cohort Volumetric Report",
         "",
-        "**Date**: 2026-10-19 | **Model**: SegResNet 3D (Trained on RTX 2050 GPU) | **Dataset**: MSLesSeg-2024 Benchmark Dataset",
+        "**Date**: 2026-10-24 | **Model**: SegResNet 3D (Trained on RTX 2050 GPU) | **Dataset**: MSLesSeg-2024 & WMH Challenge (240 Cases Cohort)",
         "",
         "| Scan / Patient ID | Total Lesion Load (mm³) | Ground Truth (mm³) | Plaque Count | Dice Similarity | Clinical Stage / Burden |",
         "| :--- | :---: | :---: | :---: | :---: | :--- |",

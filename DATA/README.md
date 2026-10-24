@@ -36,7 +36,7 @@ DATA/
 | المرض / المهمة السريرية | المجموعة المعتمدة (Dataset) | الجهة المانحة / المرجع | عدد الحالات (Cases) | التسلسلات الإشعاعية (MRI Modalities) | أوزان النموذج المدرّب |
 | :--- | :--- | :--- | :---: | :--- | :--- |
 | **1. الأورام المنتشرة (Brain Metastasis)** | **SCI + Pakawat Cohorts** | Emulated-Inc / Pakawat-Phasook | **240 مريضاً** | 3D High-Res T1-CE, T1n, T2f, T2w | `models/segresnet_brain_metastasis_best.pt` |
-| **2. التصلب المتعدد (Multiple Sclerosis)** | **MSLesSeg-2024** | Nature Scientific Data / Figshare | **115 فحصاً (75 مريضاً)** | 3D FLAIR, T1, T2 (MNI152 Isotropic) | `models/segresnet_multiple_sclerosis_best.pt` |
+| **2. التصلب المتعدد (Multiple Sclerosis)** | **MSLesSeg & WMH Challenge** | Nature Figshare / MICCAI WMH | **240 فحصاً وحالة** | 3D FLAIR, T1, T2 (Consolidated Cohort) | `models/segresnet_multiple_sclerosis_best.pt` |
 | **3. مرض الزهايمر (Alzheimer's)** | **MSD Task04_Hippocampus** | Vanderbilt Univ (VUMC) | **390 حالة** | T1-weighted 3D Isotropic ($1\text{mm}^3$) | `models/segresnet_alzheimer_hippocampus_best.pt` |
 | **4. الأورام السحائية (Meningioma)** | **BraTS-MEN 2023** | RSNA / ASNR / MICCAI | **200 حالة محلياً** (من أصل 953) | 4 قنوات: T1n, T1c, T2f, T2w | `models/segresnet_meningioma_best.pt` |
 | **5. الأورام الدبقية (Glioma)** | **MSD Task01_BrainTumour** | Penn Medicine (CBICA) | **484 حالة** | 4 قنوات: FLAIR, T1w, T1gd, T2w | `models/segresnet_fullvolume_best.pt` |

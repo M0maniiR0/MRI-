@@ -15,6 +15,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import shutil
 import sys
 import time
 from pathlib import Path
@@ -36,6 +37,7 @@ from monai.transforms import (
     NormalizeIntensityd,
     RandCropByPosNegLabeld,
     RandFlipd,
+    SpatialPadd,
 )
 
 SCRIPT_DIR = Path(__file__).resolve().parent
@@ -80,6 +82,7 @@ class MultipleSclerosisDataset(Dataset):
 def get_ms_transforms(crop_size=(96, 96, 96)):
     train_transform = Compose([
         NormalizeIntensityd(keys="image", nonzero=True),
+        SpatialPadd(keys=["image", "label"], spatial_size=crop_size, mode="constant"),
         RandCropByPosNegLabeld(
             keys=["image", "label"],
             label_key="label",
@@ -96,6 +99,7 @@ def get_ms_transforms(crop_size=(96, 96, 96)):
 
     val_transform = Compose([
         NormalizeIntensityd(keys="image", nonzero=True),
+        SpatialPadd(keys=["image", "label"], spatial_size=crop_size, mode="constant"),
         EnsureTyped(keys=["image", "label"]),
     ])
     return train_transform, val_transform
@@ -120,6 +124,26 @@ def compute_dice_score(pred: torch.Tensor, gt: torch.Tensor, eps: float = 1e-5) 
     if cardinality == 0:
         return 1.0
     return (2.0 * intersection) / (cardinality + eps)
+
+
+def safe_torch_save(obj: Dict[str, Any], filepath: Path, retries: int = 5):
+    filepath.parent.mkdir(parents=True, exist_ok=True)
+    tmp_path = filepath.with_name(f"{filepath.stem}_tmp_{os.getpid()}.pt")
+    torch.save(obj, str(tmp_path))
+    for attempt in range(retries):
+        try:
+            if filepath.exists():
+                os.replace(tmp_path, filepath)
+            else:
+                shutil.move(tmp_path, filepath)
+            return
+        except (PermissionError, OSError):
+            time.sleep(1.0 + attempt * 0.5)
+    try:
+        shutil.copy2(tmp_path, filepath)
+        tmp_path.unlink(missing_ok=True)
+    except Exception:
+        pass
 
 
 def run_ms_training(
@@ -180,6 +204,17 @@ def run_ms_training(
     output_checkpoint.parent.mkdir(parents=True, exist_ok=True)
     report_file.parent.mkdir(parents=True, exist_ok=True)
     best_dice = 0.0
+
+    # Resume from existing checkpoint if available
+    if output_checkpoint.is_file():
+        try:
+            ckpt = torch.load(str(output_checkpoint), map_location=device, weights_only=False)
+            model.load_state_dict(ckpt["model_state_dict"])
+            best_dice = float(ckpt.get("val_dice", 0.0))
+            print(f"[RESUME] Loaded previous best checkpoint from {output_checkpoint.name} (Val Dice: {best_dice:.4f})", flush=True)
+        except Exception as e:
+            print(f"[WARN] Could not resume: {e}", flush=True)
+
     history = []
 
     # 3. Training Loop
@@ -250,13 +285,13 @@ def run_ms_training(
 
             if val_dice > best_dice:
                 best_dice = val_dice
-                torch.save({
+                safe_torch_save({
                     "model_version": "1.0.0-multiple-sclerosis",
                     "epoch": ep,
                     "model_state_dict": model.state_dict(),
                     "val_dice": best_dice,
-                    "dataset": "MSLesSeg-2024 Nature Benchmark",
-                }, str(output_checkpoint))
+                    "dataset": "MSLesSeg-2024 & WMH Challenge (240 Cases)",
+                }, output_checkpoint)
                 print(f"  [SAVED BEST CHECKPOINT] -> {output_checkpoint.name} (Val Dice: {best_dice:.4f})", flush=True)
 
     total_time = time.time() - t_start
@@ -269,7 +304,7 @@ def run_ms_training(
     report_data = {
         "project": "NeuroScope AI - BrainAgenticthon 2026",
         "task": "Multiple Sclerosis 3D Lesion Segmentation (التصلب المتعدد)",
-        "dataset": "MSLesSeg-2024 Benchmark Dataset (Nature Scientific Data)",
+        "dataset": "MSLesSeg-2024 & WMH Challenge (Consolidated 240 Cohort)",
         "cohort_size": len(manifest),
         "train_patients": len(train_entries),
         "val_patients": len(val_entries),

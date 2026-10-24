@@ -1,17 +1,17 @@
 # Multiple Sclerosis (التصلب المتعدد / التصلب اللويحي) — Cohort Volumetric Report
 
-**Date**: 2026-10-19 | **Model**: SegResNet 3D (Trained on RTX 2050 GPU) | **Dataset**: MSLesSeg-2024 Benchmark Dataset
+**Date**: 2026-10-24 | **Model**: SegResNet 3D (Trained on RTX 2050 GPU) | **Dataset**: MSLesSeg-2024 & WMH Challenge (240 Cases Cohort)
 
 | Scan / Patient ID | Total Lesion Load (mm³) | Ground Truth (mm³) | Plaque Count | Dice Similarity | Clinical Stage / Burden |
 | :--- | :---: | :---: | :---: | :---: | :--- |
-| `P54` | 14,972.0 | 1,332.0 | 60 | 0.156 | 🟡 **Moderate Burden (5k-15k mm³)** |
-| `P68` | 23,716.0 | 919.0 | 64 | 0.044 | 🔴 **Severe Burden (>15k mm³)** |
-| `P11_T2` | 14,791.0 | 3,215.0 | 84 | 0.335 | 🟡 **Moderate Burden (5k-15k mm³)** |
-| `P18_T1` | 20,612.0 | 770.0 | 79 | 0.056 | 🔴 **Severe Burden (>15k mm³)** |
-| `P22_T2` | 18,350.0 | 2,857.0 | 64 | 0.209 | 🔴 **Severe Burden (>15k mm³)** |
-| `P31_T1` | 15,832.0 | 4,293.0 | 69 | 0.377 | 🔴 **Severe Burden (>15k mm³)** |
-| `P40_T1` | 19,343.0 | 6,806.0 | 55 | 0.473 | 🔴 **Severe Burden (>15k mm³)** |
-| `P50_T2` | 47,064.0 | 36,435.0 | 45 | 0.787 | 🔴 **Severe Burden (>15k mm³)** |
+| `P54` | 37,816.0 | 1,332.0 | 149 | 0.066 | 🔴 **Severe Burden (>15k mm³)** |
+| `P12_T2` | 62,547.0 | 32,008.0 | 61 | 0.534 | 🔴 **Severe Burden (>15k mm³)** |
+| `P26_T1` | 29,586.0 | 6,639.0 | 121 | 0.293 | 🔴 **Severe Burden (>15k mm³)** |
+| `P46_T1` | 33,225.0 | 6,217.0 | 102 | 0.265 | 🔴 **Severe Burden (>15k mm³)** |
+| `wmh_Singapore_51` | 58,248.0 | 27,849.0 | 25 | 0.466 | 🔴 **Severe Burden (>15k mm³)** |
+| `wmh_Utrecht_29` | 63,824.4 | 46,579.6 | 21 | 0.622 | 🔴 **Severe Burden (>15k mm³)** |
+| `wmh_Singapore_87` | 48,156.0 | 20,274.0 | 28 | 0.518 | 🔴 **Severe Burden (>15k mm³)** |
+| `wmh_Utrecht_1` | 37,928.2 | 4,446.9 | 31 | 0.073 | 🔴 **Severe Burden (>15k mm³)** |
 
 ## Diagnostic Overlays
 High-resolution 3-plane views (Coronal, Sagittal, Axial) saved to `outputs\multiple_sclerosis_analysis/`.
