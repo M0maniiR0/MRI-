@@ -1,0 +1,184 @@
+{
+  "system": "NeuroScope AI Unified Segmentation Infrastructure",
+  "version": "1.0.0",
+  "project": "BrainAgenticthon 2026 - Medical AI Workstream",
+  "architecture_family": "3D SegResNet (MONAI / PyTorch)",
+  "hardware_target": "NVIDIA GeForce RTX 2050 (4GB VRAM) / CUDA 12.1 / AMP FP16",
+  "offline_mode": true,
+  "dynamic_routing_policy": "Explicit model selection by caller; no automatic routing via ground-truth disease labels",
+  "models": {
+    "glioma": {
+      "model_identifier": "glioma",
+      "model_name": "Glioma Multi-Region 3D SegResNet",
+      "checkpoint_path": "models/segresnet_fullvolume_best.pt",
+      "model_version": "1.0.0-fullvolume",
+      "competition_core_disease": true,
+      "research_model_only": false,
+      "required_modalities": [
+        "flair",
+        "t1",
+        "t1ce",
+        "t2"
+      ],
+      "channel_ordering": [
+        "Channel 0: FLAIR (T2-FLAIR)",
+        "Channel 1: T1 (T1-weighted native)",
+        "Channel 2: T1-CE / T1gd (Contrast-enhanced T1)",
+        "Channel 3: T2 (T2-weighted)"
+      ],
+      "input_format": "4-channel 4D NIfTI [4, H, W, D] or separate 3D NIfTI paths per modality",
+      "preprocessing": [
+        "NormalizeIntensityd(nonzero=True, channel_wise=True)",
+        "SlidingWindowInference(roi_size=(96, 96, 96), sw_batch_size=1, overlap=0.25, mode='gaussian')",
+        "Anatomical Brain Mask Guard: pred[image_intensity == 0] = 0"
+      ],
+      "output_labels": {
+        "channel_0": "Whole Tumor (WT): Necrotic Core + Edema + Enhancing Tumor",
+        "channel_1": "Tumor Core (TC): Necrotic Core + Enhancing Tumor",
+        "channel_2": "Enhancing Tumor (ET): Actively enhancing viable neoplastic tissue"
+      },
+      "discrete_label_mapping": {
+        "0": "Background / Healthy Brain Tissue",
+        "1": "Necrotic / Non-enhancing Tumor Core (NET/NCR)",
+        "2": "Peritumoral Edematous Tissue (ED)",
+        "3": "Enhancing Tumor (ET)"
+      },
+      "clinical_volumetrics": [
+        "WT_volume_mm3",
+        "TC_volume_mm3",
+        "ET_volume_mm3"
+      ]
+    },
+    "meningioma": {
+      "model_identifier": "meningioma",
+      "model_name": "Meningioma Extra-Axial 3D SegResNet",
+      "checkpoint_path": "models/segresnet_meningioma_best.pt",
+      "model_version": "1.0.0-meningioma-transfer",
+      "competition_core_disease": true,
+      "research_model_only": false,
+      "required_modalities": [
+        "t2f",
+        "t1n",
+        "t1c",
+        "t2w"
+      ],
+      "channel_ordering": [
+        "Channel 0: t2f (T2-FLAIR)",
+        "Channel 1: t1n (T1 native)",
+        "Channel 2: t1c (T1 contrast-enhanced)",
+        "Channel 3: t2w (T2-weighted)"
+      ],
+      "input_format": "4-channel 4D NIfTI [4, H, W, D] or separate 3D NIfTI paths per modality",
+      "preprocessing": [
+        "NormalizeIntensityd(nonzero=True, channel_wise=True)",
+        "SlidingWindowInference(roi_size=(96, 96, 96), sw_batch_size=1, overlap=0.25, mode='gaussian')",
+        "Anatomical Brain Mask Guard: pred[image_intensity == 0] = 0"
+      ],
+      "output_labels": {
+        "channel_1": "Solid Tumor Core / Enhancing Meningioma Mass (Optimal Calibrated Region)",
+        "channel_0": "Whole Tumor Compartment (WT, requires high-confidence threshold >= 0.85)"
+      },
+      "discrete_label_mapping": {
+        "0": "Background / Normal Brain",
+        "1": "Meningioma Solid Tumor"
+      },
+      "clinical_volumetrics": [
+        "meningioma_tumor_volume_mm3",
+        "meningioma_tumor_volume_ml"
+      ]
+    },
+    "hippocampus": {
+      "model_identifier": "hippocampus",
+      "model_name": "Hippocampus Subfield 3D SegResNet",
+      "checkpoint_path": "models/segresnet_alzheimer_hippocampus_best.pt",
+      "model_version": "1.0.0-alzheimer-hippocampus",
+      "competition_core_disease": true,
+      "research_model_only": false,
+      "disease_scope_disclaimer": "Provides anatomical segmentation and volumetry only; not a stand-alone Alzheimer classifier without clinical biomarker integration",
+      "required_modalities": [
+        "t1"
+      ],
+      "channel_ordering": [
+        "Channel 0: T1-weighted 3D MRI (Isotropic or high-resolution coronal)"
+      ],
+      "input_format": "Single-channel 3D NIfTI [1, H, W, D]",
+      "preprocessing": [
+        "NormalizeIntensityd(nonzero=True)",
+        "ResizeWithPadOrCropd(spatial_size=(32, 64, 32))",
+        "ArgMax classification across 3 classes",
+        "Inverse ResizeWithPadOrCrop back to native input voxel space"
+      ],
+      "output_labels": {
+        "0": "Background / Extra-hippocampal tissue",
+        "1": "Anterior Hippocampus (Hippocampal Head)",
+        "2": "Posterior Hippocampus (Hippocampal Body & Tail)"
+      },
+      "clinical_volumetrics": [
+        "anterior_hippocampus_volume_mm3",
+        "posterior_hippocampus_volume_mm3",
+        "total_hippocampus_volume_mm3",
+        "total_hippocampus_volume_ml"
+      ]
+    },
+    "brain_metastasis": {
+      "model_identifier": "brain_metastasis",
+      "model_name": "Brain Metastasis Focal 3D SegResNet",
+      "checkpoint_path": "models/segresnet_brain_metastasis_best.pt",
+      "model_version": "1.0.0-brain-metastasis",
+      "competition_core_disease": true,
+      "research_model_only": false,
+      "required_modalities": [
+        "t1c"
+      ],
+      "channel_ordering": [
+        "Channel 0: High-Resolution T1-CE (Contrast-Enhanced T1 3D MPRAGE/VIBE)"
+      ],
+      "input_format": "Single-channel 3D NIfTI [1, H, W, D]",
+      "preprocessing": [
+        "NormalizeIntensityd(nonzero=True)",
+        "SlidingWindowInference(roi_size=(96, 96, 96), sw_batch_size=1, overlap=0.25, mode='gaussian')",
+        "Binary Thresholding: prob > 0.5 & brain_mask"
+      ],
+      "output_labels": {
+        "0": "Background / Non-metastatic parenchyma",
+        "1": "Metastatic Focus / Lesion"
+      },
+      "clinical_volumetrics": [
+        "metastatic_total_volume_mm3",
+        "metastatic_total_volume_ml",
+        "metastatic_foci_count"
+      ]
+    },
+    "multiple_sclerosis": {
+      "model_identifier": "multiple_sclerosis",
+      "model_name": "Multiple Sclerosis Demyelinating Plaque 3D SegResNet",
+      "checkpoint_path": "models/segresnet_multiple_sclerosis_best.pt",
+      "model_version": "1.0.0-multiple-sclerosis",
+      "competition_core_disease": false,
+      "research_model_only": true,
+      "competition_alignment_note": "FLAGGED AS ADDITIONAL RESEARCH MODEL: Multiple Sclerosis is not part of the official 10-disease BrainAgenticthon 2026 closed set. Retained as an extended investigational tool.",
+      "required_modalities": [
+        "flair"
+      ],
+      "channel_ordering": [
+        "Channel 0: 3D T2-FLAIR (or Multi-slice 2D FLAIR)"
+      ],
+      "input_format": "Single-channel 3D NIfTI [1, H, W, D]",
+      "preprocessing": [
+        "NormalizeIntensityd(nonzero=True)",
+        "SpatialPadd(spatial_size=(96, 96, 96), mode='constant')",
+        "SlidingWindowInference(roi_size=(96, 96, 96), sw_batch_size=1, overlap=0.25, mode='gaussian')",
+        "Inverse crop unpadding to exact native voxel matrix"
+      ],
+      "output_labels": {
+        "0": "Background / Normal Appearing White Matter",
+        "1": "Demyelinating Plaque / White Matter Hyperintensity"
+      },
+      "clinical_volumetrics": [
+        "total_lesion_load_tll_mm3",
+        "total_lesion_load_tll_ml",
+        "plaque_count"
+      ]
+    }
+  }
+}
