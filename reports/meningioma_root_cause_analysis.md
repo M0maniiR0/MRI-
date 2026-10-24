@@ -87,15 +87,29 @@ When evaluating the trained checkpoint on validation cases:
 
 ## 🛠️ 3. Corrected Evaluation & Re-established Baseline
 
-By enforcing:
-1. **Strict channel alignment:** `[t2f, t1n, t1c, t2w]`
-2. **Channel 1 (Tumor Core / Solid Mass) extraction** or **Calibrated Channel 0 threshold ($\ge 0.85$)**
-3. **Anatomical Brain Mask Guard:** `pred[image == 0] = 0`
+### Full 40-Case Validation Cohort Empirical Sweep
+To eliminate sample bias from testing only 6 or 10 cases, a comprehensive evaluation sweep was executed across the **entire 40-case validation cohort** (`reports/meningioma_full_40cases_sweep.json`) testing 8 candidate post-processing and threshold configurations on the RTX 2050 GPU:
 
-### Re-established Performance on 10 Validation Scans:
-* **Raw Uncalibrated Channel 0 Dice (Old Baseline):** `0.1289` (Worst case: 0.0015, Best case: 0.5633)
-* **Corrected Solid Tumor Core Dice (New Baseline):** **`0.3582` Mean | `0.2666` Median**
-* **Peak Single-Case Dice:** **`0.8793`** (`BraTS-MEN-00260-000`) and **`0.8652`** (`BraTS-MEN-00255-000`).
+| Configuration & Output Target | Threshold | Mean Dice | Median Dice | Std Dev | Failures (<0.10) | Failure Rate |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: |
+| **Ch0 (WT - Old Evaluation)** | 0.50 | 0.1125 | 0.0370 | 0.1601 | 28 / 40 | 70.0% |
+| **Ch0 (WT)** | 0.70 | 0.1471 | 0.0526 | 0.2014 | 24 / 40 | 60.0% |
+| **Ch0 (WT - Calibrated)** | 0.90 | 0.1653 | 0.0646 | 0.2198 | 21 / 40 | 52.5% |
+| **Ch1 (Tumor Core / Solid Mass)** | 0.20 | 0.2796 | 0.1983 | 0.2699 | 19 / 40 | 47.5% |
+| **Ch1 (Tumor Core / Solid Mass)** | 0.30 | 0.3144 | 0.2444 | 0.2863 | 16 / 40 | 40.0% |
+| **Ch1 (Tumor Core / Solid Mass)** | 0.40 | 0.3314 | 0.2758 | 0.2934 | 13 / 40 | 32.5% |
+| **Ch1 (Tumor Core / Solid Mass)** 🏆 | **0.50** | **0.3455** | **0.3008** | **0.2988** | **12 / 40** | **30.0%** |
+| **Ch2 (Enhancing Tumor)** | 0.30 | 0.3306 | 0.3010 | 0.2794 | 12 / 40 | 30.0% |
+
+### Key Findings from Full 40-Case Benchmark:
+1. **Old Evaluation Catastrophe**: Testing Channel 0 at 0.50 yielded a 70% failure rate and 0.1125 Mean Dice due to massive white-matter over-segmentation.
+2. **Channel 1 @ 0.50 Winner**: Isolating the Solid Tumor Core (Channel 1) at threshold 0.50 more than **triples Mean Dice to 0.3455**, achieves a **Median Dice of 0.3008**, and slashes the failure rate from 70% down to 30%.
+3. **Anatomy of the 12 Failures**: Detailed inspection of the 12 failure cases reveals that they are strictly **sub-centimeter, en-plaque meningiomas** with ground-truth lesion volumes $<1,000$ voxels (e.g., `BraTS-MEN-00308-000` with only 362 voxels). For standard solid meningiomas ($GT > 10,000$ voxels), Dice scores consistently reach **0.65 to 0.8865**.
+4. **Locked Production Settings**:
+   - Modality Order: `[t2f, t1n, t1c, t2w]`
+   - Output Target: Channel 1 (Tumor Core)
+   - Threshold: `0.50`
+   - Anatomical Guard: Applied to intracranial brain mask.
 
 ---
 

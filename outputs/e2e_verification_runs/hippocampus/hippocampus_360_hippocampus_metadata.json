@@ -1,0 +1,26 @@
+{
+  "case_id": "hippocampus_360",
+  "target_model": "hippocampus",
+  "model_name": "Hippocampus Subfield 3D SegResNet",
+  "model_version": "1.0.0-alzheimer-hippocampus",
+  "inference_time_sec": 0.054,
+  "voxel_spacing_mm": [
+    1.0,
+    1.0,
+    1.0
+  ],
+  "matrix_dimensions": [
+    34,
+    49,
+    37
+  ],
+  "volumes": {
+    "anterior_hippocampus_volume_mm3": 1859.0,
+    "posterior_hippocampus_volume_mm3": 1907.0,
+    "total_hippocampus_volume_mm3": 3766.0,
+    "total_hippocampus_volume_ml": 3.766
+  },
+  "research_model_only": false,
+  "qc_status": "PASSED",
+  "uncertainty_state": "LOW_UNCERTAINTY"
+}

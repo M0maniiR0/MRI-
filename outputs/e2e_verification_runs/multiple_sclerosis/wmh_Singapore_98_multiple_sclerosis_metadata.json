@@ -1,0 +1,24 @@
+{
+  "case_id": "wmh_Singapore_98",
+  "target_model": "multiple_sclerosis",
+  "model_name": "Multiple Sclerosis Plaque 3D SegResNet",
+  "model_version": "1.0.0-multiple-sclerosis",
+  "inference_time_sec": 1.067,
+  "voxel_spacing_mm": [
+    1.0,
+    1.0,
+    2.999998092651367
+  ],
+  "matrix_dimensions": [
+    232,
+    256,
+    48
+  ],
+  "volumes": {
+    "total_lesion_load_tll_mm3": 48995.97,
+    "total_lesion_load_tll_ml": 48.996
+  },
+  "research_model_only": true,
+  "qc_status": "PASSED",
+  "uncertainty_state": "LOW_UNCERTAINTY"
+}

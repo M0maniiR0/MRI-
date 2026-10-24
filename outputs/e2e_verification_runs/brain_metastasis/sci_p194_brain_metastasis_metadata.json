@@ -1,0 +1,24 @@
+{
+  "case_id": "sci_p194",
+  "target_model": "brain_metastasis",
+  "model_name": "Brain Metastasis Focal 3D SegResNet",
+  "model_version": "1.0.0-brain-metastasis",
+  "inference_time_sec": 1.556,
+  "voxel_spacing_mm": [
+    1.0,
+    1.0,
+    1.0
+  ],
+  "matrix_dimensions": [
+    240,
+    240,
+    155
+  ],
+  "volumes": {
+    "metastatic_volume_mm3": 38699.0,
+    "metastatic_volume_ml": 38.699
+  },
+  "research_model_only": false,
+  "qc_status": "PASSED",
+  "uncertainty_state": "LOW_UNCERTAINTY"
+}

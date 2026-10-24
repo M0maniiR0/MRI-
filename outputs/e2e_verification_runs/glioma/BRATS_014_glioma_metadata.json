@@ -1,0 +1,28 @@
+{
+  "case_id": "BRATS_014",
+  "target_model": "glioma",
+  "model_name": "Glioma Multi-Region 3D SegResNet",
+  "model_version": "1.0.0-fullvolume",
+  "inference_time_sec": 3.104,
+  "voxel_spacing_mm": [
+    1.0,
+    1.0,
+    1.0
+  ],
+  "matrix_dimensions": [
+    240,
+    240,
+    155
+  ],
+  "volumes": {
+    "whole_tumor_volume_mm3": 640178.0,
+    "whole_tumor_volume_ml": 640.178,
+    "tumor_core_volume_mm3": 190995.0,
+    "tumor_core_volume_ml": 190.995,
+    "enhancing_tumor_volume_mm3": 81524.0,
+    "enhancing_tumor_volume_ml": 81.524
+  },
+  "research_model_only": false,
+  "qc_status": "PASSED",
+  "uncertainty_state": "LOW_UNCERTAINTY"
+}

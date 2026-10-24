@@ -1,0 +1,617 @@
+{
+  "glioma": {
+    "mean_dice": 0.3929,
+    "median_dice": 0.3951,
+    "std_dice": 0.1496,
+    "mean_hd95_mm": 150.0,
+    "mean_latency_sec": 3.054,
+    "failure_count": 0,
+    "total_tested": 10,
+    "per_case": [
+      {
+        "case_id": "BRATS_002",
+        "dice": 0.1895,
+        "hd95": 150.0,
+        "runtime": 3.554,
+        "volumes": {
+          "whole_tumor_volume_mm3": 601621.0,
+          "whole_tumor_volume_ml": 601.621,
+          "tumor_core_volume_mm3": 118267.0,
+          "tumor_core_volume_ml": 118.267,
+          "enhancing_tumor_volume_mm3": 36733.0,
+          "enhancing_tumor_volume_ml": 36.733
+        }
+      },
+      {
+        "case_id": "BRATS_006",
+        "dice": 0.5344,
+        "hd95": 150.0,
+        "runtime": 2.715,
+        "volumes": {
+          "whole_tumor_volume_mm3": 572351.0,
+          "whole_tumor_volume_ml": 572.351,
+          "tumor_core_volume_mm3": 167585.0,
+          "tumor_core_volume_ml": 167.585,
+          "enhancing_tumor_volume_mm3": 85507.0,
+          "enhancing_tumor_volume_ml": 85.507
+        }
+      },
+      {
+        "case_id": "BRATS_011",
+        "dice": 0.3466,
+        "hd95": 150.0,
+        "runtime": 2.767,
+        "volumes": {
+          "whole_tumor_volume_mm3": 645654.0,
+          "whole_tumor_volume_ml": 645.654,
+          "tumor_core_volume_mm3": 140666.0,
+          "tumor_core_volume_ml": 140.666,
+          "enhancing_tumor_volume_mm3": 53808.0,
+          "enhancing_tumor_volume_ml": 53.808
+        }
+      },
+      {
+        "case_id": "BRATS_014",
+        "dice": 0.3737,
+        "hd95": 150.0,
+        "runtime": 3.104,
+        "volumes": {
+          "whole_tumor_volume_mm3": 640178.0,
+          "whole_tumor_volume_ml": 640.178,
+          "tumor_core_volume_mm3": 190995.0,
+          "tumor_core_volume_ml": 190.995,
+          "enhancing_tumor_volume_mm3": 81524.0,
+          "enhancing_tumor_volume_ml": 81.524
+        }
+      },
+      {
+        "case_id": "BRATS_022",
+        "dice": 0.6126,
+        "hd95": 150.0,
+        "runtime": 3.27,
+        "volumes": {
+          "whole_tumor_volume_mm3": 542557.0,
+          "whole_tumor_volume_ml": 542.557,
+          "tumor_core_volume_mm3": 170914.0,
+          "tumor_core_volume_ml": 170.914,
+          "enhancing_tumor_volume_mm3": 40742.0,
+          "enhancing_tumor_volume_ml": 40.742
+        }
+      },
+      {
+        "case_id": "BRATS_040",
+        "dice": 0.4164,
+        "hd95": 150.0,
+        "runtime": 2.846,
+        "volumes": {
+          "whole_tumor_volume_mm3": 462677.0,
+          "whole_tumor_volume_ml": 462.677,
+          "tumor_core_volume_mm3": 126179.0,
+          "tumor_core_volume_ml": 126.179,
+          "enhancing_tumor_volume_mm3": 46315.0,
+          "enhancing_tumor_volume_ml": 46.315
+        }
+      },
+      {
+        "case_id": "BRATS_064",
+        "dice": 0.4972,
+        "hd95": 150.0,
+        "runtime": 3.14,
+        "volumes": {
+          "whole_tumor_volume_mm3": 538512.0,
+          "whole_tumor_volume_ml": 538.512,
+          "tumor_core_volume_mm3": 183677.0,
+          "tumor_core_volume_ml": 183.677,
+          "enhancing_tumor_volume_mm3": 107451.0,
+          "enhancing_tumor_volume_ml": 107.451
+        }
+      },
+      {
+        "case_id": "BRATS_066",
+        "dice": 0.5497,
+        "hd95": 150.0,
+        "runtime": 3.271,
+        "volumes": {
+          "whole_tumor_volume_mm3": 505896.0,
+          "whole_tumor_volume_ml": 505.896,
+          "tumor_core_volume_mm3": 111654.0,
+          "tumor_core_volume_ml": 111.654,
+          "enhancing_tumor_volume_mm3": 47110.0,
+          "enhancing_tumor_volume_ml": 47.11
+        }
+      },
+      {
+        "case_id": "BRATS_070",
+        "dice": 0.1567,
+        "hd95": 150.0,
+        "runtime": 2.938,
+        "volumes": {
+          "whole_tumor_volume_mm3": 591160.0,
+          "whole_tumor_volume_ml": 591.16,
+          "tumor_core_volume_mm3": 92973.0,
+          "tumor_core_volume_ml": 92.973,
+          "enhancing_tumor_volume_mm3": 25424.0,
+          "enhancing_tumor_volume_ml": 25.424
+        }
+      },
+      {
+        "case_id": "BRATS_072",
+        "dice": 0.2523,
+        "hd95": 150.0,
+        "runtime": 2.94,
+        "volumes": {
+          "whole_tumor_volume_mm3": 649492.0,
+          "whole_tumor_volume_ml": 649.492,
+          "tumor_core_volume_mm3": 139478.0,
+          "tumor_core_volume_ml": 139.478,
+          "enhancing_tumor_volume_mm3": 45329.0,
+          "enhancing_tumor_volume_ml": 45.329
+        }
+      }
+    ]
+  },
+  "meningioma": {
+    "mean_dice": 0.3741,
+    "median_dice": 0.2899,
+    "std_dice": 0.3256,
+    "mean_hd95_mm": 150.0,
+    "mean_latency_sec": 2.744,
+    "failure_count": 2,
+    "total_tested": 10,
+    "per_case": [
+      {
+        "case_id": "BraTS-MEN-00246-000",
+        "dice": 0.1078,
+        "hd95": 150.0,
+        "runtime": 3.277,
+        "volumes": {
+          "meningioma_solid_tumor_volume_mm3": 47493.0,
+          "meningioma_solid_tumor_volume_ml": 47.493
+        }
+      },
+      {
+        "case_id": "BraTS-MEN-00247-000",
+        "dice": 0.1161,
+        "hd95": 150.0,
+        "runtime": 2.726,
+        "volumes": {
+          "meningioma_solid_tumor_volume_mm3": 89395.0,
+          "meningioma_solid_tumor_volume_ml": 89.395
+        }
+      },
+      {
+        "case_id": "BraTS-MEN-00253-000",
+        "dice": 0.617,
+        "hd95": 150.0,
+        "runtime": 2.998,
+        "volumes": {
+          "meningioma_solid_tumor_volume_mm3": 95684.0,
+          "meningioma_solid_tumor_volume_ml": 95.684
+        }
+      },
+      {
+        "case_id": "BraTS-MEN-00255-000",
+        "dice": 0.8865,
+        "hd95": 150.0,
+        "runtime": 2.615,
+        "volumes": {
+          "meningioma_solid_tumor_volume_mm3": 132015.0,
+          "meningioma_solid_tumor_volume_ml": 132.015
+        }
+      },
+      {
+        "case_id": "BraTS-MEN-00256-000",
+        "dice": 0.1166,
+        "hd95": 150.0,
+        "runtime": 2.574,
+        "volumes": {
+          "meningioma_solid_tumor_volume_mm3": 42159.0,
+          "meningioma_solid_tumor_volume_ml": 42.159
+        }
+      },
+      {
+        "case_id": "BraTS-MEN-00258-000",
+        "dice": 0.5123,
+        "hd95": 150.0,
+        "runtime": 2.467,
+        "volumes": {
+          "meningioma_solid_tumor_volume_mm3": 40675.0,
+          "meningioma_solid_tumor_volume_ml": 40.675
+        }
+      },
+      {
+        "case_id": "BraTS-MEN-00259-000",
+        "dice": 0.0189,
+        "hd95": 150.0,
+        "runtime": 2.625,
+        "volumes": {
+          "meningioma_solid_tumor_volume_mm3": 40006.0,
+          "meningioma_solid_tumor_volume_ml": 40.006
+        }
+      },
+      {
+        "case_id": "BraTS-MEN-00260-000",
+        "dice": 0.8814,
+        "hd95": 150.0,
+        "runtime": 2.612,
+        "volumes": {
+          "meningioma_solid_tumor_volume_mm3": 188023.0,
+          "meningioma_solid_tumor_volume_ml": 188.023
+        }
+      },
+      {
+        "case_id": "BraTS-MEN-00263-000",
+        "dice": 0.0212,
+        "hd95": 150.0,
+        "runtime": 2.642,
+        "volumes": {
+          "meningioma_solid_tumor_volume_mm3": 85025.0,
+          "meningioma_solid_tumor_volume_ml": 85.025
+        }
+      },
+      {
+        "case_id": "BraTS-MEN-00266-000",
+        "dice": 0.4633,
+        "hd95": 150.0,
+        "runtime": 2.902,
+        "volumes": {
+          "meningioma_solid_tumor_volume_mm3": 37745.0,
+          "meningioma_solid_tumor_volume_ml": 37.745
+        }
+      }
+    ]
+  },
+  "hippocampus": {
+    "mean_dice": 0.8476,
+    "median_dice": 0.8403,
+    "std_dice": 0.034,
+    "mean_hd95_mm": 150.0,
+    "mean_latency_sec": 0.083,
+    "failure_count": 0,
+    "total_tested": 10,
+    "per_case": [
+      {
+        "case_id": "hippocampus_132",
+        "dice": 0.8854,
+        "hd95": 150.0,
+        "runtime": 0.338,
+        "volumes": {
+          "anterior_hippocampus_volume_mm3": 1878.0,
+          "posterior_hippocampus_volume_mm3": 2034.0,
+          "total_hippocampus_volume_mm3": 3912.0,
+          "total_hippocampus_volume_ml": 3.912
+        }
+      },
+      {
+        "case_id": "hippocampus_385",
+        "dice": 0.8942,
+        "hd95": 150.0,
+        "runtime": 0.067,
+        "volumes": {
+          "anterior_hippocampus_volume_mm3": 2046.0,
+          "posterior_hippocampus_volume_mm3": 1772.0,
+          "total_hippocampus_volume_mm3": 3818.0,
+          "total_hippocampus_volume_ml": 3.818
+        }
+      },
+      {
+        "case_id": "hippocampus_260",
+        "dice": 0.7812,
+        "hd95": 150.0,
+        "runtime": 0.064,
+        "volumes": {
+          "anterior_hippocampus_volume_mm3": 1751.0,
+          "posterior_hippocampus_volume_mm3": 1985.0,
+          "total_hippocampus_volume_mm3": 3736.0,
+          "total_hippocampus_volume_ml": 3.736
+        }
+      },
+      {
+        "case_id": "hippocampus_360",
+        "dice": 0.8368,
+        "hd95": 150.0,
+        "runtime": 0.054,
+        "volumes": {
+          "anterior_hippocampus_volume_mm3": 1859.0,
+          "posterior_hippocampus_volume_mm3": 1907.0,
+          "total_hippocampus_volume_mm3": 3766.0,
+          "total_hippocampus_volume_ml": 3.766
+        }
+      },
+      {
+        "case_id": "hippocampus_203",
+        "dice": 0.82,
+        "hd95": 150.0,
+        "runtime": 0.073,
+        "volumes": {
+          "anterior_hippocampus_volume_mm3": 1875.0,
+          "posterior_hippocampus_volume_mm3": 1683.0,
+          "total_hippocampus_volume_mm3": 3558.0,
+          "total_hippocampus_volume_ml": 3.558
+        }
+      },
+      {
+        "case_id": "hippocampus_303",
+        "dice": 0.8745,
+        "hd95": 150.0,
+        "runtime": 0.067,
+        "volumes": {
+          "anterior_hippocampus_volume_mm3": 2059.0,
+          "posterior_hippocampus_volume_mm3": 1938.0,
+          "total_hippocampus_volume_mm3": 3997.0,
+          "total_hippocampus_volume_ml": 3.997
+        }
+      },
+      {
+        "case_id": "hippocampus_372",
+        "dice": 0.8824,
+        "hd95": 150.0,
+        "runtime": 0.039,
+        "volumes": {
+          "anterior_hippocampus_volume_mm3": 2052.0,
+          "posterior_hippocampus_volume_mm3": 1988.0,
+          "total_hippocampus_volume_mm3": 4040.0,
+          "total_hippocampus_volume_ml": 4.04
+        }
+      },
+      {
+        "case_id": "hippocampus_311",
+        "dice": 0.8342,
+        "hd95": 150.0,
+        "runtime": 0.039,
+        "volumes": {
+          "anterior_hippocampus_volume_mm3": 1742.0,
+          "posterior_hippocampus_volume_mm3": 1914.0,
+          "total_hippocampus_volume_mm3": 3656.0,
+          "total_hippocampus_volume_ml": 3.656
+        }
+      },
+      {
+        "case_id": "hippocampus_244",
+        "dice": 0.8438,
+        "hd95": 150.0,
+        "runtime": 0.042,
+        "volumes": {
+          "anterior_hippocampus_volume_mm3": 2090.0,
+          "posterior_hippocampus_volume_mm3": 1884.0,
+          "total_hippocampus_volume_mm3": 3974.0,
+          "total_hippocampus_volume_ml": 3.974
+        }
+      },
+      {
+        "case_id": "hippocampus_327",
+        "dice": 0.8236,
+        "hd95": 150.0,
+        "runtime": 0.043,
+        "volumes": {
+          "anterior_hippocampus_volume_mm3": 2159.0,
+          "posterior_hippocampus_volume_mm3": 1891.0,
+          "total_hippocampus_volume_mm3": 4050.0,
+          "total_hippocampus_volume_ml": 4.05
+        }
+      }
+    ]
+  },
+  "brain_metastasis": {
+    "mean_dice": 0.2487,
+    "median_dice": 0.2367,
+    "std_dice": 0.2373,
+    "mean_hd95_mm": 150.0,
+    "mean_latency_sec": 1.501,
+    "failure_count": 4,
+    "total_tested": 10,
+    "per_case": [
+      {
+        "case_id": "sci_p193",
+        "dice": 0.1177,
+        "hd95": 150.0,
+        "runtime": 2.068,
+        "volumes": {
+          "metastatic_volume_mm3": 33559.0,
+          "metastatic_volume_ml": 33.559
+        }
+      },
+      {
+        "case_id": "sci_p194",
+        "dice": 0.0,
+        "hd95": 150.0,
+        "runtime": 1.556,
+        "volumes": {
+          "metastatic_volume_mm3": 38699.0,
+          "metastatic_volume_ml": 38.699
+        }
+      },
+      {
+        "case_id": "sci_p195",
+        "dice": 0.3556,
+        "hd95": 150.0,
+        "runtime": 1.505,
+        "volumes": {
+          "metastatic_volume_mm3": 49169.0,
+          "metastatic_volume_ml": 49.169
+        }
+      },
+      {
+        "case_id": "sci_p196",
+        "dice": 0.0,
+        "hd95": 150.0,
+        "runtime": 1.554,
+        "volumes": {
+          "metastatic_volume_mm3": 27654.0,
+          "metastatic_volume_ml": 27.654
+        }
+      },
+      {
+        "case_id": "sci_p197",
+        "dice": 0.4436,
+        "hd95": 150.0,
+        "runtime": 1.614,
+        "volumes": {
+          "metastatic_volume_mm3": 63596.0,
+          "metastatic_volume_ml": 63.596
+        }
+      },
+      {
+        "case_id": "sci_p198",
+        "dice": 0.7003,
+        "hd95": 150.0,
+        "runtime": 1.236,
+        "volumes": {
+          "metastatic_volume_mm3": 102959.0,
+          "metastatic_volume_ml": 102.959
+        }
+      },
+      {
+        "case_id": "sci_p199",
+        "dice": 0.0,
+        "hd95": 150.0,
+        "runtime": 1.229,
+        "volumes": {
+          "metastatic_volume_mm3": 13504.0,
+          "metastatic_volume_ml": 13.504
+        }
+      },
+      {
+        "case_id": "sci_p200",
+        "dice": 0.393,
+        "hd95": 150.0,
+        "runtime": 1.337,
+        "volumes": {
+          "metastatic_volume_mm3": 56491.0,
+          "metastatic_volume_ml": 56.491
+        }
+      },
+      {
+        "case_id": "P01",
+        "dice": 0.0315,
+        "hd95": 150.0,
+        "runtime": 1.635,
+        "volumes": {
+          "metastatic_volume_mm3": 30763.0,
+          "metastatic_volume_ml": 30.763
+        }
+      },
+      {
+        "case_id": "P02",
+        "dice": 0.4458,
+        "hd95": 150.0,
+        "runtime": 1.276,
+        "volumes": {
+          "metastatic_volume_mm3": 24474.0,
+          "metastatic_volume_ml": 24.474
+        }
+      }
+    ]
+  },
+  "multiple_sclerosis": {
+    "mean_dice": 0.2673,
+    "median_dice": 0.2183,
+    "std_dice": 0.1732,
+    "mean_hd95_mm": 150.0,
+    "mean_latency_sec": 1.033,
+    "failure_count": 2,
+    "total_tested": 10,
+    "per_case": [
+      {
+        "case_id": "wmh_Singapore_89",
+        "dice": 0.0379,
+        "hd95": 150.0,
+        "runtime": 1.014,
+        "volumes": {
+          "total_lesion_load_tll_mm3": 42149.99,
+          "total_lesion_load_tll_ml": 42.15
+        }
+      },
+      {
+        "case_id": "wmh_Singapore_84",
+        "dice": 0.4029,
+        "hd95": 150.0,
+        "runtime": 1.078,
+        "volumes": {
+          "total_lesion_load_tll_mm3": 59447.91,
+          "total_lesion_load_tll_ml": 59.448
+        }
+      },
+      {
+        "case_id": "wmh_Singapore_76",
+        "dice": 0.1435,
+        "hd95": 150.0,
+        "runtime": 1.112,
+        "volumes": {
+          "total_lesion_load_tll_mm3": 42401.99,
+          "total_lesion_load_tll_ml": 42.402
+        }
+      },
+      {
+        "case_id": "wmh_Singapore_71",
+        "dice": 0.4908,
+        "hd95": 150.0,
+        "runtime": 1.239,
+        "volumes": {
+          "total_lesion_load_tll_mm3": 57062.95,
+          "total_lesion_load_tll_ml": 57.063
+        }
+      },
+      {
+        "case_id": "wmh_Singapore_79",
+        "dice": 0.2761,
+        "hd95": 150.0,
+        "runtime": 1.076,
+        "volumes": {
+          "total_lesion_load_tll_mm3": 43941.02,
+          "total_lesion_load_tll_ml": 43.941
+        }
+      },
+      {
+        "case_id": "wmh_Singapore_95",
+        "dice": 0.439,
+        "hd95": 150.0,
+        "runtime": 1.063,
+        "volumes": {
+          "total_lesion_load_tll_mm3": 48183.02,
+          "total_lesion_load_tll_ml": 48.183
+        }
+      },
+      {
+        "case_id": "wmh_Singapore_90",
+        "dice": 0.1605,
+        "hd95": 150.0,
+        "runtime": 1.037,
+        "volumes": {
+          "total_lesion_load_tll_mm3": 38510.99,
+          "total_lesion_load_tll_ml": 38.511
+        }
+      },
+      {
+        "case_id": "wmh_Singapore_98",
+        "dice": 0.1355,
+        "hd95": 150.0,
+        "runtime": 1.067,
+        "volumes": {
+          "total_lesion_load_tll_mm3": 48995.97,
+          "total_lesion_load_tll_ml": 48.996
+        }
+      },
+      {
+        "case_id": "wmh_Utrecht_7",
+        "dice": 0.5215,
+        "hd95": 150.0,
+        "runtime": 0.807,
+        "volumes": {
+          "total_lesion_load_tll_mm3": 60355.6,
+          "total_lesion_load_tll_ml": 60.356
+        }
+      },
+      {
+        "case_id": "wmh_Utrecht_34",
+        "dice": 0.0657,
+        "hd95": 150.0,
+        "runtime": 0.835,
+        "volumes": {
+          "total_lesion_load_tll_mm3": 24331.24,
+          "total_lesion_load_tll_ml": 24.331
+        }
+      }
+    ]
+  }
+}

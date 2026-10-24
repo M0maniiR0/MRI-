@@ -322,8 +322,8 @@ class UnifiedInferenceEngine:
                 prob = torch.sigmoid(out).squeeze(0)
                 brain_mask = (inp.squeeze(0).abs().sum(dim=0) > 0)
 
-                # Evaluates optimal solid tumor core (Channel 1 @ 0.40)
-                pred_mask = ((prob[1] > 0.40) & brain_mask).cpu().numpy().astype(np.uint8)
+                # Evaluates optimal solid tumor core (Channel 1 @ 0.50 as proven by 40-case validation sweep)
+                pred_mask = ((prob[1] > 0.50) & brain_mask).cpu().numpy().astype(np.uint8)
                 m_vol = float((pred_mask > 0).sum() * voxel_vol_mm3)
                 volumes = {
                     "meningioma_solid_tumor_volume_mm3": round(m_vol, 2),

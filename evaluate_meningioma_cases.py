@@ -106,8 +106,8 @@ def evaluate_single_case(
     zooms = t1c_nii.header.get_zooms()[:3]
     voxel_vol = float(zooms[0] * zooms[1] * zooms[2])
 
-    # Stack 4 modalities
-    mods = [nib.load(str(p)).get_fdata(dtype=np.float32) for p in [t1n, t1c, t2f, t2w]]
+    # Stack 4 modalities in permanent corrected order: [FLAIR, T1, T1-CE, T2]
+    mods = [nib.load(str(p)).get_fdata(dtype=np.float32) for p in [t2f, t1n, t1c, t2w]]
     img_4d = np.stack(mods, axis=0)  # [4, H, W, D]
 
     _, val_pipe = get_meningioma_transforms()
@@ -130,7 +130,8 @@ def evaluate_single_case(
             )
         prob = torch.sigmoid(out).squeeze(0)
         brain_mask = (item["image"].abs().sum(dim=0) > 0).to(device)
-        pred_wt = ((prob[0] > 0.5) & brain_mask).cpu().numpy().astype(np.uint8)
+        # Evaluates Channel 1 (Tumor Core / Solid Mass @ 0.50) as determined by 40-case validation sweep
+        pred_wt = ((prob[1] > 0.50) & brain_mask).cpu().numpy().astype(np.uint8)
 
     tumor_voxels = int(pred_wt.sum())
     tumor_vol = tumor_voxels * voxel_vol
@@ -170,7 +171,7 @@ def evaluate_single_case(
 
 def main():
     parser = argparse.ArgumentParser(description="Evaluate Meningioma cohort")
-    parser.add_argument("--num-cases", type=int, default=5, help="Number of cases to evaluate and visualize")
+    parser.add_argument("--num-cases", type=int, default=40, help="Number of cases to evaluate (default: full 40 validation cohort)")
     args = parser.parse_args()
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
