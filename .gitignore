@@ -35,9 +35,13 @@ models/*
 !models/smoke_test_model.pt
 !models/segresnet_fullvolume_best.pt
 !models/segresnet_fullvolume_best_latest.pt
+!models/segresnet_glioma_finetuned_best.pt
 !models/segresnet_meningioma_best.pt
+!models/segresnet_meningioma_enhanced_best.pt
 !models/segresnet_alzheimer_hippocampus_best.pt
+!models/segresnet_hippocampus_enhanced_best.pt
 !models/segresnet_brain_metastasis_best.pt
+!models/segresnet_brain_metastasis_enhanced_best.pt
 !models/segresnet_multiple_sclerosis_best.pt
 
 # Heavy local model outputs (keep code and metrics, exclude heavy 3D masks)

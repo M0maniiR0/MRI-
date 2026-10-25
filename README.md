@@ -1,7 +1,29 @@
 # 🧠 Medical AI Workstream — BrainAgenticthon 2026
-## 3D Brain Tumour (Glioma) Segmentation & Detection
+## 3D Medical MRI Segmentation & Multi-Model Inference Engine
 
-دليل منظم لملفات المشروع وسكريبتات التنفيذ لمهندسي وباحثي الذكاء الاصطناعي.
+دليل شامل للمشروع يوثق معمارية واستراتيجية تدريب النماذج الأربعة المعتمدة، مع محرك التصفية والتعزيز الطبي (Filtration & Enhancement)، واستبعاد التصلب المتعدد نهائياً بسبب الـ Overfitting.
+
+---
+
+### 🏥 النماذج الأربعة المعتمدة للتدريب وإعادة التصميم (The 4 Retrained Models)
+
+| المرض المستهدف | قنوات الرنين (Modality Sequences) | بنية الهدف (Target Structure) | خوارزمية المعمارية ودالة الخسارة | تقرير التوثيق والتدريب |
+| :--- | :--- | :--- | :--- | :--- |
+| **ورم الدبقيات (Glioma)** | 4 قنوات `[FLAIR, T1, T1ce, T2]` | Multi-Region (WT, TC, ET) | 3D SegResNet + `DiceCELoss(sigmoid=True)` | [`reports/GLIOMA_ENHANCED_TRAINING_REPORT.md`](file:///c:/Users/HP%20VICTUS/OneDrive/Desktop/MRI%20Data/reports/GLIOMA_ENHANCED_TRAINING_REPORT.md) |
+| **الورم السحائي (Meningioma)** | 4 قنوات `[t2f, t1n, t1c, t2w]` | Single Solid Core Mass (TC) | 3D SegResNet + `DiceFocalLoss(gamma=2.0)` | [`reports/MENINGIOMA_ENHANCED_TRAINING_REPORT.md`](file:///c:/Users/HP%20VICTUS/OneDrive/Desktop/MRI%20Data/reports/MENINGIOMA_ENHANCED_TRAINING_REPORT.md) |
+| **انبثاثات الدماغ (Metastasis)** | 4 قنوات (التركيز الحاسم على `T1ce`) | Punctate Micro-Lesions | 3D SegResNet (NO Downsample) + `FocalLoss` | [`reports/BRAIN_METASTASIS_ENHANCED_TRAINING_REPORT.md`](file:///c:/Users/HP%20VICTUS/OneDrive/Desktop/MRI%20Data/reports/BRAIN_METASTASIS_ENHANCED_TRAINING_REPORT.md) |
+| **قرن آمون (Hippocampus)** | قناة واحدة عالية الدقة `T1` | Bilateral Anatomical Volumetry | 3D SegResNet (Medial Temporal ROI) + `DiceCE` | [`reports/HIPPOCAMPUS_ENHANCED_TRAINING_REPORT.md`](file:///c:/Users/HP%20VICTUS/OneDrive/Desktop/MRI%20Data/reports/HIPPOCAMPUS_ENHANCED_TRAINING_REPORT.md) |
+
+> [!NOTE]
+> **استبعاد التصلب المتعدد (Multiple Sclerosis):** تم استبعاد نموذج التصلب المتعدد من خطة التدريب الحالية بشكل قطعي بسبب معاناته من فرط التخصيص (Overfitting) ورسم أورام وهمية غير موجودة (Hallucinated Lesions).
+
+---
+
+### 🛡️ محرك التصفية والتعزيز الطبي (Filtration & Enhancement Engine)
+تم بناء محرك الفلترة والتعزيز الطبي في [`mri_filtration_and_enhancement.py`](file:///c:/Users/HP%20VICTUS/OneDrive/Desktop/MRI%20Data/mri_filtration_and_enhancement.py) تطبيقاً لتوجيهات الدكتورة المشرفة:
+1. **التصفية (Filtration):** تطبيق قص الشدة المئوية (`PercentileClippingAndFiltrationd`) لإزالة شذوذ وضوضاء رايس (Rician noise)، وعزل الجمجمة (`BrainMaskGuardFiltrationd`) لتصفير الهواء والعظام ومنع التسريب.
+2. **التعزيز (Enhancement):** تطبيع Z-score على نسيج الدماغ فقط، وتعزيز تباين قناة الجادولينيوم `T1ce` غير الخطي ($\gamma = 1.15\text{--}1.25$).
+3. **التقرير الاستراتيجي الشامل:** للاطلاع على كامل الاستراتيجية الطبية والهندسية، راجع [`reports/MASTER_SEGMENTATION_REDESIGN_STRATEGY.md`](file:///c:/Users/HP%20VICTUS/OneDrive/Desktop/MRI%20Data/reports/MASTER_SEGMENTATION_REDESIGN_STRATEGY.md).
 
 ---
 

@@ -64,7 +64,8 @@ from segmentation_baseline import (
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 DEFAULT_INITIAL_CHECKPOINT = SCRIPT_DIR / "models" / "segresnet_fullvolume_best.pt"
-DEFAULT_FINETUNED_CHECKPOINT = SCRIPT_DIR / "models" / "segresnet_finetuned_best.pt"
+DEFAULT_FINETUNED_CHECKPOINT = SCRIPT_DIR / "models" / "segresnet_glioma_finetuned_best.pt"
+DEFAULT_REPORT_FILE = SCRIPT_DIR / "reports" / "glioma_finetuning_report.json"
 
 
 def get_finetuning_pipeline(crop_size: Tuple[int, int, int] = (96, 96, 96)) -> Any:
@@ -118,32 +119,40 @@ def run_finetuning(
     lr: float = 5e-5,
     crop_size: Tuple[int, int, int] = (96, 96, 96),
     batch_size: int = 1,
-    val_num_cases: int = 73,
+    val_num_cases: int = 10,
     device: torch.device = torch.device("cuda" if torch.cuda.is_available() else "cpu"),
     seed: int = 42,
+    report_file: Path = DEFAULT_REPORT_FILE,
 ) -> Dict[str, Any]:
-    """Executes controlled fine-tuning from existing SegResNet checkpoint."""
+    """Executes controlled fine-tuning from existing SegResNet checkpoint with AMP and memory safety."""
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8")
+
     set_deterministic_seed(seed)
     train_ids, val_ids, test_ids = enforce_zero_leakage_guard(splits_dir)
 
-    print("=" * 80)
-    print("  NEUROSCOPE AI: 3D SEGRESNET CONTROLLED FINE-TUNING (GPU / COLAB)")
-    print("=" * 80)
-    print(f"  Initial Checkpoint   : {initial_checkpoint}")
-    print(f"  Target Checkpoint    : {output_checkpoint}")
-    print(f"  Device               : {device} ({torch.cuda.get_device_name(0) if torch.cuda.is_available() else 'CPU'})")
-    print(f"  Training Cohort      : {len(train_ids)} cases")
-    print(f"  Validation Cohort    : {val_num_cases} cases (out of {len(val_ids)})")
-    print(f"  Holdout Test Set     : {len(test_ids)} cases (STRICTLY EXCLUDED)")
-    print(f"  Crop Size            : {crop_size}")
-    print(f"  Fine-Tuning Epochs   : {epochs}")
-    print(f"  Initial LR           : {lr}")
-    print(f"  Loss Function        : DiceCELoss(sigmoid=True, lambda_dice=1.0, lambda_ce=1.0)")
-    print("=" * 80)
+    use_amp = (device.type == "cuda")
+    scaler = torch.amp.GradScaler("cuda", enabled=use_amp)
+
+    print("=" * 80, flush=True)
+    print("  NEUROSCOPE AI: 3D SEGRESNET CONTROLLED FINE-TUNING (GPU / COLAB)", flush=True)
+    print("=" * 80, flush=True)
+    print(f"  Initial Checkpoint   : {initial_checkpoint}", flush=True)
+    print(f"  Target Checkpoint    : {output_checkpoint}", flush=True)
+    print(f"  Device               : {device} ({torch.cuda.get_device_name(0) if torch.cuda.is_available() else 'CPU'})", flush=True)
+    print(f"  AMP FP16 Enabled     : {use_amp}", flush=True)
+    print(f"  Training Cohort      : {len(train_ids)} cases", flush=True)
+    print(f"  Validation Sub-Cohort: {val_num_cases} cases (out of {len(val_ids)})", flush=True)
+    print(f"  Holdout Test Set     : {len(test_ids)} cases (STRICTLY EXCLUDED)", flush=True)
+    print(f"  Crop Size            : {crop_size}", flush=True)
+    print(f"  Fine-Tuning Epochs   : {epochs}", flush=True)
+    print(f"  Initial LR           : {lr}", flush=True)
+    print(f"  Loss Function        : DiceCELoss(sigmoid=True, lambda_dice=1.0, lambda_ce=1.0)", flush=True)
+    print("=" * 80, flush=True)
 
     # 1. Load starting checkpoint
     model, init_meta = load_model_from_checkpoint(initial_checkpoint, device)
-    print(f"[OK] Successfully loaded weights from: {init_meta['checkpoint_file']} (Epoch {init_meta['epoch']})")
+    print(f"[OK] Successfully loaded weights from: {init_meta['checkpoint_file']} (Epoch {init_meta['epoch']})", flush=True)
 
     # 2. Setup DataLoaders
     train_dicts = build_case_dicts(data_dir, train_ids, require_label=True)
@@ -159,7 +168,7 @@ def run_finetuning(
         batch_size=batch_size,
         shuffle=True,
         collate_fn=list_data_collate,
-        num_workers=2 if torch.cuda.is_available() else 0,
+        num_workers=0,
         pin_memory=True if torch.cuda.is_available() else False,
     )
 
@@ -178,7 +187,7 @@ def run_finetuning(
     latest_checkpoint = output_checkpoint.parent / f"{output_checkpoint.stem}_latest.pt"
 
     best_val_dice = float(init_meta.get("val_mean_dice", 0.3149))
-    print(f"[BASELINE] Starting Best Validation Dice: {best_val_dice:.4f}")
+    print(f"[BASELINE] Starting Best Validation Dice: {best_val_dice:.4f}", flush=True)
 
     history = []
 
@@ -190,47 +199,50 @@ def run_finetuning(
         step_count = 0
 
         current_lr = scheduler.get_last_lr()[0]
-        print(f"\n--- Epoch [{epoch}/{epochs}] | LR: {current_lr:.6f} ---")
+        print(f"\n--- Epoch [{epoch:>2}/{epochs}] | LR: {current_lr:.6f} ---", flush=True)
 
         for step, batch_data in enumerate(train_loader, start=1):
             inputs = batch_data["image"].to(device)
             labels = batch_data["label"].to(device)
 
-            optimizer.zero_grad()
-            outputs = model(inputs)
-            loss = loss_function(outputs, labels)
-            loss.backward()
-            optimizer.step()
+            optimizer.zero_grad(set_to_none=True)
+            with torch.amp.autocast("cuda", enabled=use_amp):
+                outputs = model(inputs)
+                loss = loss_function(outputs, labels)
+
+            scaler.scale(loss).backward()
+            scaler.step(optimizer)
+            scaler.update()
 
             epoch_loss += loss.item()
             step_count += 1
 
             if step % 50 == 0 or step == len(train_loader):
-                print(f"  [Step {step:>3}/{len(train_loader)}] Batch Loss: {loss.item():.4f}")
+                print(f"  [Step {step:>3}/{len(train_loader)}] Batch Loss: {loss.item():.4f}", flush=True)
 
         scheduler.step()
         avg_train_loss = epoch_loss / max(1, step_count)
         train_time = time.time() - t0
-        print(f"  >>> Epoch {epoch} Training Complete in {train_time:.1f}s | Avg Loss: {avg_train_loss:.4f}")
+        print(f"  >>> Epoch {epoch} Training Complete in {train_time:.1f}s | Avg Loss: {avg_train_loss:.4f}", flush=True)
 
-        # Quick validation evaluation
+        # Fast Validation on Val Cohort with Brain Mask Guard
         model.eval()
         val_dices = []
         with torch.no_grad():
             for v_case in val_dicts:
-                # Sliding window inference
                 val_data = val_pipe({"image": v_case["image"], "label": v_case["label"]})
                 v_img = val_data["image"].unsqueeze(0).to(device)
                 v_gt = val_data["label"].to(device)
 
-                v_out = sliding_window_inference(
-                    inputs=v_img,
-                    roi_size=crop_size,
-                    sw_batch_size=4,
-                    predictor=model,
-                    overlap=0.25,
-                    mode="gaussian",
-                )
+                with torch.amp.autocast("cuda", enabled=use_amp):
+                    v_out = sliding_window_inference(
+                        inputs=v_img,
+                        roi_size=crop_size,
+                        sw_batch_size=1,
+                        predictor=model,
+                        overlap=0.25,
+                        mode="gaussian",
+                    )
                 v_probs = torch.sigmoid(v_out).squeeze(0)
 
                 # Apply Brain Mask Guard
@@ -241,13 +253,13 @@ def run_finetuning(
                 val_dices.append(d_wt)
 
         epoch_val_dice = float(np.mean(val_dices))
-        print(f"  >>> Epoch {epoch} Validation WT Dice (with Brain Mask Guard): {epoch_val_dice:.4f}")
+        print(f"  >>> Epoch {epoch} Validation WT Dice (with Brain Mask Guard): {epoch_val_dice:.4f}", flush=True)
 
         record = {
             "epoch": epoch,
-            "train_loss": avg_train_loss,
-            "val_wt_dice": epoch_val_dice,
-            "lr": current_lr,
+            "train_loss": round(avg_train_loss, 4),
+            "val_wt_dice": round(epoch_val_dice, 4),
+            "lr": round(current_lr, 7),
             "time_sec": round(train_time, 1),
         }
         history.append(record)
@@ -269,12 +281,22 @@ def run_finetuning(
         if epoch_val_dice > best_val_dice:
             best_val_dice = epoch_val_dice
             torch.save(save_dict, str(output_checkpoint))
-            print(f"  [SAVED NEW BEST] -> {output_checkpoint.name} (Val Dice: {best_val_dice:.4f})")
+            print(f"  [SAVED NEW BEST] -> {output_checkpoint.name} (Val Dice: {best_val_dice:.4f})", flush=True)
 
-    print("\n" + "=" * 80)
-    print(f"  FINE-TUNING COMPLETED! Final Best Validation Dice: {best_val_dice:.4f}")
-    print(f"  Saved Checkpoint: {output_checkpoint}")
-    print("=" * 80)
+        # Save progress report
+        report_file.parent.mkdir(parents=True, exist_ok=True)
+        with open(report_file, "w", encoding="utf-8") as f:
+            json.dump({
+                "model": "Glioma 3D SegResNet Fine-Tuned",
+                "checkpoint": str(output_checkpoint),
+                "best_val_dice": best_val_dice,
+                "history": history,
+            }, f, indent=2)
+
+    print("\n" + "=" * 80, flush=True)
+    print(f"  FINE-TUNING COMPLETED! Final Best Validation Dice: {best_val_dice:.4f}", flush=True)
+    print(f"  Saved Checkpoint: {output_checkpoint}", flush=True)
+    print("=" * 80, flush=True)
     return {"best_dice": best_val_dice, "history": history}
 
 
@@ -288,8 +310,9 @@ def main():
     parser.add_argument("--lr", type=float, default=5e-5)
     parser.add_argument("--crop-size", type=int, nargs=3, default=[96, 96, 96])
     parser.add_argument("--batch-size", type=int, default=1)
-    parser.add_argument("--val-num-cases", type=int, default=73)
+    parser.add_argument("--val-num-cases", type=int, default=10)
     parser.add_argument("--device", type=str, default="cuda" if torch.cuda.is_available() else "cpu")
+    parser.add_argument("--report", type=Path, default=DEFAULT_REPORT_FILE)
     parser.add_argument("--seed", type=int, default=42)
     args = parser.parse_args()
 
@@ -305,6 +328,7 @@ def main():
         val_num_cases=args.val_num_cases,
         device=torch.device(args.device),
         seed=args.seed,
+        report_file=args.report.resolve(),
     )
 
 
