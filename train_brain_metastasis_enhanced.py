@@ -65,8 +65,12 @@ class EnhancedBrainMetastasisDataset(Dataset):
 
     def __getitem__(self, idx):
         item = self.items[idx]
-        mri_nii = nib.load(item["mri_path"])
-        seg_nii = nib.load(item["seg_path"])
+        mri_path = item["mri_path"]
+        seg_path = item.get("lesion_mask_path") or item.get("seg_path")
+        case_id = item.get("patient_id") or item.get("case_id")
+
+        mri_nii = nib.load(mri_path)
+        seg_nii = nib.load(seg_path)
 
         mri_data = mri_nii.get_fdata(dtype=np.float32)
         seg_data = seg_nii.get_fdata(dtype=np.float32).round().astype(np.float32)
@@ -84,7 +88,7 @@ class EnhancedBrainMetastasisDataset(Dataset):
         data_dict = {
             "image": torch.from_numpy(mri_data),
             "label": torch.from_numpy((seg_data > 0).astype(np.float32)),
-            "case_id": item["case_id"],
+            "case_id": case_id,
         }
         if self.transform:
             data_dict = self.transform(data_dict)
@@ -169,7 +173,7 @@ def run_metastasis_retraining(
     print(f"  Learning Rate    : {lr}", flush=True)
     print("=" * 80, flush=True)
 
-    manifest_file = data_dir / "metastasis_manifest.json"
+    manifest_file = data_dir / "dataset_manifest.json"
     if not manifest_file.is_file():
         raise FileNotFoundError(f"Manifest not found: {manifest_file}")
 

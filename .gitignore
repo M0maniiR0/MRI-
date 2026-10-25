@@ -31,8 +31,6 @@ __pycache__/
 *.onnx
 models/*
 !models/best_model.pt
-!models/baseline_5ep_best_model.pt
-!models/smoke_test_model.pt
 !models/segresnet_fullvolume_best.pt
 !models/segresnet_fullvolume_best_latest.pt
 !models/segresnet_glioma_finetuned_best.pt
@@ -42,10 +40,13 @@ models/*
 !models/segresnet_hippocampus_enhanced_best.pt
 !models/segresnet_brain_metastasis_best.pt
 !models/segresnet_brain_metastasis_enhanced_best.pt
-!models/segresnet_multiple_sclerosis_best.pt
 
-# Heavy local model outputs (keep code and metrics, exclude heavy 3D masks)
+# Heavy local model outputs (keep code and metrics, exclude heavy 3D masks and raw PNG slices)
 outputs/**/*.nii.gz
 outputs/**/*.nii
+outputs/**/*.png
+outputs/**/*.jpg
+outputs/multiple_sclerosis_analysis/
+outputs/e2e_verification_runs/multiple_sclerosis/
 reports/master_guide_temp.html
 
