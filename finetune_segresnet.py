@@ -150,9 +150,14 @@ def run_finetuning(
     print(f"  Loss Function        : DiceCELoss(sigmoid=True, lambda_dice=1.0, lambda_ce=1.0)", flush=True)
     print("=" * 80, flush=True)
 
-    # 1. Load starting checkpoint
-    model, init_meta = load_model_from_checkpoint(initial_checkpoint, device)
-    print(f"[OK] Successfully loaded weights from: {init_meta['checkpoint_file']} (Epoch {init_meta['epoch']})", flush=True)
+    # 1. Load starting checkpoint or initialize fresh SegResNet
+    if initial_checkpoint and initial_checkpoint.is_file():
+        model, init_meta = load_model_from_checkpoint(initial_checkpoint, device)
+        print(f"[OK] Successfully loaded weights from: {init_meta['checkpoint_file']} (Epoch {init_meta['epoch']})", flush=True)
+    else:
+        print("[INFO] Initializing fresh SegResNet from scratch (Full Retraining Mode)!", flush=True)
+        model = create_model(device, in_channels=4, out_channels=3, init_filters=16)
+        init_meta = {"epoch": 0, "val_mean_dice": 0.0, "checkpoint_file": "scratch"}
 
     # 2. Setup DataLoaders
     train_dicts = build_case_dicts(data_dir, train_ids, require_label=True)
