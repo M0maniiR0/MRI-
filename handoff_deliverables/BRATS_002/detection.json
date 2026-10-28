@@ -1,9 +1,0 @@
-{
-  "case_id": "BRATS_002",
-  "abnormal_probability": 0.98,
-  "prediction": "abnormal",
-  "threshold": 0.5,
-  "calibration_method": "temperature_scaling",
-  "model_version": "3D_DenseNet121_Detector_v1",
-  "qc_flags": []
-}
