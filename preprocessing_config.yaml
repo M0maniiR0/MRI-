@@ -1,0 +1,39 @@
+# Preprocessing Configuration for ACIT26 BrainAgenticthon (Task C & Abdulrahman Shared Contract)
+version: "1.0.0"
+pipeline: "Unified Preprocessing & Normalization Engine"
+
+spatial:
+  target_orientation: "RAS"
+  target_spacing: [1.0, 1.0, 1.0]  # mm isotropic
+  interpolation_image: "bilinear"
+  interpolation_mask: "nearest"
+  fixed_shape: [128, 128, 128]     # Task C standard volumetric crop/pad shape
+
+channel_convention:
+  task_c_input_modality: "T1"       # Single T1-weighted common channel across all non-lesional & tumor classes
+  available_channels:
+    - "T1"
+    - "T1ce"
+    - "T2"
+    - "FLAIR"
+
+skull_stripping:
+  method: "intensity_based_brain_mask"
+  description: "Deterministic 3D morphological brain extraction: threshold at the 15th percentile of positive voxels, largest 3D connected component, binary fill holes, one dilation"
+  offline_verified: true
+
+intensity:
+  clip_lower_percentile: 0.5
+  clip_upper_percentile: 99.5
+  z_score_nonzero_only: true
+  eps: 1.0e-8
+
+quality_control:
+  allow_nan_or_inf: false
+  min_brain_voxels: 1000
+  allowed_dimensions: [3, 4]
+  extreme_value_bounds: [-15.0, 15.0]
+
+visualization:
+  output_dir: "reports/qc_preproc_visualizations"
+  planes: ["axial", "coronal", "sagittal"]

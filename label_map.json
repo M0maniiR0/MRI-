@@ -1,0 +1,103 @@
+{
+  "classes": [
+    {
+      "id": 0,
+      "name": "Normal",
+      "description": "Explicitly verified cognitively/neurologically normal control subjects (Documented coverage gap)"
+    },
+    {
+      "id": 1,
+      "name": "Glioma",
+      "description": "High-grade or low-grade infiltrative glial brain tumor (Trained on native T1w)"
+    },
+    {
+      "id": 2,
+      "name": "Meningioma",
+      "description": "Dural-based extra-axial meningeal brain tumor (Trained on native t1n)"
+    },
+    {
+      "id": 3,
+      "name": "Metastasis",
+      "description": "Secondary brain metastatic focal lesions (Trained on native t1n)"
+    },
+    {
+      "id": 4,
+      "name": "Alzheimer's",
+      "description": "Alzheimer's disease neurodegeneration including folded MCI (Documented coverage gap: no verified whole-brain ADNI/OASIS T1 on disk)"
+    },
+    {
+      "id": 5,
+      "name": "FCD epilepsy",
+      "description": "Focal Cortical Dysplasia epilepsy (Expected coverage gap)"
+    },
+    {
+      "id": 6,
+      "name": "Post-stroke lesion",
+      "description": "Post-stroke ischemic or hemorrhagic encephalomalacia lesion (Expected coverage gap)"
+    },
+    {
+      "id": 7,
+      "name": "Parkinson's",
+      "description": "Parkinson's disease (Documented coverage gap)"
+    },
+    {
+      "id": 8,
+      "name": "ASD",
+      "description": "Autism Spectrum Disorder (Documented coverage gap)"
+    },
+    {
+      "id": 9,
+      "name": "Uncertain/Other",
+      "description": "Out-of-distribution, equivocal pathology, unrepresented classes, or low-confidence scans"
+    }
+  ],
+  "class_to_id": {
+    "Normal": 0,
+    "Glioma": 1,
+    "Meningioma": 2,
+    "Metastasis": 3,
+    "Alzheimer's": 4,
+    "FCD epilepsy": 5,
+    "Post-stroke lesion": 6,
+    "Parkinson's": 7,
+    "ASD": 8,
+    "Uncertain/Other": 9
+  },
+  "source_to_class": {
+    "MSD_Task01_BrainTumour": {
+      "channel_1_T1w": "Glioma"
+    },
+    "BraTS_MEN": {
+      "t1n": "Meningioma"
+    },
+    "BrainMetastasis_Pakawat_SCI": {
+      "t1n": "Metastasis"
+    },
+    "MSD_Task04_Hippocampus": {
+      "all": "EXCLUDE_LOGGED"
+    },
+    "MultipleSclerosis_MSLesSeg": {
+      "MS": "EXCLUDE_LOGGED"
+    }
+  },
+  "rules": [
+    "Absence of a label is NEVER assumed to be healthy or Normal.",
+    "Only subjects explicitly labeled as controls by origin registry count as Normal.",
+    "Do NOT derive diagnoses from brain volumes, thresholds, or heuristics.",
+    "Do NOT use 2D tumor images or slices for 3D volumetric classification.",
+    "Mild Cognitive Impairment (MCI) must be folded into Alzheimer's.",
+    "MSD Task04 Hippocampus must NOT be labeled as Alzheimer's (cropped bounding boxes, no diagnosis labels).",
+    "All trained models use native T1 (no contrast). t1c is strictly removed.",
+    "Unsupported classes (Normal, Alzheimer's, FCD epilepsy, Post-stroke lesion, Parkinson's, ASD) are routed to Uncertain/Other."
+  ],
+  "exclusions": {
+    "MSD_Task04_Hippocampus": {
+      "action": "EXCLUDE",
+      "reason": "Cropped ~40^3 hippocampal bounding boxes without clinical dementia/AD diagnosis labels. Induces artificial volumetric shortcut learning."
+    },
+    "MultipleSclerosis_MSLesSeg": {
+      "action": "EXCLUDE",
+      "reason": "Multiple Sclerosis is absent from the 10 official ACIT26 classes and induces high false-positive lesion hallucinations. Routed to Uncertain/Other."
+    }
+  }
+}

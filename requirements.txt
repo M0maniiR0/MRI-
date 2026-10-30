@@ -1,0 +1,9 @@
+# Python 3.11.9
+# Pinned versions of packages imported by inference.py and preprocess.py
+torch==2.5.1
+monai==1.6.1
+nibabel==5.4.2
+numpy==2.4.6
+scipy==1.17.1
+pillow==12.3.0
+pyyaml==6.0.3

@@ -1,0 +1,9 @@
+dataset,version,license/access note,diagnosis label source,modality/sequence,format (DICOM/NIfTI),skull-stripped (yes/no/unknown),site/scanner if known,number of subjects,number of scans,age/sex availability,task_c_status
+MSD Task01_BrainTumour (Glioma),1.0 (2018 / BraTS Gold Standard),CC-BY-SA 4.0 International,Expert consensus annotation / TCGA-TCIA Histology,Native T1w (Channel 1 non-contrast),NIfTI (.nii.gz),yes,"Multi-site (Penn, TCGA/TCIA consortium)",484,484,no,Included (Class 1)
+BraTS-MEN (Meningioma),BraTS-MEN 2023 v1.0,CC-BY 4.0 Open Research Access,RSNA/ASNR/MICCAI Expert Neuroradiologist consensus,Native T1n (non-contrast),NIfTI (.nii.gz),yes,Multi-institutional international consortium,200,200,no,Included (Class 2)
+BraTS-METS (Brain Metastasis),Consolidated 2023 release,Apache 2.0 / CC-BY Open Access,Expert clinical radiation oncology / SRS ground truth,Native T1n (non-contrast),NIfTI (.nii.gz),yes,Multi-center clinical radiation oncology centers,200,200,no,Included (Class 3)
+MSD Task04_Hippocampus (Excluded),1.0 (2018 Decathlon release),CC-BY-SA 4.0 International,Vanderbilt University Medical Center (VUMC) anatomical tracing,Cropped T1 isotropic (~40^3),NIfTI (.nii.gz),yes,Vanderbilt University Medical Center (Philips 3T),390,390,no,Excluded (Cropped ROI without whole-brain or diagnosis)
+MSLesSeg & WMH Challenge (Excluded),Consolidated 2016-2021,Nature Scientific Data / CC-BY-NC,Consensus McDonald Criteria manual lesion masks,"FLAIR, T1, T2",NIfTI (.nii.gz),yes,"Multi-site (Rennes, Bordeaux, Utrecht, Amsterdam)",240,722,no,Excluded (Not official class; routes to Uncertain/Other)
+ADNI / OASIS (Alzheimer's / Normal),Not Available Locally,N/A,N/A,Whole-brain T1,N/A,unknown,N/A,0,0,no,Coverage Gap (Class 0 & 4)
+PPMI (Parkinson's),Not Available Locally,N/A,N/A,T1 / DaTscan,N/A,unknown,N/A,0,0,no,Coverage Gap (Class 7)
+ABIDE (ASD),Not Available Locally,N/A,N/A,Whole-brain T1,N/A,unknown,N/A,0,0,no,Coverage Gap (Class 8)

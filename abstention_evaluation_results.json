@@ -1,0 +1,156 @@
+{
+  "test_support_n": 132,
+  "temperature_used": 0.4,
+  "abstain_threshold": 0.9,
+  "abstention_summary": {
+    "total_abstained_n": 9,
+    "abstention_rate": 0.06818181818181818,
+    "coverage": 0.9318181818181819,
+    "per_class": {
+      "Glioma": {
+        "total_n": 72,
+        "abstained_n": 3,
+        "abstention_rate": 0.041666666666666664
+      },
+      "Meningioma": {
+        "total_n": 30,
+        "abstained_n": 4,
+        "abstention_rate": 0.13333333333333333
+      },
+      "Metastasis": {
+        "total_n": 30,
+        "abstained_n": 2,
+        "abstention_rate": 0.06666666666666667
+      }
+    }
+  },
+  "selective_performance_non_abstained": {
+    "support_n": 123,
+    "accuracy": 0.991869918699187,
+    "balanced_accuracy": 0.9871794871794872,
+    "macro_f1": 0.9910659657535366,
+    "per_class_recall": {
+      "Glioma": 1.0,
+      "Meningioma": 0.9615384615384616,
+      "Metastasis": 1.0
+    },
+    "per_class_precision": {
+      "Glioma": 0.9857142857142858,
+      "Meningioma": 1.0,
+      "Metastasis": 1.0
+    },
+    "per_class_f1": {
+      "Glioma": 0.9928057503959423,
+      "Meningioma": 0.9803921518646674,
+      "Metastasis": 0.999999995
+    }
+  },
+  "deployment_view_with_abstention": {
+    "balanced_accuracy": 0.9083333333333333,
+    "balanced_accuracy_95ci": [
+      0.8475428186729556,
+      0.9609540754736787
+    ],
+    "macro_f1": 0.9488130404779906,
+    "macro_f1_95ci": [
+      0.9087572477847251,
+      0.9796243311311318
+    ],
+    "confusion_matrix_3x4": {
+      "rows_true": [
+        "Glioma",
+        "Meningioma",
+        "Metastasis"
+      ],
+      "cols_pred": [
+        "Glioma",
+        "Meningioma",
+        "Metastasis",
+        "Uncertain/Other"
+      ],
+      "matrix": [
+        [
+          69,
+          0,
+          0,
+          3
+        ],
+        [
+          1,
+          25,
+          0,
+          4
+        ],
+        [
+          0,
+          0,
+          28,
+          2
+        ]
+      ]
+    },
+    "per_class": {
+      "Glioma": {
+        "recall": 0.9583333333333334,
+        "recall_95ci": [
+          0.9117553983618764,
+          1.0
+        ],
+        "precision": 0.9857142857142858,
+        "precision_95ci": [
+          0.9523519163763066,
+          1.0
+        ],
+        "f1": 0.9718309809164849
+      },
+      "Meningioma": {
+        "recall": 0.8333333333333334,
+        "recall_95ci": [
+          0.6922413793103448,
+          0.9642857142857143
+        ],
+        "precision": 1.0,
+        "precision_95ci": [
+          1.0,
+          1.0
+        ],
+        "f1": 0.9090909041322315
+      },
+      "Metastasis": {
+        "recall": 0.9333333333333333,
+        "recall_95ci": [
+          0.8275862068965517,
+          1.0
+        ],
+        "precision": 1.0,
+        "precision_95ci": [
+          1.0,
+          1.0
+        ],
+        "f1": 0.9655172363852557
+      }
+    }
+  },
+  "side_by_side_comparison": {
+    "argmax_balanced_accuracy": 0.9777777777777779,
+    "argmax_balanced_accuracy_95ci": [
+      0.9444444444444445,
+      1.0
+    ],
+    "deployment_balanced_accuracy": 0.9083333333333333,
+    "deployment_balanced_accuracy_95ci": [
+      0.8475428186729556,
+      0.9609540754736787
+    ],
+    "argmax_macro_f1": 0.9839395320830692,
+    "argmax_macro_f1_95ci": [
+      0.9573603059760015,
+      0.999999995
+    ],
+    "deployment_macro_f1": 0.9488130404779906,
+    "deployment_macro_f1_95ci": [
+      0.9087572477847251,
+      0.9796243311311318
+    ]
+  }
+}

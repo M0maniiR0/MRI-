@@ -1,0 +1,13 @@
+{
+  "temperature": 0.4,
+  "ece_before_val": 0.06163621060830308,
+  "ece_after_val": 0.015940568500891664,
+  "confidence_threshold": 0.9,
+  "uncertain_class_id": 9,
+  "present_classes": [
+    1,
+    2,
+    3
+  ],
+  "val_n": 133
+}

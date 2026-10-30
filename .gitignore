@@ -36,6 +36,14 @@ models/*
 !models/segresnet_hippocampus_enhanced_best.pt
 !models/segresnet_brain_metastasis_enhanced_best.pt
 
+# Preprocessed Volume Caches
+cache_preprocessed/
+*.npy
+
+# Temporary verification extracts
+zip_run_verify/
+zip_verify_test/
+
 # Heavy runtime outputs & deliverables (keep code, exclude local inference dumps)
 outputs/
 handoff_deliverables/

@@ -1,0 +1,103 @@
+{
+  "test_support_n": 132,
+  "balanced_accuracy": 0.9777777777777779,
+  "balanced_accuracy_95ci": [
+    0.9444444444444445,
+    1.0
+  ],
+  "macro_f1": 0.9839395320830692,
+  "macro_f1_95ci": [
+    0.9573603059760015,
+    0.999999995
+  ],
+  "ece_before_cal": 0.08832355837027231,
+  "ece_after_cal": 0.02276470579884273,
+  "temperature_used": 0.4,
+  "abstain_threshold_used": 0.9,
+  "n_abstained": 9,
+  "confusion_matrix": [
+    [
+      72,
+      0,
+      0
+    ],
+    [
+      2,
+      28,
+      0
+    ],
+    [
+      0,
+      0,
+      30
+    ]
+  ],
+  "per_class": {
+    "Glioma": {
+      "support_n": 72,
+      "recall": 1.0,
+      "recall_95ci": [
+        1.0,
+        1.0
+      ],
+      "precision": 0.972972972972973,
+      "precision_95ci": [
+        0.930531103286385,
+        1.0
+      ],
+      "f1": 0.986301364863952,
+      "auroc": 0.9993055555555556,
+      "auroc_95ci": [
+        0.9965556237653643,
+        1.0
+      ]
+    },
+    "Meningioma": {
+      "support_n": 30,
+      "recall": 0.9333333333333333,
+      "recall_95ci": [
+        0.8333333333333334,
+        1.0
+      ],
+      "precision": 1.0,
+      "precision_95ci": [
+        1.0,
+        1.0
+      ],
+      "f1": 0.9655172363852557,
+      "auroc": 0.9986928104575163,
+      "auroc_95ci": [
+        0.9940181642750558,
+        1.0
+      ]
+    },
+    "Metastasis": {
+      "support_n": 30,
+      "recall": 1.0,
+      "recall_95ci": [
+        1.0,
+        1.0
+      ],
+      "precision": 1.0,
+      "precision_95ci": [
+        1.0,
+        1.0
+      ],
+      "f1": 0.999999995,
+      "auroc": 1.0,
+      "auroc_95ci": [
+        1.0,
+        1.0
+      ]
+    }
+  },
+  "coverage_gaps": [
+    "Normal",
+    "Alzheimer's",
+    "FCD epilepsy",
+    "Post-stroke lesion",
+    "Parkinson's",
+    "ASD",
+    "Uncertain/Other"
+  ]
+}
